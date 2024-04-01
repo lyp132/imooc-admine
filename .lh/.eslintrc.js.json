@@ -1,0 +1,26 @@
+{
+    "sourceFile": ".eslintrc.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1693386797153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693386860995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+module.exports = {\n+  root: true,\n+  env: {\n+    node: true\n+  },\n+  extends: [\n+    'plugin:vue/vue3-essential',\n+    '@vue/standard'\n+  ],\n+  parserOptions: {\n+    parser: '@babel/eslint-parser'\n+  },\n+  rules: {\n+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'space-before-function-paren': 'off'\n+  }\n+}\n"
+                },
+                {
+                    "date": 1693386871520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,22 +15,4 @@\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'space-before-function-paren': 'off'\n   }\n }\n-module.exports = {\n-  root: true,\n-  env: {\n-    node: true\n-  },\n-  extends: [\n-    'plugin:vue/vue3-essential',\n-    '@vue/standard'\n-  ],\n-  parserOptions: {\n-    parser: '@babel/eslint-parser'\n-  },\n-  rules: {\n-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'space-before-function-paren': 'none'\n-  }\n-}\n"
+                }
+            ],
+            "date": 1693386797153,
+            "name": "Commit-0",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    node: true\n  },\n  extends: [\n    'plugin:vue/vue3-essential',\n    '@vue/standard'\n  ],\n  parserOptions: {\n    parser: '@babel/eslint-parser'\n  },\n  rules: {\n    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n    'space-before-function-paren': 'none'\n  }\n}\n"
+        }
+    ]
+}

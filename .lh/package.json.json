@@ -1,0 +1,22 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1693383128820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693399731694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,48 @@\n+{\n+  \"name\": \"imooc-admin\",\n+  \"version\": \"0.1.0\",\n+  \"private\": true,\n+  \"scripts\": {\n+    \"serve\": \"vue-cli-service serve\",\n+    \"build\": \"vue-cli-service build\",\n+    \"lint\": \"vue-cli-service lint\"\n+  },\n+  \"dependencies\": {\n+    \"core-js\": \"^3.8.3\",\n+    \"vue\": \"^3.2.13\",\n+    \"vue-router\": \"^4.0.3\",\n+    \"vuex\": \"^4.0.2\"\n+  },\n+  \"devDependencies\": {\n+    \"@babel/core\": \"^7.12.16\",\n+    \"@babel/eslint-parser\": \"^7.12.16\",\n+    \"@vue/cli-plugin-babel\": \"~5.0.0\",\n+    \"@vue/cli-plugin-eslint\": \"~5.0.0\",\n+    \"@vue/cli-plugin-router\": \"~5.0.0\",\n+    \"@vue/cli-plugin-vuex\": \"~5.0.0\",\n+    \"@vue/cli-service\": \"~5.0.0\",\n+    \"@vue/eslint-config-standard\": \"^6.1.0\",\n+    \"cz-customizable\": \"^7.0.0\",\n+    \"eslint\": \"^7.32.0\",\n+    \"eslint-plugin-import\": \"^2.25.3\",\n+    \"eslint-plugin-node\": \"^11.1.0\",\n+    \"eslint-plugin-promise\": \"^5.1.0\",\n+    \"eslint-plugin-vue\": \"^8.0.3\",\n+    \"lint-staged\": \"^11.1.2\",\n+    \"sass\": \"^1.32.7\",\n+    \"sass-loader\": \"^12.0.0\"\n+  },\n+  \"gitHooks\": {\n+    \"pre-commit\": \"lint-staged\"\n+  },\n+  \"description\": \"## Project setup ``` yarn install ```\",\n+  \"main\": \".eslintrc.js\",\n+  \"author\": \"\",\n+  \"license\": \"ISC\",\n+  \"keywords\": [],\n+  \"config\": {\n+    \"commitizen\": {\n+      \"path\": \"node_modules/cz-customizable\"\n+    }\n+  }\n+}\n"
+                }
+            ],
+            "date": 1693383128820,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"imooc-admin\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"serve\": \"vue-cli-service serve\",\n    \"build\": \"vue-cli-service build\",\n    \"lint\": \"vue-cli-service lint\"\n  },\n  \"dependencies\": {\n    \"core-js\": \"^3.8.3\",\n    \"vue\": \"^3.2.13\",\n    \"vue-router\": \"^4.0.3\",\n    \"vuex\": \"^4.0.2\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.12.16\",\n    \"@babel/eslint-parser\": \"^7.12.16\",\n    \"@vue/cli-plugin-babel\": \"~5.0.0\",\n    \"@vue/cli-plugin-eslint\": \"~5.0.0\",\n    \"@vue/cli-plugin-router\": \"~5.0.0\",\n    \"@vue/cli-plugin-vuex\": \"~5.0.0\",\n    \"@vue/cli-service\": \"~5.0.0\",\n    \"@vue/eslint-config-standard\": \"^6.1.0\",\n    \"eslint\": \"^7.32.0\",\n    \"eslint-plugin-import\": \"^2.25.3\",\n    \"eslint-plugin-node\": \"^11.1.0\",\n    \"eslint-plugin-promise\": \"^5.1.0\",\n    \"eslint-plugin-vue\": \"^8.0.3\",\n    \"lint-staged\": \"^11.1.2\",\n    \"sass\": \"^1.32.7\",\n    \"sass-loader\": \"^12.0.0\"\n  },\n  \"gitHooks\": {\n    \"pre-commit\": \"lint-staged\"\n  }\n}\n"
+        }
+    ]
+}
