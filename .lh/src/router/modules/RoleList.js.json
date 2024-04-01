@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/router/modules/RoleList.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1700691583995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700691597814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,7 @@\n   name: 'roleList',\r\n   meta: {\r\n     title: 'user',\r\n     icon: 'personnel'\r\n-  }\r\n+  },\r\n+  children: []\r\n }\r\n"
+                },
+                {
+                    "date": 1700691619850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,14 @@\n   meta: {\r\n     title: 'user',\r\n     icon: 'personnel'\r\n   },\r\n-  children: []\r\n+  children: [{\r\n+    path: '/user/role',\r\n+    name: 'userRole',\r\n+    component: () => import('@/views/role-list/index'),\r\n+    meta: {\r\n+      title: 'roleList',\r\n+      icon: 'role'\r\n+    }\r\n+  ]\r\n }\r\n"
+                },
+                {
+                    "date": 1700691628325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n     component: () => import('@/views/role-list/index'),\r\n     meta: {\r\n       title: 'roleList',\r\n       icon: 'role'\r\n-    }\r\n+    }}\r\n   ]\r\n }\r\n"
+                },
+                {
+                    "date": 1700691653998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,16 +8,14 @@\n   meta: {\r\n     title: 'user',\r\n     icon: 'personnel'\r\n   },\r\n-  children: [\r\n-    {\r\n-      path: '/user/role',\r\n-      name: 'userRole',\r\n-      component: () => import('@/views/role-list/index'),\r\n-      meta: {\r\n-        title: 'roleList',\r\n-        icon: 'role'\r\n-      }\r\n-    }\r\n+  children: [{\r\n+    path: '/user/role',\r\n+    name: 'userRole',\r\n+    component: () => import('@/views/role-list/index'),\r\n+    meta: {\r\n+      title: 'roleList',\r\n+      icon: 'role'\r\n+    }}\r\n   ]\r\n }\r\n"
+                },
+                {
+                    "date": 1700691689120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,8 @@\n   },\r\n   children: [\r\n     {\r\n       path: '/user/role',\r\n-      name: 'userRole',\r\n       component: () => import('@/views/role-list/index'),\r\n       meta: {\r\n         title: 'roleList',\r\n         icon: 'role'\r\n"
+                }
+            ],
+            "date": 1700691583995,
+            "name": "Commit-0",
+            "content": "import layout from '@/layout'\r\n\r\nexport default {\r\n  path: '/user',\r\n  component: layout,\r\n  redirect: '/user/manage',\r\n  name: 'roleList',\r\n  meta: {\r\n    title: 'user',\r\n    icon: 'personnel'\r\n  }\r\n}\r\n"
+        }
+    ]
+}

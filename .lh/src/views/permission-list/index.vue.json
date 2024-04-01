@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/views/permission-list/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1698651829218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698651925534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div class=\"\">\r\n     <el-card>\r\n-      <el-table :data=\"allRoles\" border style=\"width: 100%\">\r\n+      <el-table :data=\"allPermissions\" border style=\"width: 100%\">\r\n         <!-- 序号 -->\r\n         <el-table-column\r\n           :label=\"$t('msg.role.index')\"\r\n           type=\"index\"\r\n@@ -29,22 +29,22 @@\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n-import { roleList } from '@/api/role'\r\n+import { permissionList } from '@/api/role'\r\n import { watchSwitchLang } from '@/utils/i18n'\r\n import { ref } from 'vue'\r\n \r\n // 定义用户列表数据\r\n-const allRoles = ref([])\r\n+const allPermissions = ref([])\r\n // 获取用户列表数据\r\n-const getRoleList = async () => {\r\n-  allRoles.value = await roleList()\r\n+const getPermissionList = async () => {\r\n+  allPermissions.value = await permissionList()\r\n   // console.log(allRoles.value)\r\n }\r\n-getRoleList()\r\n+getPermissionList()\r\n \r\n // 监听语言变化，重新计算数据源\r\n-watchSwitchLang(getRoleList)\r\n+watchSwitchLang(getPermissionList)\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1698651965560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,11 +33,19 @@\n import { permissionList } from '@/api/role'\r\n import { watchSwitchLang } from '@/utils/i18n'\r\n import { ref } from 'vue'\r\n \r\n-// 定义用户列表数据\r\n+/**\r\n+ * 权限分级：\r\n+ * 1. 一级权限为页面权限\r\n+ *  permissionMark 对应 路由名称\r\n+ * 2. 二级权限为功能权限\r\n+ *  permissionMark 对应 功能权限表\r\n+ */\r\n+// 所有权限\r\n+// 定义权限列表数据\r\n const allPermissions = ref([])\r\n-// 获取用户列表数据\r\n+// 获取权限列表数据\r\n const getPermissionList = async () => {\r\n   allPermissions.value = await permissionList()\r\n   // console.log(allRoles.value)\r\n }\r\n"
+                },
+                {
+                    "date": 1698652125029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,30 +1,24 @@\n <template>\r\n   <div class=\"\">\r\n     <el-card>\r\n-      <el-table :data=\"allPermissions\" border style=\"width: 100%\">\r\n-        <!-- 序号 -->\r\n+      <el-table :data=\"allPermissions\" border style=\"width: 100%; margin-bottom: 20;\">\r\n+        <!-- 权限名称 -->\r\n         <el-table-column\r\n-          :label=\"$t('msg.role.index')\"\r\n-          type=\"index\"\r\n+          :label=\"$t('msg.permission.name')\"\r\n+          prop=\"permissionName\"\r\n           width=\"120\"\r\n         ></el-table-column>\r\n-        <!-- 名称 -->\r\n+        <!-- 权限标识 -->\r\n         <el-table-column\r\n-          :label=\"$t('msg.role.name')\"\r\n-          prop=\"title\"\r\n+          :label=\"$t('msg.permission.mark')\"\r\n+          prop=\"permissionMark\"\r\n         ></el-table-column>\r\n-        <!-- 描述 -->\r\n+        <!-- 权限描述 -->\r\n         <el-table-column\r\n-          :label=\"$t('msg.role.desc')\"\r\n-          prop=\"describe\"\r\n+          :label=\"$t('msg.permission.desc')\"\r\n+          prop=\"permissionDesc\"\r\n         ></el-table-column>\r\n-        <!-- 操作 -->\r\n-        <el-table-column :label=\"$t('msg.role.action')\" width=\"200\">\r\n-          <el-button size=\"small\" type=\"primary\">{{\r\n-            $t('msg.role.assignPermissions')\r\n-          }}</el-button>\r\n-        </el-table-column>\r\n       </el-table>\r\n     </el-card>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1698652226395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,20 +3,24 @@\n     <el-card>\r\n       <el-table\r\n         :data=\"allPermissions\"\r\n         border\r\n-        style=\"width: 100%; margin-bottom: 20\"\r\n+        style=\"width: 100%; margin-bottom: 20px\"\r\n+        row-key=\"id\"\r\n+        default-expand-all\r\n+        :tree-props=\"{ children: 'children', hasChildren: 'hasChildren'}\"\r\n       >\r\n         <!-- 权限名称 -->\r\n         <el-table-column\r\n           :label=\"$t('msg.permission.name')\"\r\n           prop=\"permissionName\"\r\n-          width=\"120\"\r\n+          width=\"180\"\r\n         ></el-table-column>\r\n         <!-- 权限标识 -->\r\n         <el-table-column\r\n           :label=\"$t('msg.permission.mark')\"\r\n           prop=\"permissionMark\"\r\n+          width=\"180\"\r\n         ></el-table-column>\r\n         <!-- 权限描述 -->\r\n         <el-table-column\r\n           :label=\"$t('msg.permission.desc')\"\r\n"
+                },
+                {
+                    "date": 1698652241123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         :data=\"allPermissions\"\r\n         border\r\n         style=\"width: 100%; margin-bottom: 20px\"\r\n         row-key=\"id\"\r\n-        default-expand-all\r\n+        default-expand-all=\"false\"\r\n         :tree-props=\"{ children: 'children', hasChildren: 'hasChildren' }\"\r\n       >\r\n         <!-- 权限名称 -->\r\n         <el-table-column\r\n"
+                }
+            ],
+            "date": 1698651829218,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div class=\"\">\r\n    <el-card>\r\n      <el-table :data=\"allRoles\" border style=\"width: 100%\">\r\n        <!-- 序号 -->\r\n        <el-table-column\r\n          :label=\"$t('msg.role.index')\"\r\n          type=\"index\"\r\n          width=\"120\"\r\n        ></el-table-column>\r\n        <!-- 名称 -->\r\n        <el-table-column\r\n          :label=\"$t('msg.role.name')\"\r\n          prop=\"title\"\r\n        ></el-table-column>\r\n        <!-- 描述 -->\r\n        <el-table-column\r\n          :label=\"$t('msg.role.desc')\"\r\n          prop=\"describe\"\r\n        ></el-table-column>\r\n        <!-- 操作 -->\r\n        <el-table-column :label=\"$t('msg.role.action')\" width=\"200\">\r\n          <el-button size=\"small\" type=\"primary\">{{\r\n            $t('msg.role.assignPermissions')\r\n          }}</el-button>\r\n        </el-table-column>\r\n      </el-table>\r\n    </el-card>\r\n  </div>\r\n</template>\r\n\r\n<script setup>\r\nimport { roleList } from '@/api/role'\r\nimport { watchSwitchLang } from '@/utils/i18n'\r\nimport { ref } from 'vue'\r\n\r\n// 定义用户列表数据\r\nconst allRoles = ref([])\r\n// 获取用户列表数据\r\nconst getRoleList = async () => {\r\n  allRoles.value = await roleList()\r\n  // console.log(allRoles.value)\r\n}\r\ngetRoleList()\r\n\r\n// 监听语言变化，重新计算数据源\r\nwatchSwitchLang(getRoleList)\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

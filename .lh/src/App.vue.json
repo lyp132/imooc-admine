@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/App.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1693494497920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1694159596138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,12 @@\n <template>\r\n+  <el-config-provider :locale=\"store.getters.language === 'en' ? en : zhCn\">\r\n   <router-view />\r\n+</el-config-provider>\r\n </template>\r\n+<script setup>\r\n+import { zhCn } from \"element-plus/es/locale\";\r\n+import { useStore } from \"vuex\";\r\n \r\n+  const store = useStore()\r\n+</script>\r\n <style lang=\"scss\"></style>\r\n"
+                },
+                {
+                    "date": 1694159774314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <router-view />\r\n   </el-config-provider>\r\n </template>\r\n <script setup>\r\n-import { zhCn } from 'element-plus/es/locale'\r\n+import en from ''\r\n import { useStore } from 'vuex'\r\n \r\n const store = useStore()\r\n </script>\r\n"
+                }
+            ],
+            "date": 1693494497920,
+            "name": "Commit-0",
+            "content": "<template>\n\n  <router-view/>\n</template>\n\n<style lang=\"scss\">\n\n\n</style>\n"
+        }
+    ]
+}

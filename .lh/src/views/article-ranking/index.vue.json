@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/views/article-ranking/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1702125249002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702125337243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,10 @@\n <template>\r\n-  <div class=\"\">文章排名</div>\r\n+  <div class=\"article-ranking-container\">\r\n+    <el-card>\r\n+      <el-table data=\"tableData\"></el-table>\r\n+    </el-card>\r\n+  </div>\r\n </template>\r\n \r\n <script setup>\r\n import { ref } from 'vue'\r\n"
+                },
+                {
+                    "date": 1702125361451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div class=\"article-ranking-container\">\r\n     <el-card>\r\n-      <el-table data=\"tableData\"></el-table>\r\n+      <el-table ref=\"\" :data=\"tableData\"></el-table>\r\n     </el-card>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702125371411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div class=\"article-ranking-container\">\r\n     <el-card>\r\n-      <el-table ref=\"\" :data=\"tableData\"></el-table>\r\n+      <el-table ref=\"tableRef\" :data=\"tableData\"></el-table>\r\n     </el-card>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702125384182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div class=\"article-ranking-container\">\r\n     <el-card>\r\n-      <el-table ref=\"tableRef\" :data=\"tableData\"></el-table>\r\n+      <el-table ref=\"tableRef\" :data=\"tableData\" border></el-table>\r\n     </el-card>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702125497876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <template>\r\n   <div class=\"article-ranking-container\">\r\n     <el-card>\r\n       <el-table ref=\"tableRef\" :data=\"tableData\" border></el-table>\r\n+      <el-pagination ></el-pagination>\r\n     </el-card>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702125523805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div class=\"article-ranking-container\">\r\n     <el-card>\r\n       <el-table ref=\"tableRef\" :data=\"tableData\" border></el-table>\r\n-      <el-pagination></el-pagination>\r\n+      <el-pagination class=\"pagination\" ></el-pagination>\r\n     </el-card>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702125580073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div class=\"article-ranking-container\">\r\n     <el-card>\r\n       <el-table ref=\"tableRef\" :data=\"tableData\" border></el-table>\r\n-      <el-pagination class=\"pagination\"></el-pagination>\r\n+      <el-pagination class=\"pagination\" @size-change=\"handleSizeChange\" @current-change=\"handleCurrentChange\"></el-pagination>\r\n     </el-card>\r\n   </div>\r\n </template>\r\n \r\n"
+                }
+            ],
+            "date": 1702125249002,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div class=\"\">文章排名</div>\r\n</template>\r\n\r\n<script setup>\r\nimport { ref } from 'vue'\r\n\r\n// 数据相关\r\nconst tableData = ref([])\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

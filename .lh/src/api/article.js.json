@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/api/article.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1702124726189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702124832569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,7 @@\n import request from '@/utils/request'\r\n \r\n-\r\n+export const getArticeleList = (data) => {\r\n+  return request({\r\n+    url: '/article/list'\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1702124911661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,14 @@\n import request from '@/utils/request'\r\n \r\n+/**\r\n+ * 获取所有文章\r\n+ * @param {*} data {} 页码，每页条数\r\n+ * @returns \r\n+ */\r\n export const getArticeleList = (data) => {\r\n   return request({\r\n-    url: '/article/list'\r\n+    url: '/article/list',\r\n+    method: 'GET',\r\n+    params: data\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1702124936125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n /**\r\n  * 获取所有文章\r\n  * @param {*} data {} 页码，每页条数\r\n- * @returns\r\n+ * @returns {}\r\n  */\r\n export const getArticeleList = (data) => {\r\n   return request({\r\n     url: '/article/list',\r\n"
+                },
+                {
+                    "date": 1704535710352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,4 +11,6 @@\n     method: 'GET',\r\n     params: data\r\n   })\r\n }\r\n+\r\n+export const articleSort\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1702124726189,
+            "name": "Commit-0",
+            "content": "import request from '@/utils/request'\r\n\r\n\r\n"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/layout/components/Sidebar/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1693645909287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693802846050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <div>sidebar</div>\r\n+  <div><h1>站位</h1></div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1693802864668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <div><h1>站位</h1></div>\r\n+  <div><h1>站位</h1><el-scrollbar></el-scrollbar></div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1693802894867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n <template>\r\n   <div>\r\n     <h1>站位</h1>\r\n-    <el-scrollbar></el-scrollbar>\r\n+    <el-scrollbar><SidebarMenu /></el-scrollbar>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n+import SidebarMenu from './SidebarMenu.vue';\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1693920870791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n <template>\r\n   <div>\r\n-    <h1>站位</h1>\r\n+    <div class=\"logo-container\">\r\n+      <el-avatar></el-avatar>\r\n+      <h1 class=\"logo-title\">imooc-admin</h1>\r\n+    </div>\r\n     <el-scrollbar><SidebarMenu /></el-scrollbar>\r\n   </div>\r\n </template>\r\n \r\n"
+                }
+            ],
+            "date": 1693645909287,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div>sidebar</div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

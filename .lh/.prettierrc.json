@@ -1,0 +1,22 @@
+{
+    "sourceFile": ".prettierrc",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1693491833571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693492105287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+{\r\n+  \"semi\": false,\r\n+  \"singleQuote\": true,\r\n+  \"trailingComma\": \"none\"\r\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1693491833571,
+            "name": "Commit-0",
+            "content": "{\r\n  \"semi\": false,\r\n  \"singleQuote\": true,\r\n  \"trailingComma\": \"none\"\r\n}"
+        }
+    ]
+}

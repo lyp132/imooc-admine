@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/styles/index.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1693498641273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693499665298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-@import './base.scss'\n\\ No newline at end of file\n+@import './base.scss';\r\n+@import './styleVariables.scss'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1693499827668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+@import './base.scss'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1693553571283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,1 @@\n-@import './base.scss'\n-@import './base.scss';\r\n-@import './styleVariables.scss'\n\\ No newline at end of file\n+@import './style/base.scss'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1693553612305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-@import './style/base.scss'\n\\ No newline at end of file\n+@import './style/base.scss';\r\n+@import './style/update-element.scss'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1693644517870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,2 @@\n+@import './style/base.scss';\r\n+@import './style/update-element.scss'\r\n"
+                },
+                {
+                    "date": 1693644637663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+@import './variables.scss';\r\n+@import './mixin.scss';\r\n+@import './sidebar.scss';\r\n+\r\n\\ No newline at end of file\n @import './style/base.scss';\r\n @import './style/update-element.scss'\r\n-@import './style/base.scss';\r\n-@import './style/update-element.scss'\n"
+                },
+                {
+                    "date": 1693644744740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+@import './variables.scss';\r\n+@import './mixin.scss';\r\n+// 处理 `menu` 菜单的样式\r\n+@import './sidebar.scss';\r\n+\r\n+@import './style/base.scss';\r\n+@import './style/update-element.scss'\r\n"
+                },
+                {
+                    "date": 1693644759746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,8 @@\n @import './variables.scss';\r\n+// 定义通用的scss\r\n @import './mixin.scss';\r\n // 处理 `menu` 菜单的样式\r\n @import './sidebar.scss';\r\n \r\n @import './style/base.scss';\r\n @import './style/update-element.scss'\r\n-@import './variables.scss';\r\n-@import './mixin.scss';\r\n-@import './sidebar.scss';\r\n-\r\n-@import './style/base.scss';\r\n\\ No newline at end of file\n-@import './style/update-element.scss'\n"
+                },
+                {
+                    "date": 1693644770329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+// 定义常量\r\n @import './variables.scss';\r\n // 定义通用的scss\r\n @import './mixin.scss';\r\n // 处理 `menu` 菜单的样式\r\n"
+                },
+                {
+                    "date": 1693718562798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n // 定义常量\r\n-@import './variables.scss';\r\n+@import './variables.module.scss';\r\n // 定义通用的scss\r\n @import './mixin.scss';\r\n // 处理 `menu` 菜单的样式\r\n @import './sidebar.scss';\r\n"
+                }
+            ],
+            "date": 1693498641273,
+            "name": "Commit-0",
+            "content": "@import './base.scss'"
+        }
+    ]
+}

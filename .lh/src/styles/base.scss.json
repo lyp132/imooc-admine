@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/styles/base.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1693498791596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693498808490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,58 @@\n+html,\r\n+body {\r\n+  height: 100%;\r\n+  margin: 0;\r\n+  padding: 0;\r\n+  -moz-osx-font-smoothing: grayscale;\r\n+  -webkit-font-smoothing: antialiased;\r\n+  text-rendering: optimizeLegibility;\r\n+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,\r\n+    Microsoft YaHei, Arial, sans-serif;\r\n+}\r\n+\r\n+html {\r\n+  font-size: 100px;\r\n+}\r\n+body {\r\n+  font-size: .12rem;\r\n+}\r\n+\r\n+#app {\r\n+  height: 100%;\r\n+}\r\n+\r\n+*,\r\n+*:before,\r\n+*:after {\r\n+  box-sizing: inherit;\r\n+  margin: 0;\r\n+  padding: 0;\r\n+}\r\n+\r\n+a:focus,\r\n+a:active {\r\n+  outline: none;\r\n+}\r\n+\r\n+a,\r\n+a:focus,\r\n+a:hover {\r\n+  cursor: pointer;\r\n+  color: inherit;\r\n+  text-decoration: none;\r\n+}\r\n+\r\n+div:focus {\r\n+  outline: none;\r\n+}\r\n+\r\n+.clearfix {\r\n+  &:after {\r\n+    visibility: hidden;\r\n+    display: block;\r\n+    font-size: 0;\r\n+    content: ' ';\r\n+    clear: both;\r\n+    height: 0;\r\n+  }\r\n+}\r\n"
+                }
+            ],
+            "date": 1693498791596,
+            "name": "Commit-0",
+            "content": "html {\r\n  font-size: 100px;\r\n}\r\nbody {\r\n  font-size: .12rem;\r\n}\r\nhtml,\r\nbody {\r\n  height: 100%;\r\n  margin: 0;\r\n  padding: 0;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  -webkit-font-smoothing: antialiased;\r\n  text-rendering: optimizeLegibility;\r\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,\r\n    Microsoft YaHei, Arial, sans-serif;\r\n}\r\n\r\n#app {\r\n  height: 100%;\r\n}\r\n\r\n*,\r\n*:before,\r\n*:after {\r\n  box-sizing: inherit;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\na:focus,\r\na:active {\r\n  outline: none;\r\n}\r\n\r\na,\r\na:focus,\r\na:hover {\r\n  cursor: pointer;\r\n  color: inherit;\r\n  text-decoration: none;\r\n}\r\n\r\ndiv:focus {\r\n  outline: none;\r\n}\r\n\r\n.clearfix {\r\n  &:after {\r\n    visibility: hidden;\r\n    display: block;\r\n    font-size: 0;\r\n    content: ' ';\r\n    clear: both;\r\n    height: 0;\r\n  }\r\n}\r\n"
+        }
+    ]
+}

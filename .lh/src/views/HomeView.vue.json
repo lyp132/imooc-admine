@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/views/HomeView.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1693491858417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693491872288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+<template>\n+  <div class=\"home\">\n+    <img alt=\"Vue logo\" src=\"../assets/logo.png\">\n+    <HelloWorld msg=\"Welcome to Your Vue.js App\"/>\n+  </div>\n+</template>\n+\n+<script>\n+// @ is an alias to /src\n+import HelloWorld from '@/components/HelloWorld.vue';\n+\n+export default {\n+  name: \"HomeView\",\n+  components: {\n+    HelloWorld\n+  }\n+}\n+</script>\n"
+                },
+                {
+                    "date": 1693491904685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,22 +15,4 @@\n     HelloWorld\n   }\n }\n </script>\n-<template>\n-  <div class=\"home\">\n-    <img alt=\"Vue logo\" src=\"../assets/logo.png\">\n-    <HelloWorld msg=\"Welcome to Your Vue.js App\"/>\n-  </div>\n-</template>\n-\n-<script>\n-// @ is an alias to /src\n-import HelloWorld from '@/components/HelloWorld.vue'\n-\n-export default {\n-  name: \"HomeView\",\n-  components: {\n-    HelloWorld\n-  }\n-}\n-</script>\n"
+                },
+                {
+                    "date": 1693491941477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n // @ is an alias to /src\n import HelloWorld from '@/components/HelloWorld.vue';\n \n export default {\n-  name: \"HomeView\",\n+  name: 'HomeView',\n   components: {\n     HelloWorld\n   }\n }\n"
+                },
+                {
+                    "date": 1693492132598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n // @ is an alias to /src\n import HelloWorld from '@/components/HelloWorld.vue';\n \n export default {\n-  name: 'HomeView',\n+  name: \"HomeView\",\n   components: {\n     HelloWorld\n   }\n }\n"
+                },
+                {
+                    "date": 1693492142763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,17 @@\n <template>\n   <div class=\"home\">\n-    <img alt=\"Vue logo\" src=\"../assets/logo.png\">\n-    <HelloWorld msg=\"Welcome to Your Vue.js App\"/>\n+    <img alt=\"Vue logo\" src=\"../assets/logo.png\" />\n+    <HelloWorld msg=\"Welcome to Your Vue.js App\" />\n   </div>\n </template>\n \n <script>\n // @ is an alias to /src\n-import HelloWorld from '@/components/HelloWorld.vue';\n+import HelloWorld from '@/components/HelloWorld.vue'\n \n export default {\n-  name: \"HomeView\",\n+  name: 'HomeView',\n   components: {\n     HelloWorld\n   }\n }\n"
+                },
+                {
+                    "date": 1693492153302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n </template>\n \n <script>\n // @ is an alias to /src\n-import HelloWorld from '@/components/HelloWorld.vue'\n+import HelloWorld from '@/components/HelloWorld.vue';\n \n export default {\n   name: 'HomeView',\n   components: {\n"
+                },
+                {
+                    "date": 1693492232053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n // @ is an alias to /src\n import HelloWorld from '@/components/HelloWorld.vue'\n \n export default {\n-  name: 'HomeView',\n+  name: \"HomeView\",\n   components: {\n     HelloWorld\n   }\n }\n"
+                }
+            ],
+            "date": 1693491858417,
+            "name": "Commit-0",
+            "content": "<template>\n  <div class=\"home\">\n    <img alt=\"Vue logo\" src=\"../assets/logo.png\">\n    <HelloWorld msg=\"Welcome to Your Vue.js App\"/>\n  </div>\n</template>\n\n<script>\n// @ is an alias to /src\nimport HelloWorld from '@/components/HelloWorld.vue'\n\nexport default {\n  name: \"HomeView\",\n  components: {\n    HelloWorld\n  }\n}\n</script>\n"
+        }
+    ]
+}

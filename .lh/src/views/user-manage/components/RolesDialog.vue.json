@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/views/user-manage/components/RolesDialog.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1698654999517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698655034436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <template>\r\n-  <div></div>\r\n+  <el-dialog>\r\n+    \r\n+  </el-dialog>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1698655217410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <el-dialog> </el-dialog>\r\n+  <el-dialog :title=\"$t('msg.excel.roleDialogTitle')\" :model-value=\"modelValue\" @close=\"closed\"> </el-dialog>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1698655319590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,15 @@\n     :title=\"$t('msg.excel.roleDialogTitle')\"\r\n     :model-value=\"modelValue\"\r\n     @close=\"closed\"\r\n   >\r\n+  内容\r\n+  <template #footer>\r\n+    <span class=\"dialog-footer\">\r\n+      <el-button @click=\"closed\">{{ $t('msg.universal.canc') }}</el-button>\r\n+      <el-button></el-button>\r\n+    </span>\r\n+  </template>\r\n   </el-dialog>\r\n </template>\r\n \r\n <script setup>\r\n"
+                }
+            ],
+            "date": 1698654999517,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div></div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

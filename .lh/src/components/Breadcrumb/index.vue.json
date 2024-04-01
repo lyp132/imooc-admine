@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/Breadcrumb/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1694079003471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1694079264710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,17 +10,19 @@\n   </el-breadcrumb>\r\n </template>\r\n \r\n <script setup>\r\n-import {} from 'vue'\r\n+import { } from 'vue';\r\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n .breadcrumb {\r\n   display: inline-block;\r\n   line-height: 0.5rem;\r\n   font-size: 0.14rem;\r\n   margin-left: 0.08rem;\r\n+  \r\n+  float: left;\r\n   :deep(.no-redirect) {\r\n     color: #97a8be;\r\n     cursor: text;\r\n   }\r\n"
+                },
+                {
+                    "date": 1694079290341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n   display: inline-block;\r\n   line-height: 0.5rem;\r\n   font-size: 0.14rem;\r\n   margin-left: 0.08rem;\r\n-\r\n   float: left;\r\n+  \r\n   :deep(.no-redirect) {\r\n     color: #97a8be;\r\n     cursor: text;\r\n   }\r\n"
+                }
+            ],
+            "date": 1694079003471,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <el-breadcrumb class=\"breadcrumb\" separator=\"/\">\r\n    <el-breadcrumb-item :to=\"{ path: '/' }\">首页</el-breadcrumb-item>\r\n    <el-breadcrumb-item><a href=\"/\">活动管理</a></el-breadcrumb-item>\r\n    <el-breadcrumb-item>活动列表</el-breadcrumb-item>\r\n    <!-- 面包屑的最后一项 -->\r\n    <el-breadcrumb-item>\r\n      <span class=\"no-redirect\">活动详情</span>\r\n    </el-breadcrumb-item>\r\n  </el-breadcrumb>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n.breadcrumb {\r\n  display: inline-block;\r\n  line-height: .5rem;\r\n  font-size: .14rem;\r\n  margin-left: .08rem;\r\n  :deep(.no-redirect) {\r\n    color: #97a8be;\r\n    cursor: text;\r\n  }\r\n}\r\n</style>\r\n"
+        }
+    ]
+}

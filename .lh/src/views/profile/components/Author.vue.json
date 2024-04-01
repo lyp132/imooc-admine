@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/views/profile/components/Author.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1695978799736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695978806012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <!-- 作者 -->\r\n-  <div>章节</div>\r\n+  <div>作者</div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1697018458598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n <template>\r\n   <!-- 作者 -->\r\n-  <div>作者</div>\r\n+  <div class=\"author-container\"></div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n+import Pantumb\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697018539846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,16 @@\n <template>\r\n   <!-- 作者 -->\r\n-  <div class=\"author-container\"></div>\r\n+  <div class=\"author-container\">\r\n+    <div class=\"header\">\r\n+      <PanThumb />\r\n+    </div>\r\n+    <div class=\"info\"></div>\r\n+  </div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n-import Pantumb\r\n+import PanThumb from '@/components/PanThumb'\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697018610134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,13 @@\n <template>\r\n   <!-- 作者 -->\r\n   <div class=\"author-container\">\r\n     <div class=\"header\">\r\n-      <PanThumb />\r\n+      <PanThumb image=\"\"></PanThumb>\r\n+      <div class=\"header-desc\">\r\n+        <h3></h3>\r\n+        <span></span>\r\n+      </div>\r\n     </div>\r\n     <div class=\"info\"></div>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1697018629899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n <template>\r\n   <!-- 作者 -->\r\n   <div class=\"author-container\">\r\n     <div class=\"header\">\r\n-      <PanThumb image=\"\"></PanThumb>\r\n+      <PanThumb\r\n+        image=\"https://img4.sycdn.imooc.com/61110c2b0001152907400741-140-140.jpg\"\r\n+        height=\"\"\r\n+      ></PanThumb>\r\n       <div class=\"header-desc\">\r\n         <h3></h3>\r\n         <span></span>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1697018670901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n   <div class=\"author-container\">\r\n     <div class=\"header\">\r\n       <PanThumb\r\n         image=\"https://img4.sycdn.imooc.com/61110c2b0001152907400741-140-140.jpg\"\r\n-        height=\"\"\r\n+        height=\"60px\"\r\n+        width=\"60px\"\r\n+        :hoverable=\"false\"\r\n       ></PanThumb>\r\n       <div class=\"header-desc\">\r\n         <h3></h3>\r\n         <span></span>\r\n"
+                },
+                {
+                    "date": 1697018751721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,24 @@\n+<template>\r\n+  <!-- 作者 -->\r\n+  <div class=\"author-container\">\r\n+    <div class=\"header\">\r\n+      <PanThumb\r\n+        image=\"https://img4.sycdn.imooc.com/61110c2b0001152907400741-140-140.jpg\"\r\n+        height=\"60px\"\r\n+        width=\"60px\"\r\n+      ></PanThumb>\r\n+      <div class=\"header-desc\">\r\n+        <h3></h3>\r\n+        <span></span>\r\n+      </div>\r\n+    </div>\r\n+    <div class=\"info\"></div>\r\n+  </div>\r\n+</template>\r\n+\r\n+<script setup>\r\n+import {} from 'vue'\r\n+import PanThumb from '@/components/PanThumb'\r\n+</script>\r\n+\r\n+<style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697018819535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,45 +5,23 @@\n       <PanThumb\r\n         image=\"https://img4.sycdn.imooc.com/61110c2b0001152907400741-140-140.jpg\"\r\n         height=\"60px\"\r\n         width=\"60px\"\r\n-      ></PanThumb>\r\n+        >{{ $t('msg.profile.name') }}</PanThumb\r\n+      >\r\n       <div class=\"header-desc\">\r\n-        <h3></h3>\r\n-        <span></span>\r\n+        <h3>{{ $t('msg.profile.name') }}</h3>\r\n+        <span>{{ $t('msg.profile.job') }}</span>\r\n       </div>\r\n     </div>\r\n-    <div class=\"info\"></div>\r\n+    <div class=\"info\">\r\n+      {{ $t('msg.profile.Introduction') }}\r\n+    </div>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n-import {} from 'vue'\r\n import PanThumb from '@/components/PanThumb'\r\n-</script>\r\n-\r\n-<style lang=\"scss\" scoped></style>\r\n-<template>\r\n-  <!-- 作者 -->\r\n-  <div class=\"author-container\">\r\n-    <div class=\"header\">\r\n-      <PanThumb\r\n-        image=\"https://img4.sycdn.imooc.com/61110c2b0001152907400741-140-140.jpg\"\r\n-        height=\"60px\"\r\n-        width=\"60px\"\r\n-        :hoverable=\"false\"\r\n-      ></PanThumb>\r\n-      <div class=\"header-desc\">\r\n-        <h3></h3>\r\n-        <span></span>\r\n-      </div>\r\n-    </div>\r\n-    <div class=\"info\"></div>\r\n-  </div>\r\n-</template>\r\n-\r\n-<script setup>\r\n import {} from 'vue'\r\n-import PanThumb from '@/components/PanThumb'\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697019046493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,13 @@\n import PanThumb from '@/components/PanThumb'\r\n import {} from 'vue'\r\n </script>\r\n \r\n-<style lang=\"scss\" scoped></style>\r\n+<style lang=\"scss\" scoped>\r\n+.author-container {\r\n+  .header {\r\n+    display: flex;\r\n+    .header-desc {\r\n+    }\r\n+  }\r\n+}\r\n+</style>\r\n"
+                },
+                {
+                    "date": 1697019158157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,15 @@\n .author-container {\r\n   .header {\r\n     display: flex;\r\n     .header-desc {\r\n+      margin-left: 0.12rem;\r\n+      display: flex;\r\n+      flex-direction: column;\r\n+      justify-content: space-around;\r\n+      span {\r\n+        font-size: 0.14rem;\r\n+      }\r\n     }\r\n   }\r\n }\r\n </style>\r\n"
+                },
+                {
+                    "date": 1697019174992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,6 +37,12 @@\n         font-size: 0.14rem;\r\n       }\r\n     }\r\n   }\r\n+  .info {\r\n+    margin-top: 16px;\r\n+    line-height: 22px;\r\n+    font-size: 14px;\r\n+    text-indent: 26px;\r\n+  }\r\n }\r\n </style>\r\n"
+                }
+            ],
+            "date": 1695978799736,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <!-- 作者 -->\r\n  <div>章节</div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

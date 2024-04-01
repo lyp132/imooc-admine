@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/login/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1693495477241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693495488272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,48 @@\n-<template></template>\r\n+<template>\r\n+  <div class=\"login-container\">\r\n+    <el-form class=\"login-form\" ref=\"loginFromRef\">\r\n+      <div class=\"title-container\">\r\n+        <h3 class=\"title\">用户登录</h3>\r\n+      </div>\r\n \r\n+      <el-form-item prop=\"username\">\r\n+        <span class=\"svg-container\">\r\n+          <el-icon>\r\n+            <avatar />\r\n+          </el-icon>\r\n+        </span>\r\n+        <el-input\r\n+          placeholder=\"username\"\r\n+          name=\"username\"\r\n+          type=\"text\"\r\n+        />\r\n+      </el-form-item>\r\n+\r\n+      <el-form-item prop=\"password\">\r\n+        <span class=\"svg-container\">\r\n+          <el-icon>\r\n+            <avatar />\r\n+          </el-icon>\r\n+        </span>\r\n+        <el-input\r\n+          placeholder=\"password\"\r\n+          name=\"password\"\r\n+        />\r\n+        <span class=\"show-pwd\">\r\n+          <el-icon>\r\n+            <avatar />\r\n+          </el-icon>\r\n+        </span>\r\n+      </el-form-item>\r\n+\r\n+      <el-button type=\"primary\" style=\"width: 100%; margin-bottom: 30px\"\r\n+        >登录</el-button\r\n+      >\r\n+    </el-form>\r\n+  </div>\r\n+</template>\r\n+\r\n <script setup>\r\n import {} from 'vue'\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1693496770711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n+import { Avatar} from ''\r\n import {} from 'vue'\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                }
+            ],
+            "date": 1693495477241,
+            "name": "Commit-0",
+            "content": "<template>\r\n  \r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

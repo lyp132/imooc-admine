@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/Guide/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1695969313947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695969349198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <svg-icon icon=\"\"></svg-icon>\r\n+  <svg-icon icon=\"guide\" @click=\"OnClick\"></svg-icon>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1695969378738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,9 @@\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n+// import { driver } from \"driver.js\";\r\n+// import \"driver.js/dist/driver.css\";\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1695969444277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,14 @@\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n-// import { driver } from \"driver.js\";\r\n-// import \"driver.js/dist/driver.css\";\r\n+import { driver } from \"driver.js\";\r\n+\r\n+const driverObj = driver({\r\n+  \r\n+})\r\n </script>\r\n \r\n-<style lang=\"scss\" scoped></style>\r\n+<style lang=\"scss\" scoped>\r\n+@import \"driver.js/dist/driver.css\";\r\n+</style>\r\n"
+                }
+            ],
+            "date": 1695969313947,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <svg-icon icon=\"\"></svg-icon>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/store/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1693579938836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693641154420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { createStore } from 'vuex'\n import user from './modules/user'\n+import getters from './getters.js'\n \n export default createStore({\n   modules: {\n     user\n"
+                },
+                {
+                    "date": 1693641168131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import user from './modules/user'\n import getters from './getters.js'\n \n export default createStore({\n+  getters,\n   modules: {\n     user\n   }\n })\n"
+                },
+                {
+                    "date": 1693911592978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n import { createStore } from 'vuex'\n import user from './modules/user'\n import getters from './getters.js'\n+import app from './modules/app'\n \n export default createStore({\n   getters,\n   modules: {\n-    user\n+    user,\n+    app\n   }\n })\n"
+                },
+                {
+                    "date": 1694741894182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n import { createStore } from 'vuex'\r\n+import getters from './getters.js'\r\n import user from './modules/user'\r\n-import getters from './getters.js'\r\n import app from './modules/app'\r\n+import theme from './modules/theme'\r\n \r\n export default createStore({\r\n   getters,\r\n   modules: {\r\n     user,\r\n-    app\r\n+    app,\r\n+    theme\r\n   }\r\n })\r\n"
+                },
+                {
+                    "date": 1700695014973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,15 @@\n import getters from './getters.js'\r\n import user from './modules/user'\r\n import app from './modules/app'\r\n import theme from './modules/theme'\r\n+import permission from './modules/permission'\r\n \r\n export default createStore({\r\n   getters,\r\n   modules: {\r\n     user,\r\n     app,\r\n-    theme\r\n+    theme,\r\n+    permission\r\n   }\r\n })\r\n"
+                }
+            ],
+            "date": 1693579938836,
+            "name": "Commit-0",
+            "content": "import { createStore } from 'vuex'\nimport user from './modules/user'\n\nexport default createStore({\n  modules: {\n    user\n  }\n})\n"
+        }
+    ]
+}

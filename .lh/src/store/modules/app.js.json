@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/store/modules/app.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1693910914796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693910959832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,6 @@\n-export default {}\r\n+export default {\r\n+  namespaced: true,\r\n+  state: () => {\r\n+    \r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1693911009780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,9 @@\n export default {\r\n   namespaced: true,\r\n-  state: () => {}\r\n+  state: () => ({\r\n+    sidebarOpened: true\r\n+  }),\r\n+  mutations: {\r\n+    \r\n+  }\r\n }\r\n"
+                }
+            ],
+            "date": 1693910914796,
+            "name": "Commit-0",
+            "content": "export default {\r\n  \r\n}"
+        }
+    ]
+}

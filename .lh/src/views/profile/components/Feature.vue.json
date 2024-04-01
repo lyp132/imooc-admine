@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/views/profile/components/Feature.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1697016238566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1697016245401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n <script setup>\r\n import {} from 'vue'\r\n defineProps({\r\n-  feature: {\r\n+  features: {\r\n     type: Array\r\n   }\r\n })\r\n </script>\r\n"
+                },
+                {
+                    "date": 1697016379362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n <template>\r\n   <!-- 功能 -->\r\n-  <div>功能</div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1697016400022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <template>\r\n   <!-- 功能 -->\r\n+  <el-collapse></el-collapse>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1697016457227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,17 @@\n <template>\r\n   <!-- 功能 -->\r\n-  <el-collapse></el-collapse>\r\n+  <el-collapse v-model=\"activeName\" accordion> </el-collapse>\r\n </template>\r\n \r\n <script setup>\r\n-import {} from 'vue'\r\n+import { ref } from 'vue'\r\n defineProps({\r\n   features: {\r\n     type: Array\r\n   }\r\n })\r\n+\r\n+const activeName = ref('0')\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697016547867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+<template>\r\n+  <!-- 功能 -->\r\n+  <el-collapse v-model=\"activeName\" accordion>\r\n+    <el-collapse-item\r\n+      v-for=\"item in features\"\r\n+      :key=\"item.id\"\r\n+    ></el-collapse-item>\r\n+  </el-collapse>\r\n+</template>\r\n+\r\n+<script setup>\r\n+import { ref } from 'vue'\r\n+defineProps({\r\n+  features: {\r\n+    type: Array\r\n+  }\r\n+})\r\n+\r\n+const activeName = ref('0')\r\n+</script>\r\n+\r\n+<style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697016597660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+<template>\r\n+  <!-- 功能 -->\r\n+  <el-collapse v-model=\"activeName\" accordion>\r\n+    <el-collapse-item\r\n+      v-for=\"item in features\"\r\n+      :key=\"item.id\"\r\n+      :name=\"item.id\"\r\n+      :title=\"item.title\"\r\n+    >\r\n+      <div></div>\r\n+    </el-collapse-item>\r\n+  </el-collapse>\r\n+</template>\r\n+\r\n+<script setup>\r\n+import { ref } from 'vue'\r\n+defineProps({\r\n+  features: {\r\n+    type: Array\r\n+  }\r\n+})\r\n+\r\n+const activeName = ref('0')\r\n+</script>\r\n+\r\n+<style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697016637192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n       :key=\"item.id\"\r\n       :name=\"item.id\"\r\n       :title=\"item.title\"\r\n     >\r\n-      <div></div>\r\n+      <div v-html=\"item.content\"></div>\r\n     </el-collapse-item>\r\n   </el-collapse>\r\n </template>\r\n \r\n@@ -23,43 +23,4 @@\n const activeName = ref('0')\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n-<template>\r\n-  <!-- 功能 -->\r\n-  <el-collapse v-model=\"activeName\" accordion>\r\n-    <el-collapse-item\r\n-      v-for=\"item in features\"\r\n-      :key=\"item.id\"\r\n-    ></el-collapse-item>\r\n-  </el-collapse>\r\n-</template>\r\n-\r\n-<script setup>\r\n-import { ref } from 'vue'\r\n-defineProps({\r\n-  features: {\r\n-    type: Array\r\n-  }\r\n-})\r\n-\r\n-const activeName = ref('0')\r\n-</script>\r\n-\r\n-<style lang=\"scss\" scoped></style>\r\n-<template>\r\n-  <!-- 功能 -->\r\n-  <el-collapse v-model=\"activeName\" accordion> </el-collapse>\r\n-</template>\r\n-\r\n-<script setup>\r\n-import { ref } from 'vue'\r\n-defineProps({\r\n-  features: {\r\n-    type: Array\r\n-  }\r\n-})\r\n-\r\n-const activeName = ref('0')\r\n-</script>\r\n-\r\n-<style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697016652077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n     type: Array\r\n   }\r\n })\r\n \r\n-const activeName = ref('0')\r\n+const activeName = ref('1')\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697016712400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n     type: Array\r\n   }\r\n })\r\n \r\n-const activeName = ref('1')\r\n+const activeName = ref('0')\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697016757635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,16 @@\n \r\n const activeName = ref('0')\r\n </script>\r\n \r\n-<style lang=\"scss\" scoped></style>\r\n+<style lang=\"scss\" scoped>\r\n+:v-deep(.el-collapse-item__header) {\r\n+  font-weight: bold;\r\n+}\r\n+\r\n+.el-collapse-item {\r\n+  ::v-deep a {\r\n+    color: #2d62f7;\r\n+    margin: 0 4px;\r\n+  }\r\n+}\r\n+</style>\r\n"
+                },
+                {
+                    "date": 1697016803432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n const activeName = ref('0')\r\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n-:v-deep(.el-collapse-item__header) {\r\n+:deep(.el-collapse-item__header) {\r\n   font-weight: bold;\r\n }\r\n \r\n .el-collapse-item {\r\n"
+                },
+                {
+                    "date": 1697016997616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <template>\r\n   <!-- 功能 -->\r\n+  <div>{{ features }}</div>\r\n   <el-collapse v-model=\"activeName\" accordion>\r\n     <el-collapse-item\r\n       v-for=\"item in features\"\r\n       :key=\"item.id\"\r\n"
+                },
+                {
+                    "date": 1697017010345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n <template>\r\n   <!-- 功能 -->\r\n-  <div>{{ features }}</div>\r\n   <el-collapse v-model=\"activeName\" accordion>\r\n     <el-collapse-item\r\n       v-for=\"item in features\"\r\n       :key=\"item.id\"\r\n"
+                },
+                {
+                    "date": 1697864110192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n   font-weight: bold;\r\n }\r\n \r\n .el-collapse-item {\r\n-  ::v-deep a {\r\n+  :deep(a) {\r\n     color: #2d62f7;\r\n     margin: 0 4px;\r\n   }\r\n }\r\n"
+                }
+            ],
+            "date": 1697016238566,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <!-- 功能 -->\r\n  <div>功能</div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\ndefineProps({\r\n  feature: {\r\n    type: Array\r\n  }\r\n})\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

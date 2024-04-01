@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/icons/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1693559133533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693559271107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,4 @@\n-const \n\\ No newline at end of file\n+const svgRequire = require.context('./svg', false, /\\.svg$/)\r\n+\r\n+console.log(svgRequire.keys())\r\n+svgRequire.keys().forEach(svgicon => svgRequire(svgicon))\r\n"
+                },
+                {
+                    "date": 1693559870700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+import SvgIcon from '@/components/SvgIcon'\r\n+const svgRequire = require.context('./svg', false, /\\.svg$/)\r\n+\r\n+console.log(svgRequire.keys())\r\n+svgRequire.keys().forEach(svgicon => svgRequire(svgicon))\r\n+\r\n"
+                },
+                {
+                    "date": 1693559908046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,7 @@\n const svgRequire = require.context('./svg', false, /\\.svg$/)\r\n \r\n console.log(svgRequire.keys())\r\n svgRequire.keys().forEach(svgicon => svgRequire(svgicon))\r\n-\r\n-const svgRequire = require.context('./svg', false, /\\.svg$/)\r\n-\r\n-console.log(svgRequire.keys())\r\n-svgRequire.keys().forEach(svgicon => svgRequire(svgicon))\r\n+export default app => {\r\n+  app.components('svg-icon', SvgIcon)\r\n+}\r\n"
+                },
+                {
+                    "date": 1693560046670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n \r\n console.log(svgRequire.keys())\r\n svgRequire.keys().forEach(svgicon => svgRequire(svgicon))\r\n export default app => {\r\n-  app.components('svg-icon', SvgIcon)\r\n+  app.component('svg-icon', SvgIcon)\r\n }\r\n"
+                },
+                {
+                    "date": 1693560130760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import SvgIcon from '@/components/SvgIcon'\r\n const svgRequire = require.context('./svg', false, /\\.svg$/)\r\n \r\n-console.log(svgRequire.keys())\r\n svgRequire.keys().forEach(svgicon => svgRequire(svgicon))\r\n export default app => {\r\n   app.component('svg-icon', SvgIcon)\r\n }\r\n"
+                },
+                {
+                    "date": 1693837491537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import SvgIcon from '@/components/SvgIcon'\r\n+import * as ElementPlusIconsVue from '@element-plus/icons-vue'\r\n const svgRequire = require.context('./svg', false, /\\.svg$/)\r\n \r\n svgRequire.keys().forEach(svgicon => svgRequire(svgicon))\r\n export default app => {\r\n"
+                },
+                {
+                    "date": 1693837500046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,8 @@\n \r\n svgRequire.keys().forEach((svgicon) => svgRequire(svgicon))\r\n export default (app) => {\r\n   app.component('svg-icon', SvgIcon)\r\n+  for (const [key, component] of Object.entries(ElementPlusIconsVue)) {\r\n+    app.component(key, component)\r\n+  }\r\n }\r\n"
+                }
+            ],
+            "date": 1693559133533,
+            "name": "Commit-0",
+            "content": "const "
+        }
+    ]
+}

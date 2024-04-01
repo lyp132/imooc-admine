@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/layout/components/Appmain.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1693645924058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693719610799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,13 @@\n <template>\r\n-  <div>appmain</div>\r\n+  <div class=\"app-main\">appmain</div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n </script>\r\n \r\n-<style lang=\"scss\" scoped></style>\r\n+<style lang=\"scss\" scoped>\r\n+.appmain {\r\n+  min-height: calc(100);\r\n+}\r\n+</style>\r\n"
+                },
+                {
+                    "date": 1693719706310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,12 @@\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n .appmain {\r\n-  min-height: calc(100);\r\n+  min-height: calc(100vh - .5rem);\r\n+  width: 100%;\r\n+  position: relative;\r\n+  overflow: hidden;\r\n+  padding: .61rem .2rem .2rem .2rem;\r\n+  box-sizing: border-box;\r\n }\r\n </style>\r\n"
+                }
+            ],
+            "date": 1693645924058,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div>appmain</div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

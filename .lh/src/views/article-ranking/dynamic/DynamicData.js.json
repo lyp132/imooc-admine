@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/views/article-ranking/dynamic/DynamicData.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1702199408669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1702199408669,
+            "name": "Commit-0",
+            "content": "import i18n from '@/i18n'\r\n\r\nconst t = i18n.global.t\r\n\r\nexport default () => {\r\n  return [\r\n    {\r\n      label: t('msg.article.ranking'),\r\n      prop: 'ranking'\r\n    },\r\n    {\r\n      label: t('msg.article.title'),\r\n      prop: 'title'\r\n    },\r\n    {\r\n      label: t('msg.article.author'),\r\n      prop: 'author'\r\n    },\r\n    {\r\n      label: t('msg.article.publicDate'),\r\n      prop: 'publicDate'\r\n    },\r\n    {\r\n      label: t('msg.article.desc'),\r\n      prop: 'desc'\r\n    },\r\n    {\r\n      label: t('msg.article.action'),\r\n      prop: 'action'\r\n    }\r\n  ]\r\n}\r\n"
+        }
+    ]
+}

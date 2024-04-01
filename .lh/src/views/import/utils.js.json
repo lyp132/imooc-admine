@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/views/import/utils.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1698479167878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1698479167878,
+            "name": "Commit-0",
+            "content": "// 数据对应表\r\nexport const USER_RELATIONS = {\r\n  姓名: 'username',\r\n  联系方式: 'mobile',\r\n  角色: 'role',\r\n  开通时间: 'openTime'\r\n}\r\n/**\r\n * 解析 excel 导入的时间格式\r\n */\r\nexport const formatDate = (numb) => {\r\n  const time = new Date((numb - 1) * 24 * 3600000 + 1)\r\n  time.setYear(time.getFullYear() - 70)\r\n  const year = time.getFullYear() + ''\r\n  const month = time.getMonth() + 1 + ''\r\n  const date = time.getDate() - 1 + ''\r\n  return (\r\n    year +\r\n    '-' +\r\n    (month < 10 ? '0' + month : month) +\r\n    '-' +\r\n    (date < 10 ? '0' + date : date)\r\n  )\r\n}\r\n"
+        }
+    ]
+}

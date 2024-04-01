@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/hamburger/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1693912226618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693912320303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,9 @@\n-<template></template>\r\n+<template>\r\n+  <div class=\"hamburger-container\" @click=\"toogleClick\">\r\n+    <svg-icon class=\"hamburger\" :icon=\"icon\"></svg-icon>\r\n+  </div>\r\n+</template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n </script>\r\n"
+                },
+                {
+                    "date": 1693912724970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,14 @@\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n-import {} from 'vue'\r\n+\r\n+import { computed } from 'vue'\r\n+import { useStore } from 'vuex'\r\n+const store = useStore()\r\n+const icon = computed(() => {\r\n+  store.getters.sidebarOpened ? 'hamburger-opened' : 'hamburger-closed'\r\n+})\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                }
+            ],
+            "date": 1693912226618,
+            "name": "Commit-0",
+            "content": "<template>\r\n  \r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

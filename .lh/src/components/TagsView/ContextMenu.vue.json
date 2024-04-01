@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/TagsView/ContextMenu.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1695718661102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695718721154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <ul class=\"context-menu-container\">\r\n-    <li @click=\"onRefreshClick\"></li>\r\n-    <li @click=\"onCloseRightClick\"></li>\r\n-    <li @click=\"onCloseOtherClick\"></li>\r\n+    <li @click=\"onRefreshClick\">{{ $t('msg.tagsView.refresh') }}</li>\r\n+    <li @click=\"onCloseRightClick\">{{ $t('msg.tagsView.refresh') }}</li>\r\n+    <li @click=\"onCloseOtherClick\">{{ $t('msg.tagsView.refresh') }}</li>\r\n   </ul>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1695718731501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <ul class=\"context-menu-container\">\r\n     <li @click=\"onRefreshClick\">{{ $t('msg.tagsView.refresh') }}</li>\r\n     <li @click=\"onCloseRightClick\">{{ $t('msg.tagsView.closeRight') }}</li>\r\n-    <li @click=\"onCloseOtherClick\">{{ $t('msg.tagsView.refresh') }}</li>\r\n+    <li @click=\"onCloseOtherClick\">{{ $t('msg.tagsView.closeOther') }}</li>\r\n   </ul>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1695719031626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,11 @@\n const onCloseRightClick = () => {}\r\n const onCloseOtherClick = () => {}\r\n </script>\r\n \r\n-<style lang=\"scss\" scoped></style>\r\n+<style lang=\"scss\" scoped>\r\n+.context-menu-container {\r\n+  position: fixed;\r\n+  background-color: #fff;\r\n+  z-index: 3000;\r\n+}\r\n+</style>\r\n"
+                }
+            ],
+            "date": 1695718661102,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <ul class=\"context-menu-container\">\r\n    <li @click=\"onRefreshClick\"></li>\r\n    <li @click=\"onCloseRightClick\"></li>\r\n    <li @click=\"onCloseOtherClick\"></li>\r\n  </ul>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n\r\nconst onRefreshClick = () => {}\r\nconst onCloseRightClick = () => {}\r\nconst onCloseOtherClick = () => {}\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/store/modules/permission.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1700687437823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700687459847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,4 @@\n-export default {}\r\n+export default {\r\n+  namespaced: true,\r\n+  muta\r\n+}\r\n"
+                },
+                {
+                    "date": 1700687481855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n export default {\r\n   namespaced: true,\r\n-  muta\r\n+  state: {},\r\n+  mutations: {}\r\n }\r\n"
+                },
+                {
+                    "date": 1700687560381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n export default {\r\n   namespaced: true,\r\n-  state: {},\r\n-  mutations: {}\r\n+  state: {\r\n+    routes: \r\n+  },\r\n+  mutations: {},\r\n+  actions: {}\r\n }\r\n"
+                },
+                {
+                    "date": 1700687581772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import {privateRouters }\r\n+\r\n export default {\r\n   namespaced: true,\r\n   state: {\r\n     routes: \r\n"
+                },
+                {
+                    "date": 1700687758748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,18 @@\n-import {privateRouters }\r\n+import {privateRouters ,publicRouters} from '@/router'\r\n \r\n export default {\r\n   namespaced: true,\r\n   state: {\r\n-    routes: \r\n+    // 路由表： 初始拥有的公共静态路由权限\r\n+    routes: publicRouters\r\n   },\r\n-  mutations: {},\r\n-  actions: {}\r\n+  mutations: {\r\n+    setRoutes(state, newRoutes) {\r\n+      // 在静态路由的基础上增加新路由\r\n+      state.routes = [...publicRouters, ...newRoutes]\r\n+    }\r\n+  },\r\n+  actions: {\r\n+    filterRoutes(context, menus) {}\r\n+  }\r\n }\r\n"
+                },
+                {
+                    "date": 1700688160125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,12 @@\n       state.routes = [...publicRouters, ...newRoutes]\r\n     }\r\n   },\r\n   actions: {\r\n+    /**\r\n+     * 根据权限筛选路由\r\n+     * @param {*} context \r\n+     * @param {*} menus \r\n+     */\r\n     filterRoutes(context, menus) {}\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1700694314970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,11 @@\n      * 根据权限筛选路由\r\n      * @param {*} context\r\n      * @param {*} menus\r\n      */\r\n-    filterRoutes(context, menus) {}\r\n+    filterRoutes(context, menus) {\r\n+      // 定义筛选之后获取到的需要通过 addRoute 进行添加的路由表数组\r\n+      const routes = []\r\n+      \r\n+    }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1700694331233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   actions: {\r\n     /**\r\n      * 根据权限筛选路由\r\n      * @param {*} context\r\n-     * @param {*} menus\r\n+     * @param {*} menus \r\n      */\r\n     filterRoutes(context, menus) {\r\n       // 定义筛选之后获取到的需要通过 addRoute 进行添加的路由表数组\r\n       const routes = []\r\n"
+                }
+            ],
+            "date": 1700687437822,
+            "name": "Commit-0",
+            "content": "export default {}\r\n"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/layout/components/Sidebar/MenuItem.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1693835645718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693835720325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<template></template>\r\n+<template><div></div></template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n </script>\r\n"
+                },
+                {
+                    "date": 1693836005749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,13 @@\n <template><div></div></template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n+defineProps({\r\n+  title: {\r\n+    type: String,\r\n+    \r\n+  }\r\n+})\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1693836024687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,13 @@\n <script setup>\r\n import {} from 'vue'\r\n defineProps({\r\n   title: {\r\n-    type: String\r\n+    type: String,\r\n+    required: true\r\n+  },title: {\r\n+    type: String,\r\n+    required: true\r\n   }\r\n })\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1693836033573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   title: {\r\n     type: String,\r\n     required: true\r\n   },\r\n-  title: {\r\n+  icon: {\r\n     type: String,\r\n     required: true\r\n   }\r\n })\r\n"
+                }
+            ],
+            "date": 1693835645718,
+            "name": "Commit-0",
+            "content": "<template></template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

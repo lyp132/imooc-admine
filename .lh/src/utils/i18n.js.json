@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/utils/i18n.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1694168927840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695715283785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n import i18n from '@/i18n'\r\n+\r\n+// 将title转化为国际化内容\r\n export function generateTitle(title) {\r\n   return i18n.global.t('msg.route.' + title)\r\n }\r\n"
+                },
+                {
+                    "date": 1695715557266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,24 @@\n import i18n from '@/i18n'\r\n+import store from '@/store'\r\n+import { watch } from 'vue'\r\n \r\n // 将title转化为国际化内容\r\n export function generateTitle(title) {\r\n   return i18n.global.t('msg.route.' + title)\r\n }\r\n+\r\n+/**\r\n+ * 监听语言变化，重新计算数据源\r\n+ * @param  {...any} cbs [] 偶有的回掉函数\r\n+ */\r\n+export function watchSwitchLang(...cbs) {\r\n+  watch(\r\n+    () => store.getters.language,\r\n+    () => {\r\n+      cbs.forEach((cb) => {\r\n+        // cb(store.getters.language)\r\n+        cb()\r\n+      })\r\n+    }\r\n+  )\r\n+}\r\n"
+                }
+            ],
+            "date": 1694168927840,
+            "name": "Commit-0",
+            "content": "import i18n from '@/i18n'\r\nexport function generateTitle(title) {\r\n  return i18n.global.t('msg.route.' + title)\r\n}\r\n"
+        }
+    ]
+}

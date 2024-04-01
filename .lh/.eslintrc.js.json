@@ -1,0 +1,30 @@
+{
+    "sourceFile": ".eslintrc.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1693492019356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693496222801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,19 @@\n-module.exports = {\n-  root: true,\n-  env: {\n-    node: true\n-  },\n-  extends: [\n-    'plugin:vue/vue3-essential',\n-    '@vue/standard'\n-  ],\n-  parserOptions: {\n-    parser: '@babel/eslint-parser'\n-  },\n-  rules: {\n-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'space-before-function-paren': 'off'\n-  }\n-}\n+module.exports = {\r\n+  root: true,\r\n+  env: {\r\n+    node: true\r\n+  },\r\n+  extends: [\r\n+    'plugin:vue/vue3-essential',\r\n+    '@vue/standard'\r\n+  ],\r\n+  parserOptions: {\r\n+    parser: '@babel/eslint-parser'\r\n+  },\r\n+  rules: {\r\n+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\r\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\r\n+    'space-before-function-paren': 'off',\r\n+    'vue/multi-word-component-names': 'off',\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1693562874167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n module.exports = {\r\n   root: true,\r\n   env: {\r\n-    node: true\r\n+    node: true,\r\n+    'vue/setup-compiler-macros': true\r\n   },\r\n   extends: [\r\n     'plugin:vue/vue3-essential',\r\n     '@vue/standard'\r\n"
+                },
+                {
+                    "date": 1693562961258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n module.exports = {\r\n   root: true,\r\n   env: {\r\n     node: true,\r\n+    // 遇到问题：vue3中使用defineProps中报错，飘红\r\n     'vue/setup-compiler-macros': true\r\n   },\r\n   extends: [\r\n     'plugin:vue/vue3-essential',\r\n"
+                }
+            ],
+            "date": 1693492019356,
+            "name": "Commit-0",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    node: true\n  },\n  extends: [\n    'plugin:vue/vue3-essential',\n    '@vue/standard'\n  ],\n  parserOptions: {\n    parser: '@babel/eslint-parser'\n  },\n  rules: {\n    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n    'space-before-function-paren': 'off'\n  }\n}\n"
+        }
+    ]
+}

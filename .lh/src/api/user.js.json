@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/api/user.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1696427470226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696427544718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import request from '@/utils/request'\r\n \r\n-export \n\\ No newline at end of file\n+export const feature = () => {\r\n+  return request('/user/feature')\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1696427609401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import request from '@/utils/request'\r\n \r\n export const feature = () => {\r\n-  return request('/user/feature')\r\n+  return request({url: '/user/feature'})\r\n }\r\n"
+                },
+                {
+                    "date": 1696427622623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import request from '@/utils/request'\r\n \r\n export const feature = () => {\r\n-  return request({ url: '/user/feature' })\r\n+  return request({ url: '/user/feature', method: 'get' })\r\n }\r\n"
+                },
+                {
+                    "date": 1696427638128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,9 @@\n import request from '@/utils/request'\r\n \r\n+/**\r\n+ * \r\n+ * @returns \r\n+ */\r\n export const feature = () => {\r\n   return request({ url: '/user/feature', method: 'get' })\r\n }\r\n"
+                }
+            ],
+            "date": 1696427470226,
+            "name": "Commit-0",
+            "content": "import request from '@/utils/request'\r\n\r\nexport "
+        }
+    ]
+}

@@ -1,0 +1,110 @@
+{
+    "sourceFile": "src/utils/request.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1693576863206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693576901355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import axios from 'axios'\r\n \r\n-const se\n\\ No newline at end of file\n+const service = axios.create({\r\n+  \r\n+})\r\n"
+                },
+                {
+                    "date": 1693576925992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import axios from 'axios'\r\n \r\n const service = axios.create({\r\n-  \r\n+  bseURL: ,\r\n+  timeout: 5000\r\n })\r\n"
+                },
+                {
+                    "date": 1693577088030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import axios from 'axios'\r\n \r\n const service = axios.create({\r\n-  bseURL: ,\r\n+  bseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n+\r\n+export default service\r\n"
+                },
+                {
+                    "date": 1693583241987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+import axios from 'axios'\r\n+\r\n+const service = axios.create({\r\n+  bseURL: process.env.VUE_APP_BASE_API,\r\n+  timeout: 5000\r\n+})\r\n+\r\n+export default service\r\n"
+                },
+                {
+                    "date": 1693583473921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import axios from 'axios'\r\n-\r\n+console.log(process.env)\r\n const service = axios.create({\r\n   bseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n"
+                },
+                {
+                    "date": 1693583538217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,6 @@\n import axios from 'axios'\r\n-console.log(process.env)\r\n-const service = axios.create({\r\n-  bseURL: process.env.VUE_APP_BASE_API,\r\n-  timeout: 5000\r\n-})\r\n \r\n-export default service\r\n-import axios from 'axios'\r\n-\r\n const service = axios.create({\r\n   bseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n"
+                },
+                {
+                    "date": 1693583564927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import axios from 'axios'\r\n-\r\n+console.log(process.env.VUE_APP_BASE_API)\r\n const service = axios.create({\r\n   bseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n"
+                },
+                {
+                    "date": 1693583576790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import axios from 'axios'\r\n-console.log(process.env.VUE_APP_BASE_API)\r\n+\r\n const service = axios.create({\r\n   bseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n"
+                },
+                {
+                    "date": 1693583845430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,7 @@\n const service = axios.create({\r\n   bseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n+console.log(service)\r\n \r\n export default service\r\n"
+                },
+                {
+                    "date": 1693584461908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,6 @@\n const service = axios.create({\r\n   bseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n-console.log(service)\r\n \r\n export default service\r\n"
+                },
+                {
+                    "date": 1693584714139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import axios from 'axios'\r\n \r\n const service = axios.create({\r\n-  bseURL: process.env.VUE_APP_BASE_API,\r\n+  baseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n \r\n export default service\r\n"
+                },
+                {
+                    "date": 1693585667134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,9 @@\n const service = axios.create({\r\n   baseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n+service.interceptors.request.use(config => {\r\n+  \r\n+})\r\n \r\n export default service\r\n"
+                },
+                {
+                    "date": 1693585754318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n   baseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n service.interceptors.request.use(config => {\r\n-  \r\n+  config.headers.icode = ''\r\n+  return config\r\n })\r\n \r\n export default service\r\n"
+                },
+                {
+                    "date": 1693585765293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+import axios from 'axios'\r\n+\r\n+const service = axios.create({\r\n+  baseURL: process.env.VUE_APP_BASE_API,\r\n+  timeout: 5000\r\n+})\r\n+service.interceptors.request.use(config => {\r\n+  config.headers.icode = ''\r\n+  // 必须返回 config\r\n+  return config\r\n+})\r\n+\r\n+export default service\r\n"
+                },
+                {
+                    "date": 1693585772509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,22 +4,11 @@\n   baseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n service.interceptors.request.use(config => {\r\n+  // 添加 icode\r\n   config.headers.icode = ''\r\n   // 必须返回 config\r\n   return config\r\n })\r\n \r\n export default service\r\n-import axios from 'axios'\r\n-\r\n-const service = axios.create({\r\n-  baseURL: process.env.VUE_APP_BASE_API,\r\n-  timeout: 5000\r\n-})\r\n-service.interceptors.request.use(config => {\r\n-  config.headers.icode = ''\r\n-  return config\r\n-})\r\n-\r\n-export default service\r\n"
+                },
+                {
+                    "date": 1693585781506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n const service = axios.create({\r\n   baseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n+// 请求拦截器\r\n service.interceptors.request.use(config => {\r\n   // 添加 icode\r\n   config.headers.icode = ''\r\n   // 必须返回 config\r\n"
+                },
+                {
+                    "date": 1693585799789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const service = axios.create({\r\n   baseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n-// 请求拦截器\r\n+// 为 service 添加请求拦截器，并在请求拦截器中配置 icode\r\n service.interceptors.request.use(config => {\r\n   // 添加 icode\r\n   config.headers.icode = ''\r\n   // 必须返回 config\r\n"
+                },
+                {
+                    "date": 1693585817819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n })\r\n // 为 service 添加请求拦截器，并在请求拦截器中配置 icode\r\n service.interceptors.request.use(config => {\r\n   // 添加 icode\r\n-  config.headers.icode = ''\r\n+  config.headers.icode = '42CFEAED151C2988'\r\n   // 必须返回 config\r\n   return config\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1693588970846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   baseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n // 为 service 添加请求拦截器，并在请求拦截器中配置 icode\r\n-service.interceptors.request.use(config => {\r\n+service.interceptors.request.use((config) => {\r\n   // 添加 icode\r\n   config.headers.icode = '42CFEAED151C2988'\r\n   // 必须返回 config\r\n   return config\r\n"
+                },
+                {
+                    "date": 1693589770587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,6 @@\n   // 必须返回 config\r\n   return config\r\n })\r\n \r\n+// 响应拦截器\r\n export default service\r\n"
+                },
+                {
+                    "date": 1693590011127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n const service = axios.create({\r\n   baseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n })\r\n+// 请求拦截器\r\n // 为 service 添加请求拦截器，并在请求拦截器中配置 icode\r\n service.interceptors.request.use((config) => {\r\n   // 添加 icode\r\n   config.headers.icode = '42CFEAED151C2988'\r\n@@ -12,5 +13,21 @@\n   return config\r\n })\r\n \r\n // 响应拦截器\r\n+service.interceptors.response.use(\r\n+  // 请求成功\r\n+  response => {\r\n+    const { success, message, data} = response.data\r\n+    // 判断当前请求是否成功\r\n+    if (success) {\r\n+      // 成功返回解析后的数据\r\n+      return data\r\n+    } else {\r\n+      // 失败（请求成功，业务失败），消息提示\r\n+      \r\n+    }\r\n+  },\r\n+  // 请求失败\r\n+  error => {}\r\n+)\r\n export default service\r\n"
+                },
+                {
+                    "date": 1693590081447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import axios from 'axios'\r\n+import { ElMessage } from 'element-plus'\r\n \r\n const service = axios.create({\r\n   baseURL: process.env.VUE_APP_BASE_API,\r\n   timeout: 5000\r\n@@ -23,10 +24,14 @@\n       // 成功返回解析后的数据\r\n       return data\r\n     } else {\r\n       // 失败（请求成功，业务失败），消息提示\r\n+      ElMessage.error(message)\r\n+      return Promise.reject(new Error(message))\r\n     }\r\n   },\r\n   // 请求失败\r\n-  (error) => {}\r\n+  (error) => {\r\n+    \r\n+  }\r\n )\r\n export default service\r\n"
+                },
+                {
+                    "date": 1693590132318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,11 @@\n       return Promise.reject(new Error(message))\r\n     }\r\n   },\r\n   // 请求失败\r\n-  (error) => {}\r\n+  (error) => {\r\n+      // 失败（请求成功，业务失败），消息提示\r\n+      ElMessage.error(message)\r\n+      return Promise.reject(new Error(message))\r\n+  }\r\n )\r\n export default service\r\n"
+                }
+            ],
+            "date": 1693576863206,
+            "name": "Commit-0",
+            "content": "import axios from 'axios'\r\n\r\nconst se"
+        }
+    ]
+}

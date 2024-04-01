@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/constant/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1693587320419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693734732322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,4 @@\n+// 定义token 常量\r\n export const TOKEN = 'token'\r\n+// 定义token 时间戳常量\r\n+export const TIME_STAMP = ''\r\n"
+                },
+                {
+                    "date": 1693734851112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n // 定义token 常量\r\n export const TOKEN = 'token'\r\n // 定义token 时间戳常量\r\n-export const TIME_STAMP = ''\r\n+export const TIME_STAMP = 'timestamp'\r\n"
+                },
+                {
+                    "date": 1693734994333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,9 @@\n-// 定义token 常量\r\n+// 定义常量\r\n+\r\n+// 定义token\r\n export const TOKEN = 'token'\r\n-// 定义token 时间戳常量\r\n+// 定义token 时间戳\r\n export const TIME_STAMP = 'timestamp'\r\n+// 定义超时时长(毫秒)：两小时\r\n+export const TOKEN_TIMEOUT_VALUE = 2 *  1000\r\n+// export const TOKEN_TIMEOUT_VALUE = 2 * 360 * 1000\r\n"
+                },
+                {
+                    "date": 1693735097849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n // 定义token 时间戳\r\n export const TIME_STAMP = 'timestamp'\r\n // 定义超时时长(毫秒)：两小时\r\n export const TOKEN_TIMEOUT_VALUE = 2 * 1000\r\n-// export const TOKEN_TIMEOUT_VALUE = 2 * 360 * 1000\r\n+// export const TOKEN_TIMEOUT_VALUE = 2 * 3600 * 1000\r\n"
+                },
+                {
+                    "date": 1693736815919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n export const TOKEN = 'token'\r\n // 定义token 时间戳\r\n export const TIME_STAMP = 'timestamp'\r\n // 定义超时时长(毫秒)：两小时\r\n-export const TOKEN_TIMEOUT_VALUE = 2 * 1000\r\n-// export const TOKEN_TIMEOUT_VALUE = 2 * 3600 * 1000\r\n+// export const TOKEN_TIMEOUT_VALUE = 2 * 1000\r\n+export const TOKEN_TIMEOUT_VALUE = 2 * 3600 * 1000\r\n"
+                }
+            ],
+            "date": 1693587320419,
+            "name": "Commit-0",
+            "content": "export const TOKEN = 'token'\r\n"
+        }
+    ]
+}

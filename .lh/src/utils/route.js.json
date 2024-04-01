@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/utils/route.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1693821627846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693821737710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,6 @@\n-export const filteerRouters = routes\r\n+\r\n+export const filteerRouters = allrouter => {\r\n+  const childrenRouters = getChildrenRouters(allrouter)\r\n+  return childrenRouters\r\n+\r\n+}\r\n"
+                },
+                {
+                    "date": 1693821788980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,9 @@\n+const getChildrenRouters = allrouter  => {\r\n+  const result = []\r\n+  return result\r\n+}\r\n+\r\n export const filteerRouters = (allrouter) => {\r\n   const childrenRouters = getChildrenRouters(allrouter)\r\n   return childrenRouters\r\n }\r\n"
+                },
+                {
+                    "date": 1693821887840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,9 @@\n+/**\r\n+ * \r\n+ * @param {*} allrouter \r\n+ * @returns \r\n+ */\r\n const getChildrenRouters = (allrouter) => {\r\n   const result = []\r\n   return result\r\n }\r\n"
+                }
+            ],
+            "date": 1693821627846,
+            "name": "Commit-0",
+            "content": "\r\nexport const filteerRouters = routes"
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/api/sys.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1693578316630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693578397777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,9 @@\n-\r\n+import request from '@/utils/request'\r\n /**\r\n  * 登录\r\n  */\r\n+export const login = data => {\r\n+  return request({\r\n+    url: '/'\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1693578516885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n import request from '@/utils/request'\r\n /**\r\n  * 登录\r\n+ * return promis对象\r\n  */\r\n export const login = data => {\r\n   return request({\r\n-    url: '/'\r\n+    url: '/sys/login',\r\n+    method: 'POST',\r\n+    data\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1693578822814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import request from '@/utils/request'\r\n /**\r\n- * 登录\r\n- * return promis对象\r\n+ * \r\n+ * @param {*} data\r\n+ * @returns\r\n  */\r\n export const login = data => {\r\n   return request({\r\n     url: '/sys/login',\r\n"
+                },
+                {
+                    "date": 1693578842408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import request from '@/utils/request'\r\n /**\r\n- * \r\n+ * 登录\r\n  * @param {*} data\r\n- * @returns\r\n+ * @returns \r\n  */\r\n export const login = data => {\r\n   return request({\r\n     url: '/sys/login',\r\n"
+                },
+                {
+                    "date": 1693578878125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import request from '@/utils/request'\r\n /**\r\n  * 登录\r\n  * @param {*} data\r\n- * @returns \r\n+ * @returns promise对象\r\n  */\r\n export const login = data => {\r\n   return request({\r\n     url: '/sys/login',\r\n"
+                },
+                {
+                    "date": 1693580144471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import request from '@/utils/request'\r\n /**\r\n  * 登录\r\n- * @param {*} data\r\n+ * @param { 用户名, 密码 } data\r\n  * @returns promise对象\r\n  */\r\n export const login = data => {\r\n   return request({\r\n"
+                },
+                {
+                    "date": 1693723058682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,4 +10,9 @@\n     method: 'POST',\r\n     data\r\n   })\r\n }\r\n+export const getUserInfo = () => {\r\n+  return request({\r\n+    url: '/'\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1693723122791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,16 +3,21 @@\n  * 登录\r\n  * @param { 用户名, 密码 } data\r\n  * @returns promise对象\r\n  */\r\n-export const login = data => {\r\n+export const login = (data) => {\r\n   return request({\r\n     url: '/sys/login',\r\n     method: 'POST',\r\n     data\r\n   })\r\n }\r\n+/**\r\n+ *\r\n+ * @returns\r\n+ */\r\n export const getUserInfo = () => {\r\n   return request({\r\n-    url: '/'\r\n+    url: '/syls/profile',\r\n+    method: 'GET'\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1693723158855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n     data\r\n   })\r\n }\r\n /**\r\n- *\r\n- * @returns\r\n+ *  获取用户信息\r\n+ * @returns promise对象\r\n  */\r\n export const getUserInfo = () => {\r\n   return request({\r\n     url: '/syls/profile',\r\n"
+                },
+                {
+                    "date": 1693726357614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,8 @@\n  * @returns promise对象\r\n  */\r\n export const getUserInfo = () => {\r\n   return request({\r\n-    url: '/syls/profile',\r\n+    url: '/sys/profile',\r\n     method: 'GET'\r\n   })\r\n }\r\n"
+                }
+            ],
+            "date": 1693578316630,
+            "name": "Commit-0",
+            "content": "\r\n/**\r\n * 登录\r\n */\r\n"
+        }
+    ]
+}

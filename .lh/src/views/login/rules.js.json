@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/views/login/rules.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1693568436901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693568550306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-export const validatePasswoed\n\\ No newline at end of file\n+export const validatePassword = () => [\r\n+  return ( rule, value, callback ) => {\r\n+    \r\n+  }\r\n+]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1693568635573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+export const validatePassword = () => {\r\n+  return (rule, value, callback) => {\r\n+    if (value.length < 6) {\r\n+      callback(new Error(''))\r\n+    }\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1693568653340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,9 @@\n export const validatePassword = () => {\r\n   return (rule, value, callback) => {\r\n     if (value.length < 6) {\r\n-      callback(new Error(''))\r\n+      callback(new Error('密码不能少于6位'))\r\n+    } else {\r\n+      callback()\r\n     }\r\n   }\r\n }\r\n-export const validatePassword = () => [\r\n-  return ( rule, value, callback ) => {\r\n\\ No newline at end of file\n-    \r\n-  }\r\n-]\n"
+                },
+                {
+                    "date": 1694165143179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n+import i18n from \"@/i18n\"\r\n+\r\n export const validatePassword = () => {\r\n   return (rule, value, callback) => {\r\n     if (value.length < 6) {\r\n-      callback(new Error('密码不能少于6位'))\r\n+      callback(new Error(i18n.global))\r\n     } else {\r\n       callback()\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1694165194504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n export const validatePassword = () => {\r\n   return (rule, value, callback) => {\r\n     if (value.length < 6) {\r\n-      callback(new Error(i18n.global))\r\n+      callback(new Error(i18n.global.t('msg.login.passwordRule')))\r\n     } else {\r\n       callback()\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1694165273784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import i18n from \"@/i18n\"\r\n+import i18n from '@/i18n'\r\n \r\n export const validatePassword = () => {\r\n   return (rule, value, callback) => {\r\n     if (value.length < 6) {\r\n"
+                }
+            ],
+            "date": 1693568436901,
+            "name": "Commit-0",
+            "content": "export const validatePasswoed"
+        }
+    ]
+}

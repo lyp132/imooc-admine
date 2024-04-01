@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/user-info/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1698482534117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698482681703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,19 @@\n   <div class=\"\">用户详情</div>\r\n </template>\r\n \r\n <script setup>\r\n-import {} from 'vue'\r\n+import { ref } from 'vue'\r\n const props = defineProps({\r\n   id: {\r\n-    type: String\r\n+    type: String,\r\n+    required: true\r\n   }\r\n })\r\n+\r\n+const detailData = ref({})\r\n+const getUserDetail = async () => {\r\n+  detailData.value = await \r\n+}\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1698482795192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,12 @@\n   <div class=\"\">用户详情</div>\r\n </template>\r\n \r\n <script setup>\r\n-import { ref } from 'vue'\r\n+import { userDetail } from '@/api/user-manage';\r\n+import { watchSwitchLang } from '@/utils/i18n';\r\n+import { ref } from 'vue';\r\n+\r\n const props = defineProps({\r\n   id: {\r\n     type: String,\r\n     required: true\r\n@@ -12,9 +15,12 @@\n })\r\n \r\n const detailData = ref({})\r\n const getUserDetail = async () => {\r\n-  detailData.value = await\r\n+  detailData.value = await userDetail(props.id)\r\n }\r\n+getUserDetail()\r\n+// 监听语言切换\r\n+watchSwitchLang(getUserDetail)\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                }
+            ],
+            "date": 1698482534117,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div class=\"\">用户详情</div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\nconst props = defineProps({\r\n  id: {\r\n    type: String,\r\n    \r\n  }\r\n})\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

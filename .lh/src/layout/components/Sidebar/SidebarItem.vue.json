@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/layout/components/Sidebar/SidebarItem.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1693835081634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693835273453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,12 @@\n <template></template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n+defineProps({\r\n+  route: {\r\n+    type: Object\r\n+  }\r\n+})\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1693835307797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n <script setup>\r\n import {} from 'vue'\r\n defineProps({\r\n   route: {\r\n-    type: Object\r\n+    type: Object,\r\n+    required: true\r\n   }\r\n })\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1693835367241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-<template></template>\r\n+<template>\r\n+  <el-sub-menu v-if=\"route.children\" :index=\"\"></el-sub-menu>\r\n+</template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n defineProps({\r\n"
+                },
+                {
+                    "date": 1693835386244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n <template>\r\n+    <!-- 一级menu菜单 -->\r\n+\r\n   <el-sub-menu v-if=\"route.children\" :index=\"\"></el-sub-menu>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1693835400316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n-  <!-- 一级menu菜单 -->\r\n-\r\n+  <!-- 支持渲染多级 menu 菜单 -->\r\n   <el-sub-menu v-if=\"route.children\" :index=\"\"></el-sub-menu>\r\n+  \r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1693835561899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n <template>\r\n   <!-- 支持渲染多级 menu 菜单 -->\r\n-  <el-sub-menu v-if=\"route.children.length > 0\" :index=\"\"></el-sub-menu>\r\n+  <el-sub-menu v-if=\"route.children.length > 0\" :index=\"route.path\">\r\n+  <template #title>\r\n+    \r\n+  </template>\r\n+  </el-sub-menu>\r\n   <!-- 渲染一级 menu 菜单-->\r\n   <el-menu-item v-else></el-menu-item>\r\n </template>\r\n \r\n"
+                }
+            ],
+            "date": 1693835081634,
+            "name": "Commit-0",
+            "content": "<template></template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "sourceFile": "src/api/role.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1698648902976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698648911210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import request from '@/utils/request'\r\n \r\n export const roleList = () => {\r\n   return request({\r\n-    url: ''\r\n+    url: '/role/list'\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1698648933550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import request from '@/utils/request'\r\n \r\n export const roleList = () => {\r\n   return request({\r\n-    url: '/role/list'\r\n+    url: '/role/list',\r\n+    method: 'GET'\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1698648968842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,10 @@\n import request from '@/utils/request'\r\n \r\n+/**\r\n+ * 获取所有角色\r\n+ * @returns []\r\n+ */\r\n export const roleList = () => {\r\n   return request({\r\n     url: '/role/list',\r\n     method: 'GET'\r\n"
+                },
+                {
+                    "date": 1698651715646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,6 @@\n     url: '/role/list',\r\n     method: 'GET'\r\n   })\r\n }\r\n+\r\n+export const \r\n"
+                },
+                {
+                    "date": 1698651800646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,14 @@\n     method: 'GET'\r\n   })\r\n }\r\n \r\n-export const \r\n+/**\r\n+ * 获取用户权限列表\r\n+ * @returns []\r\n+ */\r\n+export const permissionList = () => {\r\n+  return request({\r\n+    url: '/permission/list',\r\n+    method: 'GET'\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1698825071041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,4 +20,10 @@\n     url: '/permission/list',\r\n     method: 'GET'\r\n   })\r\n }\r\n+\r\n+export const userRoles = () => {\r\n+  return request({\r\n+    url: ``\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1698825336422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,4 @@\n     url: '/permission/list',\r\n     method: 'GET'\r\n   })\r\n }\r\n-\r\n-export const userRoles = () => {\r\n-  return request({\r\n-    url: ``\r\n-  })\r\n-}\r\n"
+                },
+                {
+                    "date": 1699704661416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,4 +20,10 @@\n     url: '/permission/list',\r\n     method: 'GET'\r\n   })\r\n }\r\n+\r\n+export const rolePermission = (roleId) => {\r\n+  return request({\r\n+    url: `/role/permission/${roleId}`\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1699704678943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,8 @@\n }\r\n \r\n export const rolePermission = (roleId) => {\r\n   return request({\r\n-    url: `/role/permission/${roleId}`\r\n+    url: `/role/permission/${roleId}`,\r\n+    method: 'GET'\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1699704738554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,13 @@\n     method: 'GET'\r\n   })\r\n }\r\n \r\n+/**\r\n+ *\r\n+ * @param {*} roleId 角色ID\r\n+ * @returns\r\n+ */\r\n export const rolePermission = (roleId) => {\r\n   return request({\r\n     url: `/role/permission/${roleId}`,\r\n     method: 'GET'\r\n"
+                },
+                {
+                    "date": 1699704757018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n }\r\n \r\n /**\r\n  *\r\n- * @param {*} roleId 角色ID\r\n+ * @param {*} roleId '' 角色ID\r\n  * @returns\r\n  */\r\n export const rolePermission = (roleId) => {\r\n   return request({\r\n"
+                },
+                {
+                    "date": 1699704898396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   })\r\n }\r\n \r\n /**\r\n- *\r\n+ * 获取指定角色的权限\r\n  * @param {*} roleId '' 角色ID\r\n  * @returns\r\n  */\r\n export const rolePermission = (roleId) => {\r\n"
+                },
+                {
+                    "date": 1699705463181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,19 +11,8 @@\n   })\r\n }\r\n \r\n /**\r\n- * 获取用户权限列表\r\n- * @returns []\r\n- */\r\n-export const permissionList = () => {\r\n-  return request({\r\n-    url: '/permission/list',\r\n-    method: 'GET'\r\n-  })\r\n-}\r\n-\r\n-/**\r\n  * 获取指定角色的权限\r\n  * @param {*} roleId '' 角色ID\r\n  * @returns\r\n  */\r\n"
+                },
+                {
+                    "date": 1699708307345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,4 +21,6 @@\n     url: `/role/permission/${roleId}`,\r\n     method: 'GET'\r\n   })\r\n }\r\n+\r\n+export const \r\n"
+                },
+                {
+                    "date": 1699708333561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,5 @@\n     method: 'GET'\r\n   })\r\n }\r\n \r\n-export const \r\n+export const distribute\r\n"
+                },
+                {
+                    "date": 1699708352119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,5 @@\n     method: 'GET'\r\n   })\r\n }\r\n \r\n-export const distribute\r\n+export const distributePermission\r\n"
+                },
+                {
+                    "date": 1699708421345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,9 @@\n     method: 'GET'\r\n   })\r\n }\r\n \r\n-export const distributePermission\r\n+export const distributePermission = (data) => {\r\n+  return request({\r\n+    url: \r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1699708451445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,9 @@\n }\r\n \r\n export const distributePermission = (data) => {\r\n   return request({\r\n-    url: \r\n+    url: '/role/distribute-permission',\r\n+    method: 'POST',\r\n+    data\r\n   })\r\n }\r\n"
+                }
+            ],
+            "date": 1698648902976,
+            "name": "Commit-0",
+            "content": "import request from '@/utils/request'\r\n\r\nexport const roleList = () => {\r\n  return request({\r\n    url: ''\r\n  })\r\n}\r\n"
+        }
+    ]
+}

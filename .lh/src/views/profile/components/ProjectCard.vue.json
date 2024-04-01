@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/profile/components/ProjectCard.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1695978732876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696423378451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,17 @@\n <template>\r\n   <!-- 项目介绍 -->\r\n-  <div>项目介绍</div>\r\n+  <div>\r\n+    项目介绍\r\n+    <PanThumb>\r\n+      <div>hello</div>\r\n+      {{ $store.getters.userInfo.title }}\r\n+    </PanThumb>\r\n+  </div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n+import PanThumb from '@/components/PanThumb'\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1696423427616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <!-- 项目介绍 -->\r\n   <div>\r\n     项目介绍\r\n-    <PanThumb>\r\n+    <PanThumb :image=\"$store.getters.userInfo.avatar\">\r\n       <div>hello</div>\r\n       {{ $store.getters.userInfo.title }}\r\n     </PanThumb>\r\n   </div>\r\n"
+                }
+            ],
+            "date": 1695978732876,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <!-- 项目介绍 -->\r\n  <div>\r\n    项目介绍\r\n  </div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

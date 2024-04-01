@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/i18n/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1694086442461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1694086753988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     }\r\n   }\r\n }\r\n \r\n-const locale = 'en'\r\n+const locale = 'zh'\r\n \r\n const i18n = createI18n({\r\n   legacy: false,\r\n   globalInjection: true,\r\n"
+                },
+                {
+                    "date": 1694163588369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { createI18n } from 'vue-i18n'\r\n+import enlocale from './lang/en'\r\n \r\n const messages = {\r\n   en: {\r\n     msg: {\r\n"
+                },
+                {
+                    "date": 1694163629667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,17 @@\n import { createI18n } from 'vue-i18n'\r\n-import enlocale from './lang/en'\r\n+import enLocale from './lang/en'\r\n+import zhLocale from './lang/zh'\r\n \r\n const messages = {\r\n   en: {\r\n     msg: {\r\n-      test: 'hello world'\r\n+      ...enLocale\r\n     }\r\n   },\r\n   zh: {\r\n     msg: {\r\n-      test: '你好世界'\r\n+      ...zhLocale\r\n     }\r\n   }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1694165081962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n const i18n = createI18n({\r\n   legacy: false,\r\n   globalInjection: true,\r\n   locale,\r\n-  messages\r\n+  messages,\r\n+  warnHtmlMessage: false\r\n })\r\n \r\n export default i18n\r\n"
+                },
+                {
+                    "date": 1694170122818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,13 @@\n       ...zhLocale\r\n     }\r\n   }\r\n }\r\n+ \r\n+function getlocale() {\r\n+  return store?.getters?.\r\n+}\r\n \r\n-const locale = 'zh'\r\n-\r\n const i18n = createI18n({\r\n   legacy: false,\r\n   globalInjection: true,\r\n   locale,\r\n"
+                },
+                {
+                    "date": 1694170135349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   }\r\n }\r\n  \r\n function getlocale() {\r\n-  return store?.getters?.\r\n+  return store?.getters?.language\r\n }\r\n \r\n const i18n = createI18n({\r\n   legacy: false,\r\n"
+                },
+                {
+                    "date": 1694170148221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import { createI18n } from 'vue-i18n'\r\n import enLocale from './lang/en'\r\n import zhLocale from './lang/zh'\r\n+import store from '@/store'\r\n \r\n const messages = {\r\n   en: {\r\n     msg: {\r\n"
+                },
+                {
+                    "date": 1694170155175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \r\n const i18n = createI18n({\r\n   legacy: false,\r\n   globalInjection: true,\r\n-  locale,\r\n+  locale: getlocale(),\r\n   messages,\r\n   warnHtmlMessage: false\r\n })\r\n \r\n"
+                }
+            ],
+            "date": 1694086442461,
+            "name": "Commit-0",
+            "content": "import { createI18n } from 'vue-i18n'\r\n\r\nconst messages = {\r\n  en: {\r\n    msg: {\r\n      test: 'hello world'\r\n    }\r\n  },\r\n  zh: {\r\n    msg: {\r\n      test: '你好世界'\r\n    }\r\n  }\r\n}\r\n\r\nconst locale = 'en'\r\n\r\nconst i18n = createI18n({\r\n  legacy: false,\r\n  globalInjection: true,\r\n  locale,\r\n  messages\r\n})\r\n\r\nexport default i18n\r\n"
+        }
+    ]
+}

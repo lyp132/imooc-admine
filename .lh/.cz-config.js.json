@@ -1,0 +1,22 @@
+{
+    "sourceFile": ".cz-config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1693492701452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693493804819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,8 @@\n     footer: '请输入要关闭的issue(可选):',\r\n     confirmCommit: '确认使用以上信息提交？(y/n/e/h)'\r\n   },\r\n   // 跳过问题\r\n-  skipQuestions: ['body', 'footer'],\r\n+  skipQuestions: ['footer'],\r\n   // subject文字长度默认是72\r\n   subjectLimit: 72\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1693492701452,
+            "name": "Commit-0",
+            "content": "module.exports = {\r\n  // 可选类型\r\n  types: [\r\n    { value: 'feat', name: 'feat:     新功能' },\r\n    { value: 'fix', name: 'fix:      修复' },\r\n    { value: 'docs', name: 'docs:     文档变更' },\r\n    { value: 'style', name: 'style:    代码格式(不影响代码运行的变动)' },\r\n    {\r\n      value: 'refactor',\r\n      name: 'refactor: 重构(既不是增加feature，也不是修复bug)'\r\n    },\r\n    { value: 'perf', name: 'perf:     性能优化' },\r\n    { value: 'test', name: 'test:     增加测试' },\r\n    { value: 'chore', name: 'chore:    构建过程或辅助工具的变动' },\r\n    { value: 'revert', name: 'revert:   回退' },\r\n    { value: 'build', name: 'build:    打包' }\r\n  ],\r\n  // 消息步骤\r\n  messages: {\r\n    type: '请选择提交类型:',\r\n    customScope: '请输入修改范围(可选):',\r\n    subject: '请简要描述提交(必填):',\r\n    body: '请输入详细描述(可选):',\r\n    footer: '请输入要关闭的issue(可选):',\r\n    confirmCommit: '确认使用以上信息提交？(y/n/e/h)'\r\n  },\r\n  // 跳过问题\r\n  skipQuestions: ['body', 'footer'],\r\n  // subject文字长度默认是72\r\n  subjectLimit: 72\r\n}"
+        }
+    ]
+}

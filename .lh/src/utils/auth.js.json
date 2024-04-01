@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/utils/auth.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1693735240524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693735329809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,6 @@\n+import { getItem } from \"@/utils/storage\"\r\n+\r\n // 鉴权：用户被动退出解决方案之主动处理\r\n+export function getTimeStamp() {\r\n+  return getItem()\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1693735352576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import { getItem } from '@/utils/storage'\r\n \r\n // 鉴权：用户被动退出解决方案之主动处理\r\n+\r\n+\r\n export function getTimeStamp() {\r\n   return getItem()\r\n }\r\n"
+                },
+                {
+                    "date": 1693735411687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n-import { getItem } from '@/utils/storage'\r\n+import { getItem, setItem } from '@/utils/storage'\r\n \r\n // 鉴权：用户被动退出解决方案之主动处理\r\n-\r\n+export function setTimeStamp() {\r\n+  setItem()\r\n+}\r\n export function getTimeStamp() {\r\n   return getItem()\r\n }\r\n"
+                }
+            ],
+            "date": 1693735240524,
+            "name": "Commit-0",
+            "content": "// 鉴权：用户被动退出解决方案之主动处理\r\n\r\n"
+        }
+    ]
+}

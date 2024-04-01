@@ -1,0 +1,142 @@
+{
+    "sourceFile": "src/store/modules/user.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 31,
+            "patches": [
+                {
+                    "date": 1693579101114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693579261208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,8 @@\n   state: () => ({}),\r\n   mutations: {},\r\n   actions: {\r\n     login (context, userInfo) {\r\n-\r\n+      \r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1693579312471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+export default {\r\n+  namespaced: true,\r\n+  state: () => ({}),\r\n+  mutations: {},\r\n+  actions: {\r\n+    login (context, userInfo) {\r\n+      const { username, password } = userInfo\r\n+      return new Promise()\r\n+    }\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1693579392923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,12 @@\n+import \r\n export default {\r\n   namespaced: true,\r\n   state: () => ({}),\r\n   mutations: {},\r\n   actions: {\r\n-    login (context, userInfo) {\r\n+    login(context, userInfo) {\r\n       const { username, password } = userInfo\r\n-      return new Promise()\r\n+      return new Promise((resolve, reject) => {})\r\n     }\r\n   }\r\n }\r\n-export default {\r\n-  namespaced: true,\r\n-  state: () => ({}),\r\n-  mutations: {},\r\n-  actions: {\r\n-    login (context, userInfo) {\r\n-      \r\n-    }\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1693579430965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n-import \r\n+import { login } from \"@/api/sys\"\r\n export default {\r\n   namespaced: true,\r\n   state: () => ({}),\r\n   mutations: {},\r\n   actions: {\r\n     login(context, userInfo) {\r\n       const { username, password } = userInfo\r\n-      return new Promise((resolve, reject) => {})\r\n+      return new Promise((resolve, reject) => {\r\n+        \r\n+      })\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1693579484688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,12 @@\n   actions: {\r\n     login(context, userInfo) {\r\n       const { username, password } = userInfo\r\n       return new Promise((resolve, reject) => {\r\n-        \r\n+        login({\r\n+          username,\r\n+          password\r\n+        })\r\n       })\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1693579586785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { login } from \"@/api/sys\"\r\n+import { login } from '@/api/sys'\r\n export default {\r\n   namespaced: true,\r\n   state: () => ({}),\r\n   mutations: {},\r\n"
+                },
+                {
+                    "date": 1693579743103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import { login } from '@/api/sys'\r\n+import md5 from 'md5'\r\n+\r\n export default {\r\n   namespaced: true,\r\n   state: () => ({}),\r\n   mutations: {},\r\n@@ -8,9 +10,9 @@\n       const { username, password } = userInfo\r\n       return new Promise((resolve, reject) => {\r\n         login({\r\n           username,\r\n-          password\r\n+          password: md5(password)\r\n         })\r\n       })\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1693579813138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,12 @@\n       return new Promise((resolve, reject) => {\r\n         login({\r\n           username,\r\n           password: md5(password)\r\n+        }).then(data => {\r\n+          resolve()\r\n+        }).catch(err => {\r\n+          reject(err)\r\n         })\r\n       })\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1693579831251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,14 @@\n   namespaced: true,\r\n   state: () => ({}),\r\n   mutations: {},\r\n   actions: {\r\n+    /**\r\n+     * \r\n+     * @param {*} context \r\n+     * @param {*} userInfo \r\n+     * @returns \r\n+     */\r\n     login(context, userInfo) {\r\n       const { username, password } = userInfo\r\n       return new Promise((resolve, reject) => {\r\n         login({\r\n"
+                },
+                {
+                    "date": 1693579850144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,12 @@\n   state: () => ({}),\r\n   mutations: {},\r\n   actions: {\r\n     /**\r\n-     * \r\n-     * @param {*} context \r\n-     * @param {*} userInfo \r\n-     * @returns \r\n+     * 登录请求动作\r\n+     * @param {*} context\r\n+     * @param {*} userInfo\r\n+     * @returns\r\n      */\r\n     login(context, userInfo) {\r\n       const { username, password } = userInfo\r\n       return new Promise((resolve, reject) => {\r\n"
+                },
+                {
+                    "date": 1693580035243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         login({\r\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n-          resolve()\r\n+          resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n       })\r\n"
+                },
+                {
+                    "date": 1693587154556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { login } from '@/api/sys'\r\n import md5 from 'md5'\r\n+import {s}\r\n \r\n export default {\r\n   namespaced: true,\r\n   state: () => ({}),\r\n"
+                },
+                {
+                    "date": 1693587269510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,19 @@\n import { login } from '@/api/sys'\r\n import md5 from 'md5'\r\n-import {s}\r\n+import { setItem } from '@/utils/storage'\r\n \r\n export default {\r\n   namespaced: true,\r\n-  state: () => ({}),\r\n-  mutations: {},\r\n+  state: () => ({\r\n+    token: ''\r\n+  }),\r\n+  mutations: {\r\n+    setToken(state, token) {\r\n+      state.token = token\r\n+      setItem('token', token)\r\n+    }\r\n+  },\r\n   actions: {\r\n     /**\r\n      * 登录请求动作\r\n      * @param {*} context\r\n"
+                },
+                {
+                    "date": 1693587364143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import { login } from '@/api/sys'\r\n import md5 from 'md5'\r\n import { setItem } from '@/utils/storage'\r\n+import { TOKEN } from '@/constant/index'\r\n \r\n export default {\r\n   namespaced: true,\r\n   state: () => ({\r\n@@ -9,9 +10,9 @@\n   }),\r\n   mutations: {\r\n     setToken(state, token) {\r\n       state.token = token\r\n-      setItem('token', token)\r\n+      setItem(TOKEN, token)\r\n     }\r\n   },\r\n   actions: {\r\n     /**\r\n"
+                },
+                {
+                    "date": 1693587407697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n import { login } from '@/api/sys'\r\n import md5 from 'md5'\r\n-import { setItem } from '@/utils/storage'\r\n+import { setItem, getItem } from '@/utils/storage'\r\n import { TOKEN } from '@/constant/index'\r\n \r\n export default {\r\n   namespaced: true,\r\n   state: () => ({\r\n-    token: ''\r\n+    token: getItem(TOKEN) || ''\r\n   }),\r\n   mutations: {\r\n     setToken(state, token) {\r\n       state.token = token\r\n@@ -27,8 +27,9 @@\n         login({\r\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n+          console.log(data)\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n"
+                },
+                {
+                    "date": 1693587440229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,40 @@\n+import { login } from '@/api/sys'\r\n+import { TOKEN } from '@/constant/index'\r\n+import { getItem, setItem } from '@/utils/storage'\r\n+import md5 from 'md5'\r\n+\r\n+export default {\r\n+  namespaced: true,\r\n+  state: () => ({\r\n+    token: getItem(TOKEN) || ''\r\n+  }),\r\n+  mutations: {\r\n+    setToken(state, token) {\r\n+      state.token = token\r\n+      setItem(TOKEN, token)\r\n+    }\r\n+  },\r\n+  actions: {\r\n+    /**\r\n+     * 登录请求动作\r\n+     * @param {*} context\r\n+     * @param {*} userInfo\r\n+     * @returns\r\n+     */\r\n+    login(context, userInfo) {\r\n+      const { username, password } = userInfo\r\n+      return new Promise((resolve, reject) => {\r\n+        login({\r\n+          username,\r\n+          password: md5(password)\r\n+        }).then(data => {\r\n+          console.log(data)\r\n+          state.commit()\r\n+          resolve(data)\r\n+        }).catch(err => {\r\n+          reject(err)\r\n+        })\r\n+      })\r\n+    }\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1693587533534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,40 @@\n+import { login } from '@/api/sys'\r\n+import { TOKEN } from '@/constant/index'\r\n+import { getItem, setItem } from '@/utils/storage'\r\n+import md5 from 'md5'\r\n+\r\n+export default {\r\n+  namespaced: true,\r\n+  state: () => ({\r\n+    token: getItem(TOKEN) || ''\r\n+  }),\r\n+  mutations: {\r\n+    setToken(state, token) {\r\n+      state.token = token\r\n+      setItem(TOKEN, token)\r\n+    }\r\n+  },\r\n+  actions: {\r\n+    /**\r\n+     * 登录请求动作\r\n+     * @param {*} context\r\n+     * @param {*} userInfo\r\n+     * @returns\r\n+     */\r\n+    login(context, userInfo) {\r\n+      const { username, password } = userInfo\r\n+      return new Promise((resolve, reject) => {\r\n+        login({\r\n+          username,\r\n+          password: md5(password)\r\n+        }).then(data => {\r\n+          console.log(data)\r\n+          this.commit('/user/setToken', )\r\n+          resolve(data)\r\n+        }).catch(err => {\r\n+          reject(err)\r\n+        })\r\n+      })\r\n+    }\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1693587551080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,93 +27,14 @@\n         login({\r\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n-          console.log(data)\r\n-          this.commit('/user/setToken', )\r\n+          console.log(data.)\r\n+          this.commit('user/setToken', )\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n       })\r\n     }\r\n   }\r\n }\r\n-import { login } from '@/api/sys'\r\n-import { TOKEN } from '@/constant/index'\r\n-import { getItem, setItem } from '@/utils/storage'\r\n-import md5 from 'md5'\r\n-\r\n-export default {\r\n-  namespaced: true,\r\n-  state: () => ({\r\n-    token: getItem(TOKEN) || ''\r\n-  }),\r\n-  mutations: {\r\n-    setToken(state, token) {\r\n-      state.token = token\r\n-      setItem(TOKEN, token)\r\n-    }\r\n-  },\r\n-  actions: {\r\n-    /**\r\n-     * 登录请求动作\r\n-     * @param {*} context\r\n-     * @param {*} userInfo\r\n-     * @returns\r\n-     */\r\n-    login(context, userInfo) {\r\n-      const { username, password } = userInfo\r\n-      return new Promise((resolve, reject) => {\r\n-        login({\r\n-          username,\r\n-          password: md5(password)\r\n-        }).then(data => {\r\n-          console.log(data)\r\n-          state.commit()\r\n-          resolve(data)\r\n-        }).catch(err => {\r\n-          reject(err)\r\n-        })\r\n-      })\r\n-    }\r\n-  }\r\n-}\r\n-import { login } from '@/api/sys'\r\n-import md5 from 'md5'\r\n-import { setItem, getItem } from '@/utils/storage'\r\n-import { TOKEN } from '@/constant/index'\r\n-\r\n-export default {\r\n-  namespaced: true,\r\n-  state: () => ({\r\n-    token: getItem(TOKEN) || ''\r\n-  }),\r\n-  mutations: {\r\n-    setToken(state, token) {\r\n-      state.token = token\r\n-      setItem(TOKEN, token)\r\n-    }\r\n-  },\r\n-  actions: {\r\n-    /**\r\n-     * 登录请求动作\r\n-     * @param {*} context\r\n-     * @param {*} userInfo\r\n-     * @returns\r\n-     */\r\n-    login(context, userInfo) {\r\n-      const { username, password } = userInfo\r\n-      return new Promise((resolve, reject) => {\r\n-        login({\r\n-          username,\r\n-          password: md5(password)\r\n-        }).then(data => {\r\n-          console.log(data)\r\n-          resolve(data)\r\n-        }).catch(err => {\r\n-          reject(err)\r\n-        })\r\n-      })\r\n-    }\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1693587564270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,10 @@\n         login({\r\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n-          console.log(data.)\r\n-          this.commit('user/setToken', )\r\n+          console.log(data.data.data.token)\r\n+          // this.commit('user/setToken', )\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n"
+                },
+                {
+                    "date": 1693587577672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n           console.log(data.data.data.token)\r\n-          // this.commit('user/setToken', )\r\n+          this.commit('user/setToken', data.data.data.token)\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n"
+                },
+                {
+                    "date": 1693587605559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,9 @@\n         login({\r\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n-          console.log(data.data.data.token)\r\n-          this.commit('user/setToken', data.data.data.token)\r\n+          context.commit('user/setToken', data.data.data.token)\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n"
+                },
+                {
+                    "date": 1693587616070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n         login({\r\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n-          context.commit('user/setToken', data.data.data.token)\r\n+          context.commit('setToken', data.data.data.token)\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n"
+                },
+                {
+                    "date": 1693587644311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n         login({\r\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n+          console.log(data.data.data.token)\r\n           context.commit('setToken', data.data.data.token)\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n"
+                },
+                {
+                    "date": 1693587684133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n           console.log(data.data.data.token)\r\n-          context.commit('setToken', data.data.data.token)\r\n+          this.commit('setToken', data.data.data.token)\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n"
+                },
+                {
+                    "date": 1693587702765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n           console.log(data.data.data.token)\r\n-          this.commit('setToken', data.data.data.token)\r\n+          this.commit('user/setToken', data.data.data.token)\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n"
+                },
+                {
+                    "date": 1693588416887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,13 @@\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n           console.log(data.data.data.token)\r\n+          // this 表示顶级命名空间下的 context\r\n           this.commit('user/setToken', data.data.data.token)\r\n+          // context 是具体命名空间的  this\r\n+          // context.commit('setToken', data.data.data.token)\r\n+          // 两者命名空间不同\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n"
+                },
+                {
+                    "date": 1693588466404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,13 +28,13 @@\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n           console.log(data.data.data.token)\r\n-          // this 表示顶级命名空间下的 context\r\n+          // 两种设置数据的方法。两者命名空间不同\r\n+          // 第一种：this 表示顶级命名空间下的 context\r\n           this.commit('user/setToken', data.data.data.token)\r\n-          // context 是具体命名空间的  this\r\n+          // 第二种：context 是具体命名空间的  this\r\n           // context.commit('setToken', data.data.data.token)\r\n-          // 两者命名空间不同\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n"
+                },
+                {
+                    "date": 1693588473830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n           // 第一种：this 表示顶级命名空间下的 context\r\n           this.commit('user/setToken', data.data.data.token)\r\n           // 第二种：context 是具体命名空间的  this\r\n           // context.commit('setToken', data.data.data.token)\r\n+\r\n           resolve(data)\r\n         }).catch(err => {\r\n           reject(err)\r\n         })\r\n"
+                },
+                {
+                    "date": 1693589031131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n         login({\r\n           username,\r\n           password: md5(password)\r\n         }).then(data => {\r\n-          console.log(data.data.data.token)\r\n+          console.log(data)\r\n           // 两种设置数据的方法。两者命名空间不同\r\n           // 第一种：this 表示顶级命名空间下的 context\r\n           this.commit('user/setToken', data.data.data.token)\r\n           // 第二种：context 是具体命名空间的  this\r\n"
+                },
+                {
+                    "date": 1693590217694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,12 +28,11 @@\n           username,\r\n           password: md5(password)\r\n         })\r\n           .then((data) => {\r\n-            console.log(data)\r\n             // 两种设置数据的方法。两者命名空间不同\r\n             // 第一种：this 表示顶级命名空间下的 context\r\n-            this.commit('user/setToken', data.data.data.token)\r\n+            this.commit('user/setToken', data.token)\r\n             // 第二种：context 是具体命名空间的  this\r\n             // context.commit('setToken', data.data.data.token)\r\n \r\n             resolve(data)\r\n"
+                },
+                {
+                    "date": 1693590857730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { login } from '@/api/sys'\r\n import { TOKEN } from '@/constant/index'\r\n import { getItem, setItem } from '@/utils/storage'\r\n import md5 from 'md5'\r\n+import router from '@/router'\r\n \r\n export default {\r\n   namespaced: true,\r\n   state: () => ({\r\n@@ -33,9 +34,9 @@\n             // 第一种：this 表示顶级命名空间下的 context\r\n             this.commit('user/setToken', data.token)\r\n             // 第二种：context 是具体命名空间的  this\r\n             // context.commit('setToken', data.data.data.token)\r\n-\r\n+            router.push('/')\r\n             resolve(data)\r\n           })\r\n           .catch((err) => {\r\n             reject(err)\r\n"
+                }
+            ],
+            "date": 1693579101114,
+            "name": "Commit-0",
+            "content": "export default {\r\n  namespaced: true,\r\n  state: () => ({}),\r\n  mutations: {},\r\n  actions: {\r\n    login (context, userInfo) {\r\n\r\n    }\r\n  }\r\n}\r\n"
+        }
+    ]
+}

@@ -1,0 +1,166 @@
+{
+    "sourceFile": "src/views/article-ranking/sortable/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 37,
+            "patches": [
+                {
+                    "date": 1704532148626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704532302440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,11 @@\n-import Sortable from \"sortablejs\";\r\n+import Sortable from 'sortablejs'\r\n+import { ref } from 'vue'\r\n\\ No newline at end of file\n \r\n-export const initSortable = \n+export const tableRef = ref(null)\r\n+\r\n+export const initSortable = () => {\r\n+  const el = tableRef.value\r\n+  // 1: 要拖拽的元素\r\n+  // 2：配置对象\r\n+  Sortable.create(el)\r\n+}\r\n"
+                },
+                {
+                    "date": 1704532884600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n-  const el = tableRef.value\r\n+  const el = tableRef.value.$el.querySelectorAll('')\r\n+\r\n   // 1: 要拖拽的元素\r\n   // 2：配置对象\r\n   Sortable.create(el)\r\n }\r\n"
+                },
+                {
+                    "date": 1704532959087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,14 @@\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n-  const el = tableRef.value.$el.querySelectorAll('')\r\n-\r\n+  console.log(tableRef)\r\n+  const el = tableRef.value.$el.querySelectorAll(\r\n+    '.el-table__body-wrapper > table > tbody'\r\n+  )[0]\r\n\\ No newline at end of file\n   // 1: 要拖拽的元素\r\n   // 2：配置对象\r\n-  Sortable.create(el)\r\n-}\n+  Sortable.create(el, {\r\n+    ghostClass: 'sortable-ghost'\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1704533034270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,13 @@\n   console.log(tableRef)\r\n   const el = tableRef.value.$el.querySelectorAll(\r\n     '.el-table__body-wrapper > table > tbody'\r\n   )[0]\r\n+\r\n   // 1: 要拖拽的元素\r\n   // 2：配置对象\r\n   Sortable.create(el, {\r\n-    ghostClass: 'sortable-ghost'\r\n+    // 拖拽时的类名\r\n\\ No newline at end of file\n+    ghostClass: 'sortable-ghost',\r\n+    onEnd() {}\r\n   })\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1704533211186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,5 @@\n     // 拖拽时的类名\r\n     ghostClass: 'sortable-ghost',\r\n     onEnd() {}\r\n   })\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1704533395517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,19 @@\n-import Sortable from 'sortablejs'\r\n+// import Sortable from 'sortablejs'\r\n import { ref } from 'vue'\r\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n   console.log(tableRef)\r\n-  const el = tableRef.value.$el.querySelectorAll(\r\n-    '.el-table__body-wrapper > table > tbody'\r\n-  )[0]\r\n+  // const el = tableRef.value.$el.querySelectorAll(\r\n+  //   '.el-table__body-wrapper > table > tbody'\r\n+  // )[0]\r\n \r\n-  // 1: 要拖拽的元素\r\n-  // 2：配置对象\r\n-  Sortable.create(el, {\r\n-    // 拖拽时的类名\r\n-    ghostClass: 'sortable-ghost',\r\n-    onEnd() {}\r\n-  })\r\n+  // // 1: 要拖拽的元素\r\n+  // // 2：配置对象\r\n+  // Sortable.create(el, {\r\n+  //   // 拖拽时的类名\r\n+  //   ghostClass: 'sortable-ghost',\r\n+  //   onEnd() {}\r\n+  // })\r\n }\r\n"
+                },
+                {
+                    "date": 1704533415790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n-  console.log(tableRef)\r\n+  console.log(tableRef.value)\r\n   // const el = tableRef.value.$el.querySelectorAll(\r\n   //   '.el-table__body-wrapper > table > tbody'\r\n   // )[0]\r\n \r\n"
+                },
+                {
+                    "date": 1704533472948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,12 @@\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n   console.log(tableRef.value)\r\n-  // const el = tableRef.value.$el.querySelectorAll(\r\n-  //   '.el-table__body-wrapper > table > tbody'\r\n-  // )[0]\r\n+  const el = tableRef.value.$el.querySelectorAll(\r\n+    '.el-table__body-wrapper > table > tbody'\r\n+  )[0]\r\n+  console.log(el)\r\n \r\n   // // 1: 要拖拽的元素\r\n   // // 2：配置对象\r\n   // Sortable.create(el, {\r\n"
+                },
+                {
+                    "date": 1704533484331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n export const initSortable = () => {\r\n   console.log(tableRef.value)\r\n   const el = tableRef.value.$el.querySelectorAll(\r\n     '.el-table__body-wrapper > table > tbody'\r\n-  )[0]\r\n+  )\r\n   console.log(el)\r\n \r\n   // // 1: 要拖拽的元素\r\n   // // 2：配置对象\r\n"
+                },
+                {
+                    "date": 1704535148639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n export const initSortable = () => {\r\n   console.log(tableRef.value)\r\n   const el = tableRef.value.$el.querySelectorAll(\r\n-    '.el-table__body-wrapper > table > tbody'\r\n+    '.el-table__body-wrapper table > tbody'\r\n   )\r\n   console.log(el)\r\n \r\n   // // 1: 要拖拽的元素\r\n"
+                },
+                {
+                    "date": 1704535187000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n export const initSortable = () => {\r\n   console.log(tableRef.value)\r\n   const el = tableRef.value.$el.querySelectorAll(\r\n-    '.el-table__body-wrapper table > tbody'\r\n+    '.el-table__body-wrapper table'\r\n   )\r\n   console.log(el)\r\n \r\n   // // 1: 要拖拽的元素\r\n"
+                },
+                {
+                    "date": 1704535306636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n export const initSortable = () => {\r\n   console.log(tableRef.value)\r\n   const el = tableRef.value.$el.querySelectorAll(\r\n-    '.el-table__body-wrapper table'\r\n+    '.el-table__body-wrapper table > tbody'\r\n   )\r\n   console.log(el)\r\n \r\n   // // 1: 要拖拽的元素\r\n"
+                },
+                {
+                    "date": 1704535320996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n   console.log(tableRef.value)\r\n-  const el = tableRef.value.$el.querySelectorAll(\r\n+  const el = tableRef.value.$el.querySelector(\r\n     '.el-table__body-wrapper table > tbody'\r\n   )\r\n   console.log(el)\r\n \r\n"
+                },
+                {
+                    "date": 1704535346382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n   console.log(tableRef.value)\r\n-  const el = tableRef.value.$el.querySelector(\r\n+  const el = tableRef.value.$el.querySelectorAll(\r\n     '.el-table__body-wrapper table > tbody'\r\n-  )\r\n+  )[0]\r\n   console.log(el)\r\n \r\n   // // 1: 要拖拽的元素\r\n   // // 2：配置对象\r\n"
+                },
+                {
+                    "date": 1704535406994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n-  console.log(tableRef.value)\r\n+  console.log(\r\n+    tableRef.value$el.querySelector('.el-table__body-wrapper table > tbody')\r\n+  )\r\n   const el = tableRef.value.$el.querySelectorAll(\r\n     '.el-table__body-wrapper table > tbody'\r\n   )[0]\r\n   console.log(el)\r\n"
+                },
+                {
+                    "date": 1704535414390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n   console.log(\r\n-    tableRef.value$el.querySelector('.el-table__body-wrapper table > tbody')\r\n+    tableRef.value.$el.querySelector('.el-table__body-wrapper table > tbody')\r\n   )\r\n   const el = tableRef.value.$el.querySelectorAll(\r\n     '.el-table__body-wrapper table > tbody'\r\n   )[0]\r\n"
+                },
+                {
+                    "date": 1704535453639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,11 @@\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n-  console.log(\r\n-    tableRef.value.$el.querySelector('.el-table__body-wrapper table > tbody')\r\n+  const el = tableRef.value.$el.querySelector(\r\n+    '.el-table__body-wrapper table > tbody'\r\n   )\r\n-  const el = tableRef.value.$el.querySelectorAll(\r\n-    '.el-table__body-wrapper table > tbody'\r\n-  )[0]\r\n   console.log(el)\r\n \r\n   // // 1: 要拖拽的元素\r\n   // // 2：配置对象\r\n"
+                },
+                {
+                    "date": 1704535470073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,11 @@\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n-  const el = tableRef.value.$el.querySelector(\r\n+  const el = tableRef.value.$el.querySelectorAll(\r\n     '.el-table__body-wrapper table > tbody'\r\n-  )\r\n+  )[0]\r\n   console.log(el)\r\n \r\n   // // 1: 要拖拽的元素\r\n   // // 2：配置对象\r\n"
+                },
+                {
+                    "date": 1704535477785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-// import Sortable from 'sortablejs'\r\n+import Sortable from 'sortablejs'\r\n import { ref } from 'vue'\r\n \r\n export const tableRef = ref(null)\r\n \r\n@@ -8,12 +8,12 @@\n     '.el-table__body-wrapper table > tbody'\r\n   )[0]\r\n   console.log(el)\r\n \r\n-  // // 1: 要拖拽的元素\r\n-  // // 2：配置对象\r\n-  // Sortable.create(el, {\r\n-  //   // 拖拽时的类名\r\n-  //   ghostClass: 'sortable-ghost',\r\n-  //   onEnd() {}\r\n-  // })\r\n+  // 1: 要拖拽的元素\r\n+  // 2：配置对象\r\n+  Sortable.create(el, {\r\n+    // 拖拽时的类名\r\n+    ghostClass: 'sortable-ghost',\r\n+    onEnd() {}\r\n+  })\r\n }\r\n"
+                },
+                {
+                    "date": 1704535879390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,8 @@\n   // 2：配置对象\r\n   Sortable.create(el, {\r\n     // 拖拽时的类名\r\n     ghostClass: 'sortable-ghost',\r\n-    onEnd() {}\r\n+    // 拖拽结束后的回调方法\r\n+    onEnd(event) {}\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536507467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import Sortable from 'sortablejs'\r\n import { ref } from 'vue'\r\n+import { }\r\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n@@ -14,7 +15,10 @@\n   Sortable.create(el, {\r\n     // 拖拽时的类名\r\n     ghostClass: 'sortable-ghost',\r\n     // 拖拽结束后的回调方法\r\n-    onEnd(event) {}\r\n+    onEnd(event) {\r\n+      const { newIndex, OldIndex } = event\r\n+\r\n+    }\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536541176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import Sortable from 'sortablejs'\r\n import { ref } from 'vue'\r\n-import { }\r\n+import { articleSort } from '@/api/article'\r\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = () => {\r\n@@ -17,8 +17,8 @@\n     ghostClass: 'sortable-ghost',\r\n     // 拖拽结束后的回调方法\r\n     onEnd(event) {\r\n       const { newIndex, OldIndex } = event\r\n-\r\n+      articleSort({})\r\n     }\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536602390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { articleSort } from '@/api/article'\r\n \r\n export const tableRef = ref(null)\r\n \r\n-export const initSortable = () => {\r\n+export const initSortable = (tableData, cb) => {\r\n   const el = tableRef.value.$el.querySelectorAll(\r\n     '.el-table__body-wrapper table > tbody'\r\n   )[0]\r\n   console.log(el)\r\n@@ -17,8 +17,10 @@\n     ghostClass: 'sortable-ghost',\r\n     // 拖拽结束后的回调方法\r\n     onEnd(event) {\r\n       const { newIndex, OldIndex } = event\r\n-      articleSort({})\r\n+      articleSort({\r\n+        initRanking: tableData.value[OldIndex].ranking\r\n+      })\r\n     }\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536658688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,14 @@\n   Sortable.create(el, {\r\n     // 拖拽时的类名\r\n     ghostClass: 'sortable-ghost',\r\n     // 拖拽结束后的回调方法\r\n-    onEnd(event) {\r\n+    async onEnd(event) {\r\n       const { newIndex, OldIndex } = event\r\n-      articleSort({\r\n-        initRanking: tableData.value[OldIndex].ranking\r\n+      // 修改文章排名\r\n+      await articleSort({\r\n+        initRanking: tableData.value[OldIndex].ranking,\r\n+        finalRanking: tableData.value[newIndex].ranking\r\n       })\r\n     }\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536717403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import Sortable from 'sortablejs'\r\n import { ref } from 'vue'\r\n import { articleSort } from '@/api/article'\r\n+import { ElMessage } from 'element-plus'\r\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = (tableData, cb) => {\r\n@@ -22,7 +23,10 @@\n       await articleSort({\r\n         initRanking: tableData.value[OldIndex].ranking,\r\n         finalRanking: tableData.value[newIndex].ranking\r\n       })\r\n+      ElMessage.success({\r\n+        message: \r\n+      })\r\n     }\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536734362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import Sortable from 'sortablejs'\r\n import { ref } from 'vue'\r\n import { articleSort } from '@/api/article'\r\n import { ElMessage } from 'element-plus'\r\n+import i18n from '@/i18n'\r\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = (tableData, cb) => {\r\n@@ -24,9 +25,9 @@\n         initRanking: tableData.value[OldIndex].ranking,\r\n         finalRanking: tableData.value[newIndex].ranking\r\n       })\r\n       ElMessage.success({\r\n-        message: \r\n+        message: i18n\r\n       })\r\n     }\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536772390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,10 @@\n         initRanking: tableData.value[OldIndex].ranking,\r\n         finalRanking: tableData.value[newIndex].ranking\r\n       })\r\n       ElMessage.success({\r\n-        message: i18n\r\n+        message: i18n.global.t('msg.article.sortSuccess'),\r\n+        type: 'success'\r\n       })\r\n     }\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536793555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,6 +29,8 @@\n         message: i18n.global.t('msg.article.sortSuccess'),\r\n         type: 'success'\r\n       })\r\n     }\r\n+\r\n+    //\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536847125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n+import { articleSort } from '@/api/article'\r\n+import i18n from '@/i18n'\r\n+import { ElMessage } from 'element-plus'\r\n import Sortable from 'sortablejs'\r\n import { ref } from 'vue'\r\n-import { articleSort } from '@/api/article'\r\n-import { ElMessage } from 'element-plus'\r\n-import i18n from '@/i18n'\r\n \r\n export const tableRef = ref(null)\r\n \r\n export const initSortable = (tableData, cb) => {\r\n@@ -30,7 +30,9 @@\n         type: 'success'\r\n       })\r\n     }\r\n \r\n-    //\r\n+    // 直接重新获取数据无法刷新table， 要先清空table数据\r\n+    tableData.value = []\r\n+    \r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536866754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         type: 'success'\r\n       })\r\n     }\r\n \r\n-    // 直接重新获取数据无法刷新table， 要先清空table数据\r\n-    tableData.value = []\r\n+  // 直接重新获取数据无法刷新table， 要先清空table数据\r\n+  tableData.value = []\r\n     \r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536890032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,9 @@\n       ElMessage.success({\r\n         message: i18n.global.t('msg.article.sortSuccess'),\r\n         type: 'success'\r\n       })\r\n+      // 直接重新获取数据无法刷新table， 要先清空table数据\r\n+      tableData.value = []\r\n     }\r\n-\r\n-  // 直接重新获取数据无法刷新table， 要先清空table数据\r\n-  tableData.value = []\r\n-    \r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536896513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n       ElMessage.success({\r\n         message: i18n.global.t('msg.article.sortSuccess'),\r\n         type: 'success'\r\n       })\r\n+\r\n       // 直接重新获取数据无法刷新table， 要先清空table数据\r\n       tableData.value = []\r\n     }\r\n   })\r\n"
+                },
+                {
+                    "date": 1704536916986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,9 @@\n       })\r\n \r\n       // 直接重新获取数据无法刷新table， 要先清空table数据\r\n       tableData.value = []\r\n+      // 重新获取数据\r\n+      cb && cb()\r\n     }\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1704536994498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,8 @@\n export const initSortable = (tableData, cb) => {\r\n   const el = tableRef.value.$el.querySelectorAll(\r\n     '.el-table__body-wrapper table > tbody'\r\n   )[0]\r\n-  console.log(el)\r\n \r\n   // 1: 要拖拽的元素\r\n   // 2：配置对象\r\n   Sortable.create(el, {\r\n@@ -19,8 +18,9 @@\n     ghostClass: 'sortable-ghost',\r\n     // 拖拽结束后的回调方法\r\n     async onEnd(event) {\r\n       const { newIndex, OldIndex } = event\r\n+      console.log(tableData)\r\n       // 修改文章排名\r\n       await articleSort({\r\n         initRanking: tableData.value[OldIndex].ranking,\r\n         finalRanking: tableData.value[newIndex].ranking\r\n"
+                },
+                {
+                    "date": 1704537081582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     ghostClass: 'sortable-ghost',\r\n     // 拖拽结束后的回调方法\r\n     async onEnd(event) {\r\n       const { newIndex, OldIndex } = event\r\n-      console.log(tableData)\r\n+      console.log(tableData.value)\r\n       // 修改文章排名\r\n       await articleSort({\r\n         initRanking: tableData.value[OldIndex].ranking,\r\n         finalRanking: tableData.value[newIndex].ranking\r\n"
+                },
+                {
+                    "date": 1704537115004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n     ghostClass: 'sortable-ghost',\r\n     // 拖拽结束后的回调方法\r\n     async onEnd(event) {\r\n       const { newIndex, OldIndex } = event\r\n+      console.log(newIndex, OldIndex)\r\n       console.log(tableData.value)\r\n       // 修改文章排名\r\n       await articleSort({\r\n         initRanking: tableData.value[OldIndex].ranking,\r\n"
+                },
+                {
+                    "date": 1704537137884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,14 +17,12 @@\n     // 拖拽时的类名\r\n     ghostClass: 'sortable-ghost',\r\n     // 拖拽结束后的回调方法\r\n     async onEnd(event) {\r\n-      const { newIndex, OldIndex } = event\r\n-      console.log(newIndex, OldIndex)\r\n-      console.log(tableData.value)\r\n+      const { newIndex, oldIndex } = event\r\n       // 修改文章排名\r\n       await articleSort({\r\n-        initRanking: tableData.value[OldIndex].ranking,\r\n+        initRanking: tableData.value[oldIndex].ranking,\r\n         finalRanking: tableData.value[newIndex].ranking\r\n       })\r\n       ElMessage.success({\r\n         message: i18n.global.t('msg.article.sortSuccess'),\r\n"
+                }
+            ],
+            "date": 1704532148626,
+            "name": "Commit-0",
+            "content": "import Sortable from \"sortablejs\";\r\n\r\nexport const initSortable = "
+        }
+    ]
+}

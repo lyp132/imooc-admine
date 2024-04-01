@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/views/article-create/components/Editor.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1706619899836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706790054084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,21 @@\n <template>\r\n-  <div>editor</div>\r\n+  <div class=\"editor-container\">\r\n+    <div class=\"editor-box\"></div>\r\n+    <div class=\"bottom\">\r\n+      <el-button type=\"primary\" @click=\"onSubmitClick\">{{ $t('msg.article.commit') }}</el-button>\r\n+    </div>\r\n+  </div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n </script>\r\n \r\n <style  lang=\"scss\" scoped>\r\n+.editor-container {\r\n+  .bottom {\r\n+    margin-top: .2rem;\r\n+    text-align: right;\r\n+  }\r\n+}\r\n </style>\r\n"
+                },
+                {
+                    "date": 1706790089294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,11 @@\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n+const onSubmitClick = () => {\r\n+  console.log('点击提交')\r\n+}\r\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n .editor-container {\r\n"
+                },
+                {
+                    "date": 1706790172675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,11 @@\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n-import {} from 'vue'\r\n+import '@wangeditor/editor/dist/css/style.css' // 引入 css\r\n+import { onBeforeUnmount, ref, shallowRef, onMounted } from 'vue'\r\n+import { Editor, Toolbar } from '@wangeditor/editor-for-vue'\r\n const onSubmitClick = () => {\r\n   console.log('点击提交')\r\n }\r\n </script>\r\n"
+                }
+            ],
+            "date": 1706619899836,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div>editor</div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n</style>\r\n"
+        }
+    ]
+}

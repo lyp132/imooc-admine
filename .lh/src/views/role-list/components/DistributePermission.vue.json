@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/views/role-list/components/DistributePermission.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1699703278770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699703644140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <el-dialog></el-dialog>\r\n+  <el-dialog :title=\"$t('msg.')\"></el-dialog>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1699703764520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <el-dialog :title=\"$t('msg.')\"></el-dialog>\r\n+  <el-dialog :title=\"$t('msg.excel.roleDialogTitle') :model-value=modelValue\"></el-dialog>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1699703794833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <el-dialog\r\n-    :title=\"$t('msg.excel.roleDialogTitle') :model-value=modelValue\"\r\n+    :title=\"$t('msg.excel.roleDialogTitle') :model-value=\"modelValue\"\r\n   ></el-dialog>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1699703808770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n   ></el-dialog>\r\n </template>\r\n \r\n <script setup>\r\n-import { } from 'vue';\r\n+import {} from 'vue'\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                }
+            ],
+            "date": 1699703278770,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <el-dialog></el-dialog>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

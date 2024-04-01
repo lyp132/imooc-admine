@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/PanThumb/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1695981400837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695981782370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,19 @@\n \r\n <script setup>\r\n import {} from 'vue'\r\n defineProps({\r\n-  image: {},\r\n-  zIndex: {},\r\n-  width: {},\r\n+  image: {\r\n+    type: String\r\n+  },\r\n+  zIndex: {\r\n+    type: Number,\r\n+    default: 1\r\n+  },\r\n+  width: {\r\n+    type: String,\r\n+    default: '150px'\r\n+  },\r\n   height: {}\r\n })\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1695981859152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n <template>\r\n-  <div class=\"pan-item\" :style=\"\"></div>\r\n+  <div class=\"pan-item\" :style=\"{zIndex: zIndex, height: height, width: width}\">\r\n+    <div class=\"pan-info\"></div>\r\n+    <div class=\"pan-thumb\"></div>\r\n+  </div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n@@ -15,9 +18,12 @@\n   width: {\r\n     type: String,\r\n     default: '150px'\r\n   },\r\n-  height: {}\r\n+  height: {\r\n+    type: String,\r\n+    default: '150px'\r\n+  }\r\n })\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1695981959475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n   <div\r\n     class=\"pan-item\"\r\n     :style=\"{ zIndex: zIndex, height: height, width: width }\"\r\n   >\r\n+    <!-- 内层展示信息 -->\r\n     <div class=\"pan-info\"></div>\r\n+    <!-- 外层旋转图片 -->\r\n     <div class=\"pan-thumb\"></div>\r\n   </div>\r\n </template>\r\n \r\n"
+                }
+            ],
+            "date": 1695981400837,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div class=\"pan-item\" :style=\"\"></div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\ndefineProps({\r\n  image: {},\r\n  zIndex: {},\r\n  width: {},\r\n  height: {}\r\n})\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

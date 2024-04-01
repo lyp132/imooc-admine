@@ -1,0 +1,106 @@
+{
+    "sourceFile": "src/views/article-detail/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 22,
+            "patches": [
+                {
+                    "date": 1706089789704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706089962945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,20 @@\n   <div class=\"\">文章详情</div>\r\n </template>\r\n \r\n <script setup>\r\n-import {} from 'vue'\r\n+import { articleDetail } from '@/api/article'\r\n+import { ref } from 'vue'\r\n import { useRoute } from 'vue-router'\r\n \r\n const route = useRoute()\r\n-const articleId = route.params\r\n-console.log(articleId)\r\n+const articleId = route.params.id\r\n+const detail = ref({})\r\n+// 获取文章详情数据\r\n+const getArticleDetail = async () => {\r\n+  detail.value = await articleDetail(articleId)\r\n+  console.log(detail)\r\n+}\r\n+getArticleDetail()\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1706090446934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,11 @@\n <template>\r\n-  <div class=\"\">文章详情</div>\r\n+  <div class=\"article-detail-container\">\r\n+    <!-- 标题 -->\r\n+    <h2 class=\"title\">{{ detail }}</h2>\r\n+    <!-- 头部 -->\r\n+    <!-- 内容 -->\r\n+  </div>\r\n </template>\r\n \r\n <script setup>\r\n import { articleDetail } from '@/api/article'\r\n"
+                },
+                {
+                    "date": 1706090625504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,18 @@\n <template>\r\n   <div class=\"article-detail-container\">\r\n     <!-- 标题 -->\r\n-    <h2 class=\"title\">{{ detail }}</h2>\r\n+    <h2 class=\"title\">{{ detail.title }}</h2>\r\n     <!-- 头部 -->\r\n+    <div class=\"header\">\r\n+      <span class=\"author\">\r\n+        {{ $t('msg.article.author') }}：{{ detail.author }}\r\n+      </span>\r\n+      <span class=\"time\">\r\n+        {{ $t('msg.article.publicDate') }}：{{ detail.publicDate }}\r\n+      </span>\r\n+      <el-button type=\"text\" class=\"edit\"></el-button>\r\n+    </div>\r\n     <!-- 内容 -->\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1706090691557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,14 @@\n       </span>\r\n       <span class=\"time\">\r\n         {{ $t('msg.article.publicDate') }}：{{ detail.publicDate }}\r\n       </span>\r\n-      <el-button type=\"text\" class=\"edit\"></el-button>\r\n+      <el-button type=\"text\" class=\"edit\" @click=\"onEditClick\">{{\r\n+        $t('msg.article.edit')\r\n+      }}</el-button>\r\n     </div>\r\n     <!-- 内容 -->\r\n+    <div class=\"content\" v-html=\"detail.content\"></div>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1706090712552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,5 +34,6 @@\n }\r\n getArticleDetail()\r\n </script>\r\n \r\n-<style lang=\"scss\" scoped></style>\r\n+<style lang=\"scss\" scoped>\r\n+</style>\r\n"
+                },
+                {
+                    "date": 1706090772362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,5 +35,12 @@\n getArticleDetail()\r\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n+.article-detail-container {\r\n+  .title {\r\n+    font-size: 0.22rem;\r\n+    text-align: center;\r\n+    padding: 0.12rem 0;\r\n+  }\r\n+}\r\n </style>\r\n"
+                },
+                {
+                    "date": 1706090837070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,6 +41,12 @@\n     font-size: 0.22rem;\r\n     text-align: center;\r\n     padding: 0.12rem 0;\r\n   }\r\n+  .header {\r\n+    padding: 0.26rem 0;\r\n+    .author {\r\n+      font-size: ;\r\n+    }\r\n+  }\r\n }\r\n </style>\r\n"
+                },
+                {
+                    "date": 1706090875389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,11 @@\n     padding: 0.12rem 0;\r\n   }\r\n   .header {\r\n     padding: 0.26rem 0;\r\n+    font-size: 0.14rem;\r\n     .author {\r\n-      font-size: ;\r\n+      color: ;\r\n     }\r\n   }\r\n }\r\n </style>\r\n"
+                },
+                {
+                    "date": 1706090908206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,14 @@\n   .header {\r\n     padding: 0.26rem 0;\r\n     font-size: 0.14rem;\r\n     .author {\r\n-      color: ;\r\n+      color: #555666;\r\n+      margin-right: 0.2rem;\r\n     }\r\n+    .time {\r\n+      color: #555666;\r\n+      margin-right: 0.2rem;\r\n+    }\r\n   }\r\n }\r\n </style>\r\n"
+                },
+                {
+                    "date": 1706090932717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,10 +49,13 @@\n       color: #555666;\r\n       margin-right: 0.2rem;\r\n     }\r\n     .time {\r\n-      color: #555666;\r\n+      color: #999aaa;\r\n       margin-right: 0.2rem;\r\n     }\r\n+    .edit {\r\n+      float: right;\r\n+    }\r\n   }\r\n }\r\n </style>\r\n"
+                },
+                {
+                    "date": 1706091002708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,6 +56,11 @@\n     .edit {\r\n       float: right;\r\n     }\r\n   }\r\n+  .content {\r\n+    font-size: 0.14rem;\r\n+    padding: 0.2rem 0;\r\n+    border-top: 0.01rem solid #;\r\n+  }\r\n }\r\n </style>\r\n"
+                },
+                {
+                    "date": 1706091069507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,11 @@\n   detail.value = await articleDetail(articleId)\r\n   console.log(detail)\r\n }\r\n getArticleDetail()\r\n+const onEditClick = () => {\r\n+  console.log()\r\n+}\r\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n .article-detail-container {\r\n"
+                },
+                {
+                    "date": 1706091147897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,13 @@\n   detail.value = await articleDetail(articleId)\r\n   console.log(detail)\r\n }\r\n getArticleDetail()\r\n+/**\r\n+ * 编辑按钮点击事件\r\n+ */\r\n const onEditClick = () => {\r\n-  console.log()\r\n+  console.log('编辑按钮点击事件')\r\n }\r\n </script>\r\n \r\n <style lang=\"scss\" scoped>\r\n@@ -62,8 +65,8 @@\n   }\r\n   .content {\r\n     font-size: 0.14rem;\r\n     padding: 0.2rem 0;\r\n-    border-top: 0.01rem solid #;\r\n+    border-top: 0.01rem solid #d4d4d4;\r\n   }\r\n }\r\n </style>\r\n"
+                },
+                {
+                    "date": 1706091365619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       </span>\r\n       <span class=\"time\">\r\n         {{ $t('msg.article.publicDate') }}：{{ detail.publicDate }}\r\n       </span>\r\n-      <el-button type=\"text\" class=\"edit\" @click=\"onEditClick\">{{\r\n+      <el-button type=\"primary\" class=\"edit\" @click=\"onEditClick\" link>{{\r\n         $t('msg.article.edit')\r\n       }}</el-button>\r\n     </div>\r\n     <!-- 内容 -->\r\n"
+                },
+                {
+                    "date": 1706091394888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,8 @@\n const detail = ref({})\r\n // 获取文章详情数据\r\n const getArticleDetail = async () => {\r\n   detail.value = await articleDetail(articleId)\r\n-  console.log(detail)\r\n }\r\n getArticleDetail()\r\n /**\r\n  * 编辑按钮点击事件\r\n"
+                },
+                {
+                    "date": 1706632347054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,11 @@\n       <span class=\"author\">\r\n         {{ $t('msg.article.author') }}：{{ detail.author }}\r\n       </span>\r\n       <span class=\"time\">\r\n-        {{ $t('msg.article.publicDate') }}：{{ detail.publicDate }}\r\n+        {{ $t('msg.article.publicDate') }}：{{\r\n+          $filters.relativeTime(detail.publicDate)\r\n+        }}\r\n       </span>\r\n       <el-button type=\"primary\" class=\"edit\" @click=\"onEditClick\" link>{{\r\n         $t('msg.article.edit')\r\n       }}</el-button>\r\n"
+                },
+                {
+                    "date": 1706777936772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n const detail = ref({})\r\n // 获取文章详情数据\r\n const getArticleDetail = async () => {\r\n   detail.value = await articleDetail(articleId)\r\n+  console.log(detail.value)\r\n }\r\n getArticleDetail()\r\n /**\r\n  * 编辑按钮点击事件\r\n"
+                },
+                {
+                    "date": 1706777988728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n const detail = ref({})\r\n // 获取文章详情数据\r\n const getArticleDetail = async () => {\r\n   detail.value = await articleDetail(articleId)\r\n-  console.log(detail.value)\r\n+  // console.log(detail.value)\r\n }\r\n getArticleDetail()\r\n /**\r\n  * 编辑按钮点击事件\r\n"
+                },
+                {
+                    "date": 1706779021496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \r\n <script setup>\r\n import { articleDetail } from '@/api/article'\r\n import { ref } from 'vue'\r\n-import { useRoute } from 'vue-router'\r\n+import { useRoute, useRouter } from 'vue-router'\r\n \r\n const route = useRoute()\r\n const articleId = route.params.id\r\n const detail = ref({})\r\n@@ -37,9 +37,11 @@\n getArticleDetail()\r\n /**\r\n  * 编辑按钮点击事件\r\n  */\r\n+const router = useRouter()\r\n const onEditClick = () => {\r\n+  router.push(`/`)\r\n   console.log('编辑按钮点击事件')\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1706779059323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n  * 编辑按钮点击事件\r\n  */\r\n const router = useRouter()\r\n const onEditClick = () => {\r\n-  router.push(`/`)\r\n+  router.push(`/article/editor/${articleId}`)\r\n   console.log('编辑按钮点击事件')\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1706784705093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n </template>\r\n \r\n <script setup>\r\n import { articleDetail } from '@/api/article'\r\n-import { ref } from 'vue'\r\n+import { onActivated, ref } from 'vue'\r\n import { useRoute, useRouter } from 'vue-router'\r\n \r\n const route = useRoute()\r\n const articleId = route.params.id\r\n@@ -33,9 +33,9 @@\n const getArticleDetail = async () => {\r\n   detail.value = await articleDetail(articleId)\r\n   // console.log(detail.value)\r\n }\r\n-getArticleDetail()\r\n+onActivated(getArticleDetail)\r\n /**\r\n  * 编辑按钮点击事件\r\n  */\r\n const router = useRouter()\r\n"
+                },
+                {
+                    "date": 1706784717850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,10 @@\n const getArticleDetail = async () => {\r\n   detail.value = await articleDetail(articleId)\r\n   // console.log(detail.value)\r\n }\r\n+// 调用时机为首次挂载\r\n+// 以及每次从缓存中被重新插入时\r\n onActivated(getArticleDetail)\r\n /**\r\n  * 编辑按钮点击事件\r\n  */\r\n"
+                }
+            ],
+            "date": 1706089789704,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div class=\"\">文章详情</div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\nimport { useRoute } from 'vue-router'\r\n\r\nconst route = useRoute()\r\nconst articleId = route.params\r\nconsole.log(articleId)\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

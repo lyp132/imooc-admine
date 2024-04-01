@@ -1,0 +1,90 @@
+{
+    "sourceFile": "src/api/user-manage.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1697021225841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1697021256635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,10 @@\n import request from '@/utils/request'\r\n \r\n+/**\r\n+ * 获取项目章节\r\n+ * @returns promise对象\r\n+ */\r\n export const getUserManageList = (data) => {\r\n   return request({\r\n     url: '/user-manage/list',\r\n     params: data\r\n"
+                },
+                {
+                    "date": 1697021281717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+import request from '@/utils/request'\r\n+\r\n+/**\r\n+ * 获取用户列表数据\r\n+ * @returns promise对象\r\n+ */\r\n+export const getUserManageList = (data) => {\r\n+  return request({\r\n+    url: '/user-manage/list',\r\n+    params: data\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1697863186925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,19 +6,20 @@\n  */\r\n export const getUserManageList = (data) => {\r\n   return request({\r\n     url: '/user-manage/list',\r\n+    method: 'GET',\r\n     params: data\r\n   })\r\n }\r\n-import request from '@/utils/request'\r\n-\r\n /**\r\n- * 获取项目章节\r\n- * @returns promise对象\r\n+ * 批量导入用户\r\n+ * @param {*} data []\r\n+ * @returns\r\n  */\r\n-export const getUserManageList = (data) => {\r\n+export const userBatchImport = (data) => {\r\n   return request({\r\n-    url: '/user-manage/list',\r\n-    params: data\r\n+    url: '/user-manage/batch/import',\r\n+    method: 'POST',\r\n+    data\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1697863338634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,4 +22,10 @@\n     method: 'POST',\r\n     data\r\n   })\r\n }\r\n+export const deleteUser = (id) => {\r\n+  return request({\r\n+    url: `/user-manage/detele/${id}`,\r\n+    method: 'GET'\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1697875732848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,21 @@\n     method: 'POST',\r\n     data\r\n   })\r\n }\r\n+/**\r\n+ * 删除用户\r\n+ * @param {*} id String 用户id\r\n+ * @returns\r\n+ */\r\n export const deleteUser = (id) => {\r\n   return request({\r\n     url: `/user-manage/detele/${id}`,\r\n     method: 'GET'\r\n   })\r\n }\r\n+\r\n+export const getUserManageAllList = () => {\r\n+  return request({\r\n+    url: '/user-manage/all-list'\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1697875766609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,10 +33,14 @@\n     url: `/user-manage/detele/${id}`,\r\n     method: 'GET'\r\n   })\r\n }\r\n-\r\n+/**\r\n+ * 获取所用用户列表\r\n+ * @returns\r\n+ */\r\n export const getUserManageAllList = () => {\r\n   return request({\r\n-    url: '/user-manage/all-list'\r\n+    url: '/user-manage/all-list',\r\n+    method: 'GET'\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1698481988112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,4 +43,6 @@\n     url: '/user-manage/all-list',\r\n     method: 'GET'\r\n   })\r\n }\r\n+\r\n+export const \r\n"
+                },
+                {
+                    "date": 1698482026974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,5 +44,9 @@\n     method: 'GET'\r\n   })\r\n }\r\n \r\n-export const \r\n+export const userDetail = () => {\r\n+  return request({\r\n+    url: ''\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1698482062082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,7 +46,7 @@\n }\r\n \r\n export const userDetail = () => {\r\n   return request({\r\n-    url: ''\r\n+    url: '/user-manage/detail/:id'\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1698482095551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     method: 'GET'\r\n   })\r\n }\r\n \r\n-export const userDetail = () => {\r\n+export const userDetail = (id) => {\r\n   return request({\r\n-    url: '/user-manage/detail/:id'\r\n+    url: `/user-manage/detail/${id}`\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1698482149627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,15 @@\n     method: 'GET'\r\n   })\r\n }\r\n \r\n+/**\r\n+ * 获取员工详情\r\n+ * @param {*} id '' 用户id\r\n+ * @returns \r\n+ */\r\n export const userDetail = (id) => {\r\n   return request({\r\n-    url: `/user-manage/detail/${id}`\r\n+    url: `/user-manage/detail/${id}`,\r\n+    method: 'GET'\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1698825329145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,12 +47,13 @@\n \r\n /**\r\n  * 获取员工详情\r\n  * @param {*} id '' 用户id\r\n- * @returns \r\n+ * @returns\r\n  */\r\n export const userDetail = (id) => {\r\n   return request({\r\n     url: `/user-manage/detail/${id}`,\r\n     method: 'GET'\r\n   })\r\n }\r\n+/user-manage/role/:userId\r\n"
+                },
+                {
+                    "date": 1698825351995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,5 +55,11 @@\n     url: `/user-manage/detail/${id}`,\r\n     method: 'GET'\r\n   })\r\n }\r\n-/user-manage/role/:userId\r\n+\r\n+export const userRoles = () => {\r\n+  return request({\r\n+    url: `\r\n+    /user-manage/role/:userId`\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1698825382797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,10 +56,10 @@\n     method: 'GET'\r\n   })\r\n }\r\n \r\n-export const userRoles = () => {\r\n+export const userRoles = (userId) => {\r\n   return request({\r\n-    url: `\r\n-    /user-manage/role/:userId`\r\n+    url: `/user-manage/role/${userId}`,\r\n+    method: 'GET'\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1698827701431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,4 +62,5 @@\n     url: `/user-manage/role/${userId}`,\r\n     method: 'GET'\r\n   })\r\n }\r\n+export cosnt \r\n"
+                },
+                {
+                    "date": 1698827803404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,5 +62,13 @@\n     url: `/user-manage/role/${userId}`,\r\n     method: 'GET'\r\n   })\r\n }\r\n-export cosnt \r\n+export const updateRole = (userId, roles) => {\r\n+  return request({\r\n+    url: `/user-manage/update-role/${userId}`,\r\n+    method: 'POST',\r\n+    data: {\r\n+      roles\r\n+    }\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1698827884863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,80 @@\n+import request from '@/utils/request'\r\n+\r\n+/**\r\n+ * 获取用户列表数据\r\n+ * @returns promise对象\r\n+ */\r\n+export const getUserManageList = (data) => {\r\n+  return request({\r\n+    url: '/user-manage/list',\r\n+    method: 'GET',\r\n+    params: data\r\n+  })\r\n+}\r\n+/**\r\n+ * 批量导入用户\r\n+ * @param {*} data []\r\n+ * @returns\r\n+ */\r\n+export const userBatchImport = (data) => {\r\n+  return request({\r\n+    url: '/user-manage/batch/import',\r\n+    method: 'POST',\r\n+    data\r\n+  })\r\n+}\r\n+/**\r\n+ * 删除用户\r\n+ * @param {*} id String 用户id\r\n+ * @returns\r\n+ */\r\n+export const deleteUser = (id) => {\r\n+  return request({\r\n+    url: `/user-manage/detele/${id}`,\r\n+    method: 'GET'\r\n+  })\r\n+}\r\n+/**\r\n+ * 获取所用用户列表\r\n+ * @returns\r\n+ */\r\n+export const getUserManageAllList = () => {\r\n+  return request({\r\n+    url: '/user-manage/all-list',\r\n+    method: 'GET'\r\n+  })\r\n+}\r\n+\r\n+/**\r\n+ * 获取员工详情\r\n+ * @param {*} id '' 用户id\r\n+ * @returns\r\n+ */\r\n+export const userDetail = (id) => {\r\n+  return request({\r\n+    url: `/user-manage/detail/${id}`,\r\n+    method: 'GET'\r\n+  })\r\n+}\r\n+\r\n+export const userRoles = (userId) => {\r\n+  return request({\r\n+    url: `/user-manage/role/${userId}`,\r\n+    method: 'GET'\r\n+  })\r\n+}\r\n+/**\r\n+ * 更新用户角色\r\n+ * @param {*} userId '' 用户id\r\n+ * @param {*} roles []\r\n+ * @returns\r\n+ */\r\n+export const updateRole = (userId, roles) => {\r\n+  return request({\r\n+    url: `/user-manage/update-role/${userId}`,\r\n+    method: 'POST',\r\n+    data: {\r\n+      roles\r\n+    }\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1698827917999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,84 @@\n+import request from '@/utils/request'\r\n+\r\n+/**\r\n+ * 获取用户列表数据\r\n+ * @returns promise对象\r\n+ */\r\n+export const getUserManageList = (data) => {\r\n+  return request({\r\n+    url: '/user-manage/list',\r\n+    method: 'GET',\r\n+    params: data\r\n+  })\r\n+}\r\n+/**\r\n+ * 批量导入用户\r\n+ * @param {*} data []\r\n+ * @returns\r\n+ */\r\n+export const userBatchImport = (data) => {\r\n+  return request({\r\n+    url: '/user-manage/batch/import',\r\n+    method: 'POST',\r\n+    data\r\n+  })\r\n+}\r\n+/**\r\n+ * 删除用户\r\n+ * @param {*} id String 用户id\r\n+ * @returns\r\n+ */\r\n+export const deleteUser = (id) => {\r\n+  return request({\r\n+    url: `/user-manage/detele/${id}`,\r\n+    method: 'GET'\r\n+  })\r\n+}\r\n+/**\r\n+ * 获取所用用户列表\r\n+ * @returns\r\n+ */\r\n+export const getUserManageAllList = () => {\r\n+  return request({\r\n+    url: '/user-manage/all-list',\r\n+    method: 'GET'\r\n+  })\r\n+}\r\n+\r\n+/**\r\n+ * 获取员工详情\r\n+ * @param {*} id '' 用户id\r\n+ * @returns\r\n+ */\r\n+export const userDetail = (id) => {\r\n+  return request({\r\n+    url: `/user-manage/detail/${id}`,\r\n+    method: 'GET'\r\n+  })\r\n+}\r\n+/**\r\n+ * 获取指定用户角色\r\n+ * @param {*} userId\r\n+ * @returns\r\n+ */\r\n+export const userRoles = (userId) => {\r\n+  return request({\r\n+    url: `/user-manage/role/${userId}`,\r\n+    method: 'GET'\r\n+  })\r\n+}\r\n+/**\r\n+ * 更新用户角色\r\n+ * @param {*} userId '' 用户id\r\n+ * @param {*} roles []\r\n+ * @returns\r\n+ */\r\n+export const updateRole = (userId, roles) => {\r\n+  return request({\r\n+    url: `/user-manage/update-role/${userId}`,\r\n+    method: 'POST',\r\n+    data: {\r\n+      roles\r\n+    }\r\n+  })\r\n+}\r\n"
+                }
+            ],
+            "date": 1697021225841,
+            "name": "Commit-0",
+            "content": "import request from '@/utils/request'\r\n\r\nexport const getUserManageList = (data) => {\r\n  return request({\r\n    url: '/user-manage/list',\r\n    params: data\r\n  })\r\n}\r\n"
+        }
+    ]
+}

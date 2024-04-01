@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/components/HeaderSearch/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1694857264271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1694857323980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n     border-radius: 0;\r\n     display: inline-block;\r\n     vertical-align: middle;\r\n \r\n-    ::v-deep .el-input__inner {\r\n+    :v-deep(.el-input__inner) {\r\n       border-radius: 0;\r\n       border: 0;\r\n       padding-left: 0;\r\n       padding-right: 0;\r\n"
+                },
+                {
+                    "date": 1694857375506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \r\n <style lang=\"scss\" scoped>\r\n .header-search {\r\n   font-size: 0 !important;\r\n-  .search-icon {\r\n+  :deep(.search-icon) {\r\n     cursor: pointer;\r\n     font-size: 18px;\r\n     vertical-align: middle;\r\n   }\r\n"
+                },
+                {
+                    "date": 1694859808210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,88 +0,0 @@\n-<template>\r\n-  <div :class=\"{ show: isShow }\" class=\"header-search\">\r\n-    <svg-icon\r\n-      class-name=\"search-icon\"\r\n-      icon=\"search\"\r\n-      @click.stop=\"onShowClick\"\r\n-    />\r\n-    <el-select\r\n-      ref=\"headerSearchSelectRef\"\r\n-      class=\"header-search-select\"\r\n-      v-model=\"search\"\r\n-      filterable\r\n-      default-first-option\r\n-      remote\r\n-      placeholder=\"Search\"\r\n-      :remote-method=\"querySearch\"\r\n-      @change=\"onSelectChange\"\r\n-    >\r\n-      <el-option\r\n-        v-for=\"option in 5\"\r\n-        :key=\"option\"\r\n-        :label=\"option\"\r\n-        :value=\"option\"\r\n-      ></el-option>\r\n-    </el-select>\r\n-  </div>\r\n-</template>\r\n-\r\n-<script setup>\r\n-import { ref } from 'vue'\r\n-\r\n-// 控制 search 显示\r\n-const isShow = ref(false)\r\n-// el-select 实例\r\n-const headerSearchSelectRef = ref(null)\r\n-const onShowClick = () => {\r\n-  isShow.value = !isShow.value\r\n-  headerSearchSelectRef.value.focus()\r\n-}\r\n-\r\n-// search 相关\r\n-const search = ref('')\r\n-// 搜索方法\r\n-const querySearch = () => {\r\n-  console.log('querySearch')\r\n-}\r\n-// 选中回调\r\n-const onSelectChange = () => {\r\n-  console.log('onSelectChange')\r\n-}\r\n-</script>\r\n-\r\n-<style lang=\"scss\" scoped>\r\n-.header-search {\r\n-  font-size: 0 !important;\r\n-  :deep(.search-icon) {\r\n-    cursor: pointer;\r\n-    font-size: 18px;\r\n-    vertical-align: middle;\r\n-  }\r\n-  .header-search-select {\r\n-    font-size: 18px;\r\n-    transition: width 0.2s;\r\n-    width: 0;\r\n-    overflow: hidden;\r\n-    background: transparent;\r\n-    border-radius: 0;\r\n-    display: inline-block;\r\n-    vertical-align: middle;\r\n-\r\n-    :v-deep(.el-input__inner) {\r\n-      border-radius: 0;\r\n-      border: 0;\r\n-      padding-left: 0;\r\n-      padding-right: 0;\r\n-      box-shadow: none !important;\r\n-      border-bottom: 1px solid #d9d9d9;\r\n-      vertical-align: middle;\r\n-    }\r\n-  }\r\n-  &.show {\r\n-    .header-search-select {\r\n-      width: 210px;\r\n-      margin-left: 10px;\r\n-    }\r\n-  }\r\n-}\r\n-</style>\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1694860079651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+<template>\r\n+  <div class=\"header-search\">\r\n+    <svg-icon class=\"\" icon=\"search\"></svg-icon>\r\n+  </div>\r\n+</template>\r\n+\r\n+<script setup>\r\n+import {} from 'vue'\r\n+</script>\r\n+\r\n+<style  lang=\"scss\" scoped>\r\n+\r\n+</style>\r\n"
+                },
+                {
+                    "date": 1694860190709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n <template>\r\n   <div class=\"header-search\">\r\n-    <svg-icon class=\"\" icon=\"search\"></svg-icon>\r\n+    <!-- 搜索图标 -->\r\n+    <svg-icon class-name=\"search-icon\" icon=\"search\"></svg-icon>\r\n+<!-- 搜索下拉框 -->\r\n+<el-select></el-select>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1694862644638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n   <div class=\"header-search\">\r\n     <!-- 搜索图标 -->\r\n     <svg-icon class-name=\"search-icon\" icon=\"search\"></svg-icon>\r\n     <!-- 搜索下拉框 -->\r\n-    <el-select></el-select>\r\n+    <el-select ref=\"headerSearchSelectRef\" class=\"header-search-select\">\r\n+      <el-option></el-option>\r\n+    </el-select>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1694862791504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <div class=\"header-search\">\r\n+  <div class=\"header-search\" :class=\"{ show: isShow }\">\r\n     <!-- 搜索图标 -->\r\n     <svg-icon class-name=\"search-icon\" icon=\"search\"></svg-icon>\r\n     <!-- 搜索下拉框 -->\r\n     <el-select ref=\"headerSearchSelectRef\" class=\"header-search-select\">\r\n@@ -9,8 +9,14 @@\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n-import {} from 'vue'\r\n+import { ref } from 'vue'\r\n+\r\n+// 控制search搜索框显示和隐藏\r\n+const isShow = ref(false)\r\n+\r\n+// 获取select组件实例\r\n+const headerSearchSelectRef = ref(null)\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                }
+            ],
+            "date": 1694857264271,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div :class=\"{ show: isShow }\" class=\"header-search\">\r\n    <svg-icon\r\n      class-name=\"search-icon\"\r\n      icon=\"search\"\r\n      @click.stop=\"onShowClick\"\r\n    />\r\n    <el-select\r\n      ref=\"headerSearchSelectRef\"\r\n      class=\"header-search-select\"\r\n      v-model=\"search\"\r\n      filterable\r\n      default-first-option\r\n      remote\r\n      placeholder=\"Search\"\r\n      :remote-method=\"querySearch\"\r\n      @change=\"onSelectChange\"\r\n    >\r\n      <el-option\r\n        v-for=\"option in 5\"\r\n        :key=\"option\"\r\n        :label=\"option\"\r\n        :value=\"option\"\r\n      ></el-option>\r\n    </el-select>\r\n  </div>\r\n</template>\r\n\r\n<script setup>\r\nimport { ref } from 'vue'\r\n\r\n// 控制 search 显示\r\nconst isShow = ref(false)\r\n// el-select 实例\r\nconst headerSearchSelectRef = ref(null)\r\nconst onShowClick = () => {\r\n  isShow.value = !isShow.value\r\n  headerSearchSelectRef.value.focus()\r\n}\r\n\r\n// search 相关\r\nconst search = ref('')\r\n// 搜索方法\r\nconst querySearch = () => {\r\n  console.log('querySearch')\r\n}\r\n// 选中回调\r\nconst onSelectChange = () => {\r\n  console.log('onSelectChange')\r\n}\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n.header-search {\r\n  font-size: 0 !important;\r\n  .search-icon {\r\n    cursor: pointer;\r\n    font-size: 18px;\r\n    vertical-align: middle;\r\n  }\r\n  .header-search-select {\r\n    font-size: 18px;\r\n    transition: width 0.2s;\r\n    width: 0;\r\n    overflow: hidden;\r\n    background: transparent;\r\n    border-radius: 0;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n\r\n    ::v-deep .el-input__inner {\r\n      border-radius: 0;\r\n      border: 0;\r\n      padding-left: 0;\r\n      padding-right: 0;\r\n      box-shadow: none !important;\r\n      border-bottom: 1px solid #d9d9d9;\r\n      vertical-align: middle;\r\n    }\r\n  }\r\n  &.show {\r\n    .header-search-select {\r\n      width: 210px;\r\n      margin-left: 10px;\r\n    }\r\n  }\r\n}\r\n</style>\r\n"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/views/import/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1697874790226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698479056369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,9 @@\n       userInfo[USER_RELATIONS[key]] = item[key]\r\n     })\r\n     arr.push(userInfo)\r\n   })\r\n+  console.log(arr)\r\n   return arr\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1698479159557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n   const arr = []\r\n   results.forEach((item) => {\r\n     const userInfo = {}\r\n     Object.keys(item).forEach((key) => {\r\n-      if (USER_RELATIONS[key] === 'opentime') {\r\n+      if (USER_RELATIONS[key] === 'openTime') {\r\n         userInfo[USER_RELATIONS[key]] = formatDate(item[key])\r\n         return\r\n       }\r\n       userInfo[USER_RELATIONS[key]] = item[key]\r\n"
+                },
+                {
+                    "date": 1698481450981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,12 @@\n const i18n = useI18n()\r\n const router = useRouter()\r\n \r\n const onSuccess = async ({ results }) => {\r\n-  console.log(results)\r\n+  // console.log(results)\r\n   // 将解析后的数据转换为能够上传的数据\r\n   const uploadData = generateData(results)\r\n-  console.log(uploadData)\r\n+  // console.log(uploadData)\r\n   // 上传数据\r\n   await userBatchImport(uploadData)\r\n   ElMessage.success(results.length + i18n.t('msg.excel.importSuccess'))\r\n   router.push('/user/manage')\r\n@@ -43,9 +43,9 @@\n       userInfo[USER_RELATIONS[key]] = item[key]\r\n     })\r\n     arr.push(userInfo)\r\n   })\r\n-  console.log(arr)\r\n+  // console.log(arr)\r\n   return arr\r\n }\r\n </script>\r\n \r\n"
+                }
+            ],
+            "date": 1697874790226,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div>\r\n    <UploadExcel :onSuccess=\"onSuccess\" />\r\n  </div>\r\n</template>\r\n\r\n<script setup>\r\nimport { userBatchImport } from '@/api/user-manage'\r\nimport UploadExcel from '@/components/UploadExcel'\r\nimport { ElMessage } from 'element-plus'\r\nimport {} from 'vue'\r\nimport { useI18n } from 'vue-i18n'\r\nimport { useRouter } from 'vue-router'\r\nimport { USER_RELATIONS, formatDate } from './utils'\r\n\r\nconst i18n = useI18n()\r\nconst router = useRouter()\r\n\r\nconst onSuccess = async ({ results }) => {\r\n  console.log(results)\r\n  // 将解析后的数据转换为能够上传的数据\r\n  const uploadData = generateData(results)\r\n  console.log(uploadData)\r\n  // 上传数据\r\nawait userBatchImport(uploadData)\r\n    ElMessage.success(results.length + i18n.t('msg.excel.importSuccess'))\r\n    router.push('/user/manage')\r\n  \r\n}\r\n\r\n/**\r\n * 筛选数据\r\n * @param {*} results\r\n */\r\nconst generateData = (results) => {\r\n  const arr = []\r\n  results.forEach((item) => {\r\n    const userInfo = {}\r\n    Object.keys(item).forEach((key) => {\r\n      if (USER_RELATIONS[key] === 'opentime') {\r\n        userInfo[USER_RELATIONS[key]] = formatDate(item[key])\r\n        return\r\n      }\r\n      userInfo[USER_RELATIONS[key]] = item[key]\r\n    })\r\n    arr.push(userInfo)\r\n  })\r\n  return arr\r\n}\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

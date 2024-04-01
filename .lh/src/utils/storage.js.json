@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/utils/storage.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1693586010421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693586161463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,13 @@\n // 存储数据\r\n-export const \r\n+export const setItem = (key, value) => {\r\n+  // value 分为两种情况：\r\n+  // 1.基本数据类型\r\n+  // 2.复杂数据类型\r\n+  if (typeof value === 'object') {\r\n+    value = JSON.stringify(value)\r\n+  }\r\n+  window.localStorage.setItem()\r\n+}\r\n // 获取数据\r\n // 删除指定数据\r\n // 删除所有数据\r\n"
+                },
+                {
+                    "date": 1693586217930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   // 2.复杂数据类型\r\n   if (typeof value === 'object') {\r\n     value = JSON.stringify(value)\r\n   }\r\n-  window.localStorage.setItem()\r\n+  window.localStorage.setItem(key, value)\r\n }\r\n // 获取数据\r\n // 删除指定数据\r\n // 删除所有数据\r\n"
+                },
+                {
+                    "date": 1693587127629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+// 存储数据\r\n+export const setItem = (key, value) => {\r\n+  // value 分为两种情况：\r\n+  // 1.基本数据类型\r\n+  // 2.复杂数据类型\r\n+  if (typeof value === 'object') {\r\n+    value = JSON.stringify(value)\r\n+  }\r\n+  window.localStorage.setItem(key, value)\r\n+}\r\n+// 获取数据\r\n+export const getItem = key => {\r\n+  const data = window.localStorage.getItem(key)\r\n+  try {\r\n+    return JSON.parse(data)\r\n+  } catch (error) {\r\n+    return data\r\n+  }\r\n+}\r\n+// 删除指定数据\r\n+export const removeItem = key => {\r\n+  window.localStorage.removeItem(key)\r\n+}\r\n+// 删除所有数据\r\n+export const removeAllItem = key => {\r\n+  window.localStorage.clear()\r\n+}\r\n"
+                }
+            ],
+            "date": 1693586010421,
+            "name": "Commit-0",
+            "content": "// 存储数据\r\nexport const \r\n// 获取数据\r\n// 删除指定数据\r\n// 删除所有数据\r\n"
+        }
+    ]
+}

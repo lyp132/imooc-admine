@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/role-list/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1698649174776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698649371464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,14 @@\n </template>\r\n \r\n <script setup>\r\n import { ref } from 'vue'\r\n-import {ro}\r\n-const roleList = ref([])\r\n+import {roleList} from '@/api/role'\r\n+\r\n+const allRoles = ref([])\r\n+const getRoleList = async () => {\r\n+  allRoles.value = await roleList()\r\n+}\r\n+getRoleList()\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1698649453662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,18 @@\n \r\n <script setup>\r\n import { ref } from 'vue'\r\n import { roleList } from '@/api/role'\r\n+import { watchSwitchLang } from '@/utils/i18n'\r\n \r\n+// 定义用户列表数据\r\n const allRoles = ref([])\r\n+// 获取用户列表数据\r\n const getRoleList = async () => {\r\n   allRoles.value = await roleList()\r\n }\r\n getRoleList()\r\n+\r\n+watchSwitchLang(getRoleList)\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                }
+            ],
+            "date": 1698649174776,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div class=\"\">角色列表</div>\r\n</template>\r\n\r\n<script setup>\r\nimport { ref } from 'vue'\r\nimport {ro}\r\nconst roleList = ref([])\r\n\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

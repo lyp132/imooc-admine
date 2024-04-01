@@ -1,0 +1,82 @@
+{
+    "sourceFile": "src/styles/transition.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1694083070766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1694083089154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n \r\n /* 确保将离开的元素从布局流中删除\r\n   以便能够正确地计算移动的动画。 */\r\n .breadcrumb-leave-active {\r\n+  display: inline-block;\r\n   position: absolute;\r\n   .el-breadcrumb__separator {\r\n     display: none;\r\n   }\r\n"
+                },
+                {
+                    "date": 1694083283014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n+.breadcrumb-enter-active{\r\n+  transition: all 0.5s ease;\r\n+}\r\n+\r\n+.breadcrumb-enter-from,\r\n+.breadcrumb-leave-to {\r\n+  opacity: 0;\r\n+  transform: translateX(30px);\r\n+}\r\n+\r\n+/* 确保将离开的元素从布局流中删除\r\n+  以便能够正确地计算移动的动画。 */\r\n+.breadcrumb-leave-active {\r\n+  display: inline-block;\r\n+  position: absolute;\r\n+  .el-breadcrumb__separator {\r\n+    display: none;\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1694083308157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n .breadcrumb-enter-active{\r\n-  transition: all 0.5s ease;\r\n+  transition: all 5s ease;\r\n }\r\n \r\n .breadcrumb-enter-from,\r\n .breadcrumb-leave-to {\r\n@@ -16,26 +16,5 @@\n   position: absolute;\r\n   .el-breadcrumb__separator {\r\n     display: none;\r\n   }\r\n-}\n-.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n-.breadcrumb-enter-active,\r\n-.breadcrumb-leave-active {\r\n-  transition: all 0.5s ease;\r\n-}\r\n-\r\n-.breadcrumb-enter-from,\r\n-.breadcrumb-leave-to {\r\n-  opacity: 0;\r\n-  transform: translateX(30px);\r\n-}\r\n-\r\n-/* 确保将离开的元素从布局流中删除\r\n-  以便能够正确地计算移动的动画。 */\r\n-.breadcrumb-leave-active {\r\n-  display: inline-block;\r\n-  position: absolute;\r\n-  .el-breadcrumb__separator {\r\n-    display: none;\r\n-  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1694083330496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n .breadcrumb-enter-active{\r\n-  transition: all 5s ease;\r\n+  transition: all 3s ease;\r\n }\r\n \r\n .breadcrumb-enter-from,\r\n .breadcrumb-leave-to {\r\n"
+                },
+                {
+                    "date": 1694083389621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n .breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n-.breadcrumb-enter-active{\r\n+.breadcrumb-enter-active,\r\n+.breadcrumb-leave-active {\r\n   transition: all 3s ease;\r\n }\r\n \r\n .breadcrumb-enter-from,\r\n"
+                },
+                {
+                    "date": 1694083460782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,5 @@\n   以便能够正确地计算移动的动画。 */\r\n .breadcrumb-leave-active {\r\n   display: inline-block;\r\n   position: absolute;\r\n-  .el-breadcrumb__separator {\r\n-    display: none;\r\n-  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1694083502852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n \r\n /* 确保将离开的元素从布局流中删除\r\n   以便能够正确地计算移动的动画。 */\r\n .breadcrumb-leave-active {\r\n-  display: inline-block;\r\n+  // display: inline-block;\r\n   position: absolute;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1694083585695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n+.breadcrumb-enter-active,\r\n+.breadcrumb-leave-active {\r\n+  transition: all 10s ease;\r\n+}\r\n+\r\n+.breadcrumb-enter-from,\r\n+.breadcrumb-leave-to {\r\n+  opacity: 0;\r\n+  transform: translateX(30px);\r\n+}\r\n+\r\n+/* 确保将离开的元素从布局流中删除\r\n+  以便能够正确地计算移动的动画。 */\r\n+.breadcrumb-leave-active {\r\n+  // display: inline-block;\r\n+  position: absolute;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1694083618015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,25 +12,8 @@\n \r\n /* 确保将离开的元素从布局流中删除\r\n   以便能够正确地计算移动的动画。 */\r\n .breadcrumb-leave-active {\r\n-  // display: inline-block;\r\n+  display: inline-block;\r\n   position: absolute;\r\n-}\n-.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n-.breadcrumb-enter-active,\r\n-.breadcrumb-leave-active {\r\n-  transition: all 3s ease;\r\n-}\r\n-\r\n-.breadcrumb-enter-from,\r\n-.breadcrumb-leave-to {\r\n-  opacity: 0;\r\n-  transform: translateX(30px);\r\n-}\r\n-\r\n-/* 确保将离开的元素从布局流中删除\r\n-  以便能够正确地计算移动的动画。 */\r\n-.breadcrumb-leave-active {\r\n-  // display: inline-block;\r\n-  position: absolute;\r\n+  :deep(.)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1694083623765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n+.breadcrumb-enter-active,\r\n+.breadcrumb-leave-active {\r\n+  transition: all 10s ease;\r\n+}\r\n+\r\n+.breadcrumb-enter-from,\r\n+.breadcrumb-leave-to {\r\n+  opacity: 0;\r\n+  transform: translateX(30px);\r\n+}\r\n+\r\n+/* 确保将离开的元素从布局流中删除\r\n+  以便能够正确地计算移动的动画。 */\r\n+.breadcrumb-leave-active {\r\n+  display: inline-block;\r\n+  position: absolute;\r\n+  // :deep(.)\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1694083668343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n+.breadcrumb-enter-active,\r\n+.breadcrumb-leave-active {\r\n+  transition: all 10s ease;\r\n+}\r\n+\r\n+.breadcrumb-enter-from,\r\n+.breadcrumb-leave-to {\r\n+  opacity: 0;\r\n+  transform: translateX(30px);\r\n+}\r\n+\r\n+/* 确保将离开的元素从布局流中删除\r\n+  以便能够正确地计算移动的动画。 */\r\n+.breadcrumb-leave-active {\r\n+  display: inline-block;\r\n+  position: absolute;\r\n+  :deep(.el-breadcrumb__separator) {\r\n+    display: none;\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1694083687440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n+.breadcrumb-enter-active,\r\n+.breadcrumb-leave-active {\r\n+  transition: all 3s ease;\r\n+}\r\n+\r\n+.breadcrumb-enter-from,\r\n+.breadcrumb-leave-to {\r\n+  opacity: 0;\r\n+  transform: translateX(30px);\r\n+}\r\n+\r\n+/* 确保将离开的元素从布局流中删除\r\n+  以便能够正确地计算移动的动画。 */\r\n+.breadcrumb-leave-active {\r\n+  display: inline-block;\r\n+  position: absolute;\r\n+  :deep(.el-breadcrumb__separator) {\r\n+    display: none;\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695738686580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,32 @@\n+.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n+.breadcrumb-enter-active,\r\n+.breadcrumb-leave-active {\r\n+  transition: all 3s ease;\r\n+}\r\n+\r\n+.breadcrumb-enter-from,\r\n+.breadcrumb-leave-to {\r\n+  opacity: 0;\r\n+  transform: translateX(30px);\r\n+}\r\n+\r\n+/* 确保将离开的元素从布局流中删除\r\n+  以便能够正确地计算移动的动画。 */\r\n+.breadcrumb-leave-active {\r\n+  display: inline-block;\r\n+  position: absolute;\r\n+  :deep(.el-breadcrumb__separator) {\r\n+    display: none;\r\n+  }\r\n+}\r\n+\r\n+// fade-transfrom\r\n+.fade-transform-leave-active,\r\n+.fade-transform-enter-active {\r\n+  transition: all 0.5s;\r\n+}\r\n+\r\n+.fade-transform-enter-from {\r\n+  opacity: 0;\r\n+  transform: translateX(-.3rem);\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695738710284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n+.breadcrumb-enter-active,\r\n+.breadcrumb-leave-active {\r\n+  transition: all 3s ease;\r\n+}\r\n+\r\n+.breadcrumb-enter-from,\r\n+.breadcrumb-leave-to {\r\n+  opacity: 0;\r\n+  transform: translateX(30px);\r\n+}\r\n+\r\n+/* 确保将离开的元素从布局流中删除\r\n+  以便能够正确地计算移动的动画。 */\r\n+.breadcrumb-leave-active {\r\n+  display: inline-block;\r\n+  position: absolute;\r\n+  :deep(.el-breadcrumb__separator) {\r\n+    display: none;\r\n+  }\r\n+}\r\n+\r\n+// fade-transfrom\r\n+.fade-transform-leave-active,\r\n+.fade-transform-enter-active {\r\n+  transition: all 0.5s;\r\n+}\r\n+\r\n+.fade-transform-enter-from {\r\n+  opacity: 0;\r\n+  transform: translateX(-.3rem);\r\n+}\r\n+.fade-transform-leave-to {\r\n+  opacity: 0;\r\n+  transform: translateX(.3rem);\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695739225972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,122 +27,10 @@\n }\r\n \r\n .fade-transform-enter-from {\r\n   opacity: 0;\r\n-  transform: translateX(-.3rem);\r\n+  transform: translateX(-30px);\r\n }\r\n .fade-transform-leave-to {\r\n   opacity: 0;\r\n-  transform: translateX(.3rem);\r\n-}\n-.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n-.breadcrumb-enter-active,\r\n-.breadcrumb-leave-active {\r\n-  transition: all 3s ease;\r\n-}\r\n-\r\n-.breadcrumb-enter-from,\r\n-.breadcrumb-leave-to {\r\n-  opacity: 0;\r\n   transform: translateX(30px);\r\n-}\r\n-\r\n-/* 确保将离开的元素从布局流中删除\r\n-  以便能够正确地计算移动的动画。 */\r\n-.breadcrumb-leave-active {\r\n-  display: inline-block;\r\n-  position: absolute;\r\n-  :deep(.el-breadcrumb__separator) {\r\n-    display: none;\r\n-  }\r\n-}\r\n-\r\n-// fade-transfrom\r\n-.fade-transform-leave-active,\r\n-.fade-transform-enter-active {\r\n-  transition: all 0.5s;\r\n-}\r\n-\r\n-.fade-transform-enter-from {\r\n-  opacity: 0;\r\n-  transform: translateX(-.3rem);\r\n-}\n-.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n-.breadcrumb-enter-active,\r\n-.breadcrumb-leave-active {\r\n-  transition: all 3s ease;\r\n-}\r\n-\r\n-.breadcrumb-enter-from,\r\n-.breadcrumb-leave-to {\r\n-  opacity: 0;\r\n-  transform: translateX(30px);\r\n-}\r\n-\r\n-/* 确保将离开的元素从布局流中删除\r\n-  以便能够正确地计算移动的动画。 */\r\n-.breadcrumb-leave-active {\r\n-  display: inline-block;\r\n-  position: absolute;\r\n-  :deep(.el-breadcrumb__separator) {\r\n-    display: none;\r\n-  }\r\n-}\n-.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n-.breadcrumb-enter-active,\r\n-.breadcrumb-leave-active {\r\n-  transition: all 10s ease;\r\n-}\r\n-\r\n-.breadcrumb-enter-from,\r\n-.breadcrumb-leave-to {\r\n-  opacity: 0;\r\n-  transform: translateX(30px);\r\n-}\r\n-\r\n-/* 确保将离开的元素从布局流中删除\r\n-  以便能够正确地计算移动的动画。 */\r\n-.breadcrumb-leave-active {\r\n-  display: inline-block;\r\n-  position: absolute;\r\n-  :deep(.el-breadcrumb__separator) {\r\n-    display: none;\r\n-  }\r\n-}\n-.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n-.breadcrumb-enter-active,\r\n-.breadcrumb-leave-active {\r\n-  transition: all 10s ease;\r\n-}\r\n-\r\n-.breadcrumb-enter-from,\r\n-.breadcrumb-leave-to {\r\n-  opacity: 0;\r\n-  transform: translateX(30px);\r\n-}\r\n-\r\n-/* 确保将离开的元素从布局流中删除\r\n-  以便能够正确地计算移动的动画。 */\r\n-.breadcrumb-leave-active {\r\n-  display: inline-block;\r\n-  position: absolute;\r\n-  // :deep(.)\r\n-}\n-.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n-.breadcrumb-enter-active,\r\n-.breadcrumb-leave-active {\r\n-  transition: all 10s ease;\r\n-}\r\n-\r\n-.breadcrumb-enter-from,\r\n-.breadcrumb-leave-to {\r\n-  opacity: 0;\r\n-  transform: translateX(30px);\r\n-}\r\n-\r\n-/* 确保将离开的元素从布局流中删除\r\n-  以便能够正确地计算移动的动画。 */\r\n-.breadcrumb-leave-active {\r\n-  display: inline-block;\r\n-  position: absolute;\r\n-  :deep(.)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695739450938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,50 @@\n+.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n+.breadcrumb-enter-active,\r\n+.breadcrumb-leave-active {\r\n+  transition: all 3s ease;\r\n+}\r\n+\r\n+.breadcrumb-enter-from,\r\n+.breadcrumb-leave-to {\r\n+  opacity: 0;\r\n+  transform: translateX(30px);\r\n+}\r\n+\r\n+/* 确保将离开的元素从布局流中删除\r\n+  以便能够正确地计算移动的动画。 */\r\n+.breadcrumb-leave-active {\r\n+  display: inline-block;\r\n+  position: absolute;\r\n+  :deep(.el-breadcrumb__separator) {\r\n+    display: none;\r\n+  }\r\n+}\r\n+\r\n+// fade-transfrom\r\n+// .fade-transform-leave-active,\r\n+// .fade-transform-enter-active {\r\n+//   transition: all 0.5s;\r\n+// }\r\n+\r\n+// .fade-transform-enter-from {\r\n+//   opacity: 0;\r\n+//   transform: translateX(-30px);\r\n+// }\r\n+// .fade-transform-leave-to {\r\n+//   opacity: 0;\r\n+//   transform: translateX(30px);\r\n+// }\r\n+.fade-transform-leave-active,\r\n+.fade-transform-enter-active {\r\n+  transition: all 0.5s;\r\n+}\r\n+\r\n+.fade-transform-enter-from {\r\n+  opacity: 0;\r\n+  transform: translateX(-30px);\r\n+}\r\n+\r\n+.fade-transform-leave-to {\r\n+  opacity: 0;\r\n+  transform: translateX(30px);\r\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1694083070766,
+            "name": "Commit-0",
+            "content": ".breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n.breadcrumb-enter-active,\r\n.breadcrumb-leave-active {\r\n  transition: all 0.5s ease;\r\n}\r\n\r\n.breadcrumb-enter-from,\r\n.breadcrumb-leave-to {\r\n  opacity: 0;\r\n  transform: translateX(30px);\r\n}\r\n\r\n/* 确保将离开的元素从布局流中删除\r\n  以便能够正确地计算移动的动画。 */\r\n.breadcrumb-leave-active {\r\n  position: absolute;\r\n  .el-breadcrumb__separator {\r\n    display: none;\r\n  }\r\n}"
+        }
+    ]
+}

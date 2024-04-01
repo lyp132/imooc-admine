@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/permission.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1693637409563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693640456155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import router from ''\r\n+\r\n"
+                },
+                {
+                    "date": 1693640734368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+import router from './router/index.js'\r\n+import store from './store/index.js'\r\n+\r\n+// 白名单\r\n+const whiteList = ['/login']\r\n+\r\n+router.beforeEach(async (to, from, next) => {})\r\n"
+                },
+                {
+                    "date": 1693640761903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,9 @@\n \r\n // 白名单\r\n const whiteList = ['/login']\r\n \r\n-router.beforeEach(async (to, from, next) => {})\r\n+router.beforeEach(async \r\n+  /**\r\n+   * \r\n+   */\r\n+  (to, from, next) => {})\r\n"
+                },
+                {
+                    "date": 1693640802298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,16 @@\n import router from './router/index.js'\r\n \r\n // 白名单\r\n const whiteList = ['/login']\r\n-\r\n-router.beforeEach(async \r\n   /**\r\n    * \r\n+   * @param {*} to \r\n+   * @param {*} from \r\n+   * @param {*} next \r\n    */\r\n-  (to, from, next) => {})\r\n+router.beforeEach( \r\n+\r\n+  async (to, from, next) => {\r\n+\r\n+  }\r\n+)\r\n"
+                },
+                {
+                    "date": 1693640817510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import router from './router/index.js'\r\n \r\n // 白名单\r\n const whiteList = ['/login']\r\n+\r\n /**\r\n  *\r\n  * @param {*} to\r\n  * @param {*} from\r\n"
+                }
+            ],
+            "date": 1693637409563,
+            "name": "Commit-0",
+            "content": "import router from ''"
+        }
+    ]
+}

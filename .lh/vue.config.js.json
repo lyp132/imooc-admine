@@ -1,0 +1,54 @@
+{
+    "sourceFile": "vue.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1693562192011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693584799912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const path = require('path')\n function resolve(dir) {\n   return path.join(__dirname, dir)\n }\n-// https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F\n+\n module.exports = {\n   chainWebpack(config) {\n     // 设置 svg-sprite-loader\n     config.module\n"
+                },
+                {
+                    "date": 1693585028771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,17 @@\n   return path.join(__dirname, dir)\n }\n \n module.exports = {\n+  devServer: {\n+    // 配置反向代理\n+    proxy: {\n+      // 当地址中包含/api的时候会触发代理机制\n+      'api': {\n+        target: ''\n+      }\n+    }\n+  },\n   chainWebpack(config) {\n     // 设置 svg-sprite-loader\n     config.module\n       .rule('svg')\n"
+                },
+                {
+                    "date": 1693585180922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,40 @@\n+const { defineConfig } = require('@vue/cli-service')\n+module.exports = defineConfig({\n+  transpileDependencies: true\n+})\n+\n+const path = require('path')\n+function resolve(dir) {\n+  return path.join(__dirname, dir)\n+}\n+\n+module.exports = {\n+  // webpack devServer 提供了代理的功能，该代理可以把所有请求到当前服务中的请求，转发(代理)到另外的一个服务器上\n+  devServer: {\n+    // 代理\n+    proxy: {\n+      // 当地址中包含/api的时候会触发代理机制\n+      'api': {\n+        target: ''\n+      }\n+    }\n+  },\n+  chainWebpack(config) {\n+    // 设置 svg-sprite-loader\n+    config.module\n+      .rule('svg')\n+      .exclude.add(resolve('src/icons'))\n+      .end()\n+    config.module\n+      .rule('icons')\n+      .test(/\\.svg$/)\n+      .include.add(resolve('src/icons'))\n+      .end()\n+      .use('svg-sprite-loader')\n+      .loader('svg-sprite-loader')\n+      .options({\n+        symbolId: 'icon-[name]'\n+      })\n+      .end()\n+  }\n+}\n"
+                },
+                {
+                    "date": 1693585213621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,40 @@\n+const { defineConfig } = require('@vue/cli-service')\n+module.exports = defineConfig({\n+  transpileDependencies: true\n+})\n+\n+const path = require('path')\n+function resolve(dir) {\n+  return path.join(__dirname, dir)\n+}\n+\n+module.exports = {\n+  // webpack devServer 提供了代理的功能，该代理可以把所有请求到当前服务中的请求，转发(代理)到另外的一个服务器上\n+  devServer: {\n+    // 代理\n+    proxy: {\n+      // 当地址中包含/api的时候会触发代理机制\n+      '/api': {\n+        target: ''\n+      }\n+    }\n+  },\n+  chainWebpack(config) {\n+    // 设置 svg-sprite-loader\n+    config.module\n+      .rule('svg')\n+      .exclude.add(resolve('src/icons'))\n+      .end()\n+    config.module\n+      .rule('icons')\n+      .test(/\\.svg$/)\n+      .include.add(resolve('src/icons'))\n+      .end()\n+      .use('svg-sprite-loader')\n+      .loader('svg-sprite-loader')\n+      .options({\n+        symbolId: 'icon-[name]'\n+      })\n+      .end()\n+  }\n+}\n"
+                },
+                {
+                    "date": 1693585258291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n     // 代理\n     proxy: {\n       // 当地址中包含/api的时候会触发代理机制\n       '/api': {\n-        target: ''\n+        target: 'https://api.imooc-admin.lgdsunday.club/',\n+        changeOrigin: true\n       }\n     }\n   },\n   chainWebpack(config) {\n@@ -37,83 +38,4 @@\n       })\n       .end()\n   }\n }\n-const { defineConfig } = require('@vue/cli-service')\n-module.exports = defineConfig({\n-  transpileDependencies: true\n-})\n-\n-const path = require('path')\n-function resolve(dir) {\n-  return path.join(__dirname, dir)\n-}\n-\n-module.exports = {\n-  // webpack devServer 提供了代理的功能，该代理可以把所有请求到当前服务中的请求，转发(代理)到另外的一个服务器上\n-  devServer: {\n-    // 代理\n-    proxy: {\n-      // 当地址中包含/api的时候会触发代理机制\n-      'api': {\n-        target: ''\n-      }\n-    }\n-  },\n-  chainWebpack(config) {\n-    // 设置 svg-sprite-loader\n-    config.module\n-      .rule('svg')\n-      .exclude.add(resolve('src/icons'))\n-      .end()\n-    config.module\n-      .rule('icons')\n-      .test(/\\.svg$/)\n-      .include.add(resolve('src/icons'))\n-      .end()\n-      .use('svg-sprite-loader')\n-      .loader('svg-sprite-loader')\n-      .options({\n-        symbolId: 'icon-[name]'\n-      })\n-      .end()\n-  }\n-}\n-const { defineConfig } = require('@vue/cli-service')\n-module.exports = defineConfig({\n-  transpileDependencies: true\n-})\n-\n-const path = require('path')\n-function resolve(dir) {\n-  return path.join(__dirname, dir)\n-}\n-\n-module.exports = {\n-  devServer: {\n-    // 配置反向代理\n-    proxy: {\n-      // 当地址中包含/api的时候会触发代理机制\n-      'api': {\n-        target: ''\n-      }\n-    }\n-  },\n-  chainWebpack(config) {\n-    // 设置 svg-sprite-loader\n-    config.module\n-      .rule('svg')\n-      .exclude.add(resolve('src/icons'))\n-      .end()\n-    config.module\n-      .rule('icons')\n-      .test(/\\.svg$/)\n-      .include.add(resolve('src/icons'))\n-      .end()\n-      .use('svg-sprite-loader')\n-      .loader('svg-sprite-loader')\n-      .options({\n-        symbolId: 'icon-[name]'\n-      })\n-      .end()\n-  }\n-}\n"
+                },
+                {
+                    "date": 1693585288320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     // 代理\n     proxy: {\n       // 当地址中包含/api的时候会触发代理机制\n       '/api': {\n+        // 要代理的服务器地址  这里不用写 api\n         target: 'https://api.imooc-admin.lgdsunday.club/',\n         changeOrigin: true\n       }\n     }\n"
+                },
+                {
+                    "date": 1693585313369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n       // 当地址中包含/api的时候会触发代理机制\n       '/api': {\n         // 要代理的服务器地址  这里不用写 api\n         target: 'https://api.imooc-admin.lgdsunday.club/',\n+        // 是否跨域\n         changeOrigin: true\n       }\n     }\n   },\n"
+                },
+                {
+                    "date": 1693833082968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,16 @@\n const { defineConfig } = require('@vue/cli-service')\n module.exports = defineConfig({\n-  transpileDependencies: true\n+  transpileDependencies: true,\n+  configureWebpack: {\n+\n+    resolve: {\n+\n+      fallback: { path: require.resolve('path-browserify') }\n+\n+    }\n+\n+  }\n })\n \n const path = require('path')\n function resolve(dir) {\n"
+                },
+                {
+                    "date": 1700699210480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,11 @@\n         target: 'https://api.imooc-admin.lgdsunday.club/',\r\n         // 是否跨域\r\n         changeOrigin: true\r\n       }\r\n+    },\r\n+    client: {\r\n+      overlay: false // 编译错误时，取消全屏覆盖\r\n     }\r\n   },\r\n   chainWebpack(config) {\r\n     // 设置 svg-sprite-loader\r\n"
+                }
+            ],
+            "date": 1693562192011,
+            "name": "Commit-0",
+            "content": "const { defineConfig } = require('@vue/cli-service')\nmodule.exports = defineConfig({\n  transpileDependencies: true\n})\n\nconst path = require('path')\nfunction resolve(dir) {\n  return path.join(__dirname, dir)\n}\n// https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F\nmodule.exports = {\n  chainWebpack(config) {\n    // 设置 svg-sprite-loader\n    config.module\n      .rule('svg')\n      .exclude.add(resolve('src/icons'))\n      .end()\n    config.module\n      .rule('icons')\n      .test(/\\.svg$/)\n      .include.add(resolve('src/icons'))\n      .end()\n      .use('svg-sprite-loader')\n      .loader('svg-sprite-loader')\n      .options({\n        symbolId: 'icon-[name]'\n      })\n      .end()\n  }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/styles/styleVariables.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1693499679563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693499702676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+// 背景颜色\r\n $bg: #2d3a4b;\r\n $dark_gray: #889aa4;\r\n $light_gray: #eee;\r\n $cursor: #fff;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1693499781039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n // 背景颜色\r\n $bg: #2d3a4b;\r\n $dark_gray: #889aa4;\r\n $light_gray: #eee;\r\n+// 光标颜色\r\n $cursor: #fff;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1693644441024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +0,0 @@\n-// 背景颜色\r\n-$bg: #2d3a4b;\r\n-$dark_gray: #889aa4;\r\n-$light_gray: #eee;\r\n-// 光标颜色\r\n-$cursor: #fff;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1693499679563,
+            "name": "Commit-0",
+            "content": "$bg: #2d3a4b;\r\n$dark_gray: #889aa4;\r\n$light_gray: #eee;\r\n$cursor: #fff;"
+        }
+    ]
+}

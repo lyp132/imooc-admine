@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/store/getters.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1693641217341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693641229458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n // 快捷访问\r\n const getters = {\r\n-  token: state => state.\r\n+  token: state => state.user.token\r\n }\r\n \r\n export default getters\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1693723649510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n // 快捷访问\r\n const getters = {\r\n-  token: (state) => state.user.token\r\n+  token: (state) => state.user.token,\r\n+  \r\n }\r\n \r\n export default getters\r\n"
+                },
+                {
+                    "date": 1693725711649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n // 快捷访问\r\n const getters = {\r\n-  token: (state) => state.user.token\r\n+  token: (state) => state.user.token,\r\n+  hasUserInfo: () => {\r\n+    \r\n+  }\r\n }\r\n \r\n export default getters\r\n"
+                }
+            ],
+            "date": 1693641217341,
+            "name": "Commit-0",
+            "content": "// 快捷访问\r\nconst getters = {\r\n  token: state => state.\r\n}\r\n\r\nexport default getters"
+        }
+    ]
+}

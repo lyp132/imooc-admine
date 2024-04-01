@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/router/modules/userManage.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1700689843818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700689939970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+import layout from '@/layout'\r\n+\r\n+export default {\r\n+  path: '/user',\r\n+  component: layout,\r\n+  redirect: '/user/manage'\r\n+}\r\n"
+                },
+                {
+                    "date": 1700691255947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,10 @@\n \r\n export default {\r\n   path: '/user',\r\n   component: layout,\r\n-  redirect: '/user/manage'\r\n+  redirect: '/user/manage',\r\n+  meta: {\r\n+    title: 'user',\r\n+    icon: 'personnel'\r\n+  }\r\n }\r\n"
+                },
+                {
+                    "date": 1700691319122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+import layout from '@/layout'\r\n+\r\n+export default {\r\n+  path: '/user',\r\n+  component: layout,\r\n+  redirect: '/user/manage',\r\n+  meta: {\r\n+    title: 'user',\r\n+    icon: 'personnel'\r\n+  },\r\n+  children: []\r\n+}\r\n"
+                },
+                {
+                    "date": 1700691330538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+import layout from '@/layout'\r\n+\r\n+export default {\r\n+  path: '/user',\r\n+  component: layout,\r\n+  redirect: '/user/manage',\r\n+  meta: {\r\n+    title: 'user',\r\n+    icon: 'personnel'\r\n+  },\r\n+  children: [\r\n+    {\r\n+      path: '/user/manage',\r\n+      name: 'userManage',\r\n+      component: () => import('@/views/user-manage/index'),\r\n+      meta: {\r\n+        title: 'userManage',\r\n+        icon: 'personnel-manage'\r\n+      }\r\n+    }\r\n+  ]\r\n+}\r\n"
+                },
+                {
+                    "date": 1700691362192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,33 +16,16 @@\n       meta: {\r\n         title: 'userManage',\r\n         icon: 'personnel-manage'\r\n       }\r\n+    },\r\n+    {\r\n+      path: '/user/info/:id',\r\n+      name: 'userInfo',\r\n+      component: () => import('@/views/user-info/index'),\r\n+      props: true,\r\n+      meta: {\r\n+        title: 'userInfo'\r\n+      }\r\n     }\r\n   ]\r\n }\r\n-import layout from '@/layout'\r\n-\r\n-export default {\r\n-  path: '/user',\r\n-  component: layout,\r\n-  redirect: '/user/manage',\r\n-  meta: {\r\n-    title: 'user',\r\n-    icon: 'personnel'\r\n-  },\r\n-  children: []\r\n-}\r\n-import layout from '@/layout'\r\n-\r\n-export default {\r\n-  path: '/user',\r\n-  component: layout,\r\n-  redirect: '/user/manage',\r\n-  meta: {\r\n-    title: 'user',\r\n-    icon: 'personnel'\r\n-  }\r\n-}\r\n-import layout from '@/layout'\r\n-\r\n-export default {}\r\n"
+                },
+                {
+                    "date": 1700691382706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,7 +25,15 @@\n       props: true,\r\n       meta: {\r\n         title: 'userInfo'\r\n       }\r\n+    },\r\n+    {\r\n+      path: '/user/import',\r\n+      name: 'import',\r\n+      component: () => import('@/views/import/index'),\r\n+      meta: {\r\n+        title: 'excelImport'\r\n+      }\r\n     }\r\n   ]\r\n }\r\n"
+                },
+                {
+                    "date": 1700691416128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,38 @@\n+import layout from '@/layout'\r\n+\r\n+export default {\r\n+  path: '/user',\r\n+  component: layout,\r\n+  redirect: '/user/manage',\r\n+  meta: {\r\n+    title: 'user',\r\n+    icon: 'personnel'\r\n+  },\r\n+  children: [\r\n+    {\r\n+      path: '/user/manage',\r\n+      component: () => import('@/views/user-manage/index'),\r\n+      meta: {\r\n+        title: 'userManage',\r\n+        icon: 'personnel-manage'\r\n+      }\r\n+    },\r\n+    {\r\n+      path: '/user/info/:id',\r\n+      name: 'userInfo',\r\n+      component: () => import('@/views/user-info/index'),\r\n+      props: true,\r\n+      meta: {\r\n+        title: 'userInfo'\r\n+      }\r\n+    },\r\n+    {\r\n+      path: '/user/import',\r\n+      name: 'import',\r\n+      component: () => import('@/views/import/index'),\r\n+      meta: {\r\n+        title: 'excelImport'\r\n+      }\r\n+    }\r\n+  ]\r\n+}\r\n"
+                },
+                {
+                    "date": 1700696091164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n export default {\r\n   path: '/user',\r\n   component: layout,\r\n   redirect: '/user/manage',\r\n+  name: 'userManage',\r\n   meta: {\r\n     title: 'user',\r\n     icon: 'personnel'\r\n   },\r\n"
+                }
+            ],
+            "date": 1700689843818,
+            "name": "Commit-0",
+            "content": "import layout from '@/layout'\r\n\r\nexport default {}\r\n"
+        }
+    ]
+}

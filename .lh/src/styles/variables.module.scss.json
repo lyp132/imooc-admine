@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/styles/variables.module.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1693917013921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693922060602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+// sidebar\r\n+$menuText: #bfcbd9;\r\n+$menuActiveText: #ffffff;\r\n+$subMenuActiveText: #f4f4f5;\r\n+\r\n+$menuBg: #304156;\r\n+$menuHover: #263445;\r\n+\r\n+$subMenuBg: #1f2d3d;\r\n+$subMenuHover: #001528;\r\n+\r\n+$sideBarWidth: 2.1rem;\r\n+$hideSideBarWidth: .54rem;\r\n+$sideBarDuration: 0.28s;\r\n+\r\n+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass\r\n+// JS 与 scss 共享变量，在 scss 中通过 :export 进行导出，在 js 中可通过 ESM 进行导入\r\n+:export {\r\n+  menuText: $menuText;\r\n+  menuActiveText: $menuActiveText;\r\n+  subMenuActiveText: $subMenuActiveText;\r\n+  menuBg: $menuBg;\r\n+  menuHover: $menuHover;\r\n+  subMenuBg: $subMenuBg;\r\n+  subMenuHover: $subMenuHover;\r\n+  sideBarWidth: $sideBarWidth;\r\n+}\r\n"
+                },
+                {
+                    "date": 1693922287366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+// sidebar\r\n+$menuText: #bfcbd9;\r\n+$menuActiveText: #ffffff;\r\n+$subMenuActiveText: #f4f4f5;\r\n+\r\n+$menuBg: #304156;\r\n+$menuHover: #263445;\r\n+\r\n+$subMenuBg: #1f2d3d;\r\n+$subMenuHover: #001528;\r\n+\r\n+$sideBarWidth: 2.1rem;\r\n+$hideSideBarWidth: .54rem;\r\n+$sideBarDuration: 4.28s;\r\n+\r\n+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass\r\n+// JS 与 scss 共享变量，在 scss 中通过 :export 进行导出，在 js 中可通过 ESM 进行导入\r\n+:export {\r\n+  menuText: $menuText;\r\n+  menuActiveText: $menuActiveText;\r\n+  subMenuActiveText: $subMenuActiveText;\r\n+  menuBg: $menuBg;\r\n+  menuHover: $menuHover;\r\n+  subMenuBg: $subMenuBg;\r\n+  subMenuHover: $subMenuHover;\r\n+  sideBarWidth: $sideBarWidth;\r\n+}\r\n"
+                },
+                {
+                    "date": 1693922318697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,35 +10,8 @@\n $subMenuHover: #001528;\r\n \r\n $sideBarWidth: 2.1rem;\r\n $hideSideBarWidth: .54rem;\r\n-$sideBarDuration: 4.28s;\r\n-\r\n-// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass\r\n-// JS 与 scss 共享变量，在 scss 中通过 :export 进行导出，在 js 中可通过 ESM 进行导入\r\n-:export {\r\n-  menuText: $menuText;\r\n-  menuActiveText: $menuActiveText;\r\n-  subMenuActiveText: $subMenuActiveText;\r\n-  menuBg: $menuBg;\r\n-  menuHover: $menuHover;\r\n-  subMenuBg: $subMenuBg;\r\n-  subMenuHover: $subMenuHover;\r\n-  sideBarWidth: $sideBarWidth;\r\n-}\r\n-// sidebar\r\n-$menuText: #bfcbd9;\r\n-$menuActiveText: #ffffff;\r\n-$subMenuActiveText: #f4f4f5;\r\n-\r\n-$menuBg: #304156;\r\n-$menuHover: #263445;\r\n-\r\n-$subMenuBg: #1f2d3d;\r\n-$subMenuHover: #001528;\r\n-\r\n-$sideBarWidth: 2.1rem;\r\n-$hideSideBarWidth: .54rem;\r\n $sideBarDuration: 0.28s;\r\n \r\n // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass\r\n // JS 与 scss 共享变量，在 scss 中通过 :export 进行导出，在 js 中可通过 ESM 进行导入\r\n@@ -51,30 +24,4 @@\n   subMenuBg: $subMenuBg;\r\n   subMenuHover: $subMenuHover;\r\n   sideBarWidth: $sideBarWidth;\r\n }\r\n-// sidebar\r\n-$menuText: #bfcbd9;\r\n-$menuActiveText: #ffffff;\r\n-$subMenuActiveText: #f4f4f5;\r\n-\r\n-$menuBg: #304156;\r\n-$menuHover: #263445;\r\n-\r\n-$subMenuBg: #1f2d3d;\r\n-$subMenuHover: #001528;\r\n-\r\n-$sideBarWidth: 2.1rem;\r\n-$hideSideBarWidth: .54rem;\r\n-\r\n-// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass\r\n-// JS 与 scss 共享变量，在 scss 中通过 :export 进行导出，在 js 中可通过 ESM 进行导入\r\n-:export {\r\n-  menuText: $menuText;\r\n-  menuActiveText: $menuActiveText;\r\n-  subMenuActiveText: $subMenuActiveText;\r\n-  menuBg: $menuBg;\r\n-  menuHover: $menuHover;\r\n-  subMenuBg: $subMenuBg;\r\n-  subMenuHover: $subMenuHover;\r\n-  sideBarWidth: $sideBarWidth;\r\n-}\r\n"
+                }
+            ],
+            "date": 1693917013920,
+            "name": "Commit-0",
+            "content": "// sidebar\r\n$menuText: #bfcbd9;\r\n$menuActiveText: #ffffff;\r\n$subMenuActiveText: #f4f4f5;\r\n\r\n$menuBg: #304156;\r\n$menuHover: #263445;\r\n\r\n$subMenuBg: #1f2d3d;\r\n$subMenuHover: #001528;\r\n\r\n$sideBarWidth: 2.1rem;\r\n$hideSideBarWidth: .54rem;\r\n\r\n// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass\r\n// JS 与 scss 共享变量，在 scss 中通过 :export 进行导出，在 js 中可通过 ESM 进行导入\r\n:export {\r\n  menuText: $menuText;\r\n  menuActiveText: $menuActiveText;\r\n  subMenuActiveText: $subMenuActiveText;\r\n  menuBg: $menuBg;\r\n  menuHover: $menuHover;\r\n  subMenuBg: $subMenuBg;\r\n  subMenuHover: $subMenuHover;\r\n  sideBarWidth: $sideBarWidth;\r\n}\r\n"
+        }
+    ]
+}

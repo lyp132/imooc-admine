@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/router/modules/PermissionList.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1700691705583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700691781516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export default {\r\n   path: '/user',\r\n   component: layout,\r\n   redirect: '/user/manage',\r\n-  name: 'roleList',\r\n+  name: 'permissionList',\r\n   meta: {\r\n     title: 'user',\r\n     icon: 'personnel'\r\n   },\r\n"
+                },
+                {
+                    "date": 1700691870921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,13 +10,13 @@\n     icon: 'personnel'\r\n   },\r\n   children: [\r\n     {\r\n-      path: '/user/role',\r\n-      component: () => import('@/views/role-list/index'),\r\n+      path: '/user/permission',\r\n+      component: () => import('@/views/permission-list/index'),\r\n       meta: {\r\n-        title: 'roleList',\r\n-        icon: 'role'\r\n+        title: 'permissionList',\r\n+        icon: 'permission'\r\n       }\r\n     }\r\n   ]\r\n }\r\n"
+                }
+            ],
+            "date": 1700691705583,
+            "name": "Commit-0",
+            "content": "import layout from '@/layout'\r\n\r\nexport default {\r\n  path: '/user',\r\n  component: layout,\r\n  redirect: '/user/manage',\r\n  name: 'roleList',\r\n  meta: {\r\n    title: 'user',\r\n    icon: 'personnel'\r\n  },\r\n  children: [\r\n    {\r\n      path: '/user/role',\r\n      component: () => import('@/views/role-list/index'),\r\n      meta: {\r\n        title: 'roleList',\r\n        icon: 'role'\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
+        }
+    ]
+}

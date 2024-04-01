@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/utils/tags.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1695621113364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695621123179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const = \n\\ No newline at end of file\n+const whiteList = ['']\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695621128837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const whiteList = ['']\n\\ No newline at end of file\n+const whiteList = ['/login', '']\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695621135682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const whiteList = ['/login', '']\n\\ No newline at end of file\n+const whiteList = ['/login', '/import', ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695621142761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const whiteList = ['/login', '/import', ]\n\\ No newline at end of file\n+const whiteList = ['/login', '/import', '/404', '/']\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695621148796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-const whiteList = ['/login', '/import', '/404', '/']\n\\ No newline at end of file\n+const whiteList = ['/login', '/import', '/404', '/401']\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1695621155211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const whiteList = ['/login', '/import', '/404', '/401']\r\n \r\n-\r\n+export function\r\n"
+                },
+                {
+                    "date": 1695621163435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n const whiteList = ['/login', '/import', '/404', '/401']\r\n \r\n-export function\r\n+export function isTags(path) {\r\n+  \r\n+}\r\n"
+                },
+                {
+                    "date": 1695621172189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n const whiteList = ['/login', '/import', '/404', '/401']\r\n \r\n export function isTags(path) {\r\n-  \r\n+  console.log(whiteList)\r\n }\r\n"
+                },
+                {
+                    "date": 1695621179224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n const whiteList = ['/login', '/import', '/404', '/401']\r\n \r\n export function isTags(path) {\r\n   console.log(whiteList)\r\n+  return \r\n }\r\n"
+                },
+                {
+                    "date": 1695621185325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const whiteList = ['/login', '/import', '/404', '/401']\r\n \r\n export function isTags(path) {\r\n   console.log(whiteList)\r\n-  return !whit\r\n+  return !whiteList\r\n }\r\n"
+                },
+                {
+                    "date": 1695621191646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const whiteList = ['/login', '/import', '/404', '/401']\r\n \r\n export function isTags(path) {\r\n   console.log(whiteList)\r\n-  return !whiteList.includes()\r\n+  return !whiteList.includes(p)\r\n }\r\n"
+                }
+            ],
+            "date": 1695621113364,
+            "name": "Commit-0",
+            "content": "const = "
+        }
+    ]
+}

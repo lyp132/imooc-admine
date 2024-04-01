@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/views/user-manage/components/ExportToExcel.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1697869522027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1697869580196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <el-dialog>\r\n+  <el-dialog :title=\"$t('msg.excel.title')\">\r\n     <el-input></el-input>\r\n     <template>\r\n       <span>\r\n         <button></button>\r\n"
+                },
+                {
+                    "date": 1697871778920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,13 @@\n <template>\r\n-  <el-dialog :title=\"$t('msg.excel.title')\">\r\n-    <el-input></el-input>\r\n-    <template>\r\n+  <el-dialog\r\n+    :title=\"$t('msg.excel.title')\"\r\n+    :model-value=\"modelValue\"\r\n+    @close=\"closed\"\r\n+    width=\"30%\"\r\n+  >\r\n+    <el-input :placeholder=\"$t('msg.excel.placeholder')\"></el-input>\r\n+    <template #footer>\r\n       <span>\r\n         <button></button>\r\n         <button></button>\r\n       </span>\r\n"
+                },
+                {
+                    "date": 1697873456828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,13 @@\n   >\r\n     <el-input :placeholder=\"$t('msg.excel.placeholder')\"></el-input>\r\n     <template #footer>\r\n       <span>\r\n-        <button></button>\r\n-        <button></button>\r\n+        import { } from 'vue';\r\n+        <button @click=\"closed\">{{ $t('msg.isExcel.close') }}</button>\r\n+        <button @click=\"onConfirm\" type=\"primary\">\r\n+          {{ $t('msg.isExcel.confirm') }}\r\n+        </button>\r\n       </span>\r\n     </template>\r\n   </el-dialog>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1697873713694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <el-dialog\r\n     :title=\"$t('msg.excel.title')\"\r\n     :model-value=\"modelValue\"\r\n     @close=\"closed\"\r\n-    width=\"30%\"\r\n+import { } from 'vue';\r\n   >\r\n     <el-input :placeholder=\"$t('msg.excel.placeholder')\"></el-input>\r\n     <template #footer>\r\n       <span>\r\n@@ -19,7 +19,27 @@\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n+defineProps({\r\n+  modelValue: {\r\n+    type: Boolean,\r\n+    required: true\r\n+  }\r\n+})\r\n+\r\n+const emits = defineEmits(['update:modelValue'])\r\n+/**\r\n+ * 确定导出excel\r\n+ */\r\n+const onConfirm = () => {\r\n+  console.log('导出')\r\n+}\r\n+/**\r\n+ * 取消\r\n+ */\r\n+const closed = () => {\r\n+  emits('update:modelValue', false)\r\n+}\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697873728167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n     :title=\"$t('msg.excel.title')\"\r\n     :model-value=\"modelValue\"\r\n     @close=\"closed\"\r\n import { } from 'vue';\r\n-  >\r\n     <el-input :placeholder=\"$t('msg.excel.placeholder')\"></el-input>\r\n     <template #footer>\r\n       <span>\r\n         import { } from 'vue';\r\n"
+                },
+                {
+                    "date": 1697873733342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n     :title=\"$t('msg.excel.title')\"\r\n     :model-value=\"modelValue\"\r\n     @close=\"closed\"\r\n import { } from 'vue';\r\n+  >\r\n     <el-input :placeholder=\"$t('msg.excel.placeholder')\"></el-input>\r\n     <template #footer>\r\n       <span>\r\n         import { } from 'vue';\r\n@@ -33,9 +34,9 @@\n const onConfirm = () => {\r\n   console.log('导出')\r\n }\r\n /**\r\n- * 取消\r\n+ * \r\n  */\r\n const closed = () => {\r\n   emits('update:modelValue', false)\r\n }\r\n"
+                },
+                {
+                    "date": 1697873781031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <el-dialog\r\n     :title=\"$t('msg.excel.title')\"\r\n     :model-value=\"modelValue\"\r\n     @close=\"closed\"\r\n-import { } from 'vue';\r\n+    width=\"30%\"\r\n   >\r\n     <el-input :placeholder=\"$t('msg.excel.placeholder')\"></el-input>\r\n     <template #footer>\r\n       <span>\r\n"
+                },
+                {
+                    "date": 1697873799014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n const onConfirm = () => {\r\n   console.log('导出')\r\n }\r\n /**\r\n- * qu\r\n+ * 取消\r\n  */\r\n const closed = () => {\r\n   emits('update:modelValue', false)\r\n }\r\n"
+                },
+                {
+                    "date": 1697873933085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,11 @@\n     <el-input :placeholder=\"$t('msg.excel.placeholder')\"></el-input>\r\n     <template #footer>\r\n       <span>\r\n         import { } from 'vue';\r\n-        <button @click=\"closed\">{{ $t('msg.isExcel.close') }}</button>\r\n+        <button @click=\"closed\">{{ $t('msg.excel.close') }}</button>\r\n         <button @click=\"onConfirm\" type=\"primary\">\r\n-          {{ $t('msg.isExcel.confirm') }}\r\n+          {{ $t('msg.excel.confirm') }}\r\n         </button>\r\n       </span>\r\n     </template>\r\n   </el-dialog>\r\n"
+                }
+            ],
+            "date": 1697869522027,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <el-dialog>\r\n    <el-input></el-input>\r\n    <template>\r\n      <span>\r\n        <button></button>\r\n        <button></button>\r\n      </span>\r\n    </template>\r\n  </el-dialog>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

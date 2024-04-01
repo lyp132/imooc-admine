@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/directives/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1698555285375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702117350664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import print from 'vue3-print-nb'\r\n \r\n export default app => {\r\n+  // 打印\r\n   app.use(print)\r\n+  // \r\n }\r\n"
+                },
+                {
+                    "date": 1702117373993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,7 @@\n \r\n export default (app) => {\r\n   // 打印\r\n   app.use(print)\r\n-  //\r\n+  //功能受控指令\r\n+  app.use()\r\n }\r\n"
+                },
+                {
+                    "date": 1702117677748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import print from 'vue3-print-nb'\r\n+import permission from './permission'\r\n \r\n export default (app) => {\r\n   // 打印\r\n   app.use(print)\r\n   //功能受控指令\r\n-  app.use()\r\n+  app.use('permission', permission)\r\n }\r\n"
+                }
+            ],
+            "date": 1698555285375,
+            "name": "Commit-0",
+            "content": "import print from 'vue3-print-nb'\r\n\r\nexport default app => {\r\n  app.use(print)\r\n}\r\n"
+        }
+    ]
+}

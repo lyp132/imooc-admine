@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/layout/components/Navbar.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1693645938043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693726897241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,14 @@\n <template>\r\n-  <div>navbar</div>\r\n+  <div class=\"navbar\">\r\n+    <div class=\"right-menu\">\r\n+      <el-deopdown class=\"avatar-container\">\r\n+        <div class=\"avatar-wrapper\">\r\n+          <el-avatar></el-avatar>\r\n+        </div>\r\n+      </el-deopdown>\r\n+    </div>\r\n+  </div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1693727022630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div class=\"navbar\">\r\n     <div class=\"right-menu\">\r\n       <el-deopdown class=\"avatar-container\">\r\n         <div class=\"avatar-wrapper\">\r\n-          <el-avatar></el-avatar>\r\n+          <el-avatar class=\"\" shape=\"square\" :size=\"40\" :src=\"$store.getters.userInfo.avatar\"></el-avatar>\r\n         </div>\r\n       </el-deopdown>\r\n     </div>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1693727157808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,23 @@\n <template>\r\n   <div class=\"navbar\">\r\n     <div class=\"right-menu\">\r\n-      <el-deopdown class=\"avatar-container\">\r\n+      <el-dropdown class=\"avatar-container\">\r\n         <div class=\"avatar-wrapper\">\r\n           <el-avatar\r\n             class=\"\"\r\n             shape=\"square\"\r\n             :size=\"40\"\r\n             :src=\"$store.getters.userInfo.avatar\"\r\n           ></el-avatar>\r\n+          <i class=\"el-icon-s-tools\"></i>\r\n         </div>\r\n-      </el-deopdown>\r\n+        <template #dropdown>\r\n+          <el-dropdown-menu class=\"user-dropdown\">\r\n+            \r\n+          </el-dropdown-menu>\r\n+        </template>\r\n+      </el-dropdown>\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1693727246825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,16 @@\n           ></el-avatar>\r\n           <i class=\"el-icon-s-tools\"></i>\r\n         </div>\r\n         <template #dropdown>\r\n-          <el-dropdown-menu class=\"user-dropdown\"> </el-dropdown-menu>\r\n+          <el-dropdown-menu class=\"user-dropdown\">\r\n+            <router-link to=\"/\">\r\n+              <el-dropdown-item>主页</el-dropdown-item>\r\n+            </router-link>\r\n+            <a href=\"\">\r\n+              <el-dropdown-item>课程主页</el-dropdown-item>\r\n+            </a>\r\n+          </el-dropdown-menu>\r\n         </template>\r\n       </el-dropdown>\r\n     </div>\r\n   </div>\r\n"
+                }
+            ],
+            "date": 1693645938043,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div>navbar</div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

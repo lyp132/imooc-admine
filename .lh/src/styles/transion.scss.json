@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/styles/transion.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1694082611360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1694082642301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,17 @@\n-.list-move, /* 对移动中的元素应用的过渡 */\r\n-.list-enter-active,\r\n-.list-leave-active {\r\n+.breadcrumb-move, /* 对移动中的元素应用的过渡 */\r\n+.breadcrumb-enter-active,\r\n+.breadcrumb-leave-active {\r\n   transition: all 0.5s ease;\r\n }\r\n \r\n-.list-enter-from,\r\n-.list-leave-to {\r\n+.breadcrumb-enter-from,\r\n+.breadcrumb-leave-to {\r\n   opacity: 0;\r\n   transform: translateX(30px);\r\n }\r\n \r\n /* 确保将离开的元素从布局流中删除\r\n   以便能够正确地计算移动的动画。 */\r\n-.list-leave-active {\r\n+.breadcrumb-leave-active {\r\n   position: absolute;\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1694082611360,
+            "name": "Commit-0",
+            "content": ".list-move, /* 对移动中的元素应用的过渡 */\r\n.list-enter-active,\r\n.list-leave-active {\r\n  transition: all 0.5s ease;\r\n}\r\n\r\n.list-enter-from,\r\n.list-leave-to {\r\n  opacity: 0;\r\n  transform: translateX(30px);\r\n}\r\n\r\n/* 确保将离开的元素从布局流中删除\r\n  以便能够正确地计算移动的动画。 */\r\n.list-leave-active {\r\n  position: absolute;\r\n}"
+        }
+    ]
+}

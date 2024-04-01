@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/views/profile/components/Chapter.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1695978789049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1697017460199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,8 @@\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n+import { chapter } from '@/api/user'\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697017546076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,14 @@\n   <div>章节</div>\r\n </template>\r\n \r\n <script setup>\r\n-import {} from 'vue'\r\n+import { ref } from 'vue'\r\n import { chapter } from '@/api/user'\r\n+\r\n+const chapters = ref([])\r\n+const getChapterData = () => {\r\n+  chapters.value = await chapter()\r\n+}\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697017631794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,18 @@\n \r\n <script setup>\r\n import { ref } from 'vue'\r\n import { chapter } from '@/api/user'\r\n+import { watchSwitchLang } from '@/utils/i18n'\r\n \r\n+// 定义项目章节数据\r\n const chapters = ref([])\r\n-const getChapterData = () => {\r\n+// 获取项目章节数据\r\n+const getChapterData = async () => {\r\n   chapters.value = await chapter()\r\n }\r\n+getChapterData()\r\n+\r\n+watchSwitchLang(getChapterData)\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697017757653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <template>\r\n   <!-- 章节 -->\r\n-  <div>章节</div>\r\n+  <el-timeline>\r\n+    <el-timeline-item v-for=\"item in chapters\" :key=\"item.\"></el-timeline-item>\r\n+  </el-timeline>\r\n </template>\r\n \r\n <script setup>\r\n import { ref } from 'vue'\r\n@@ -15,8 +17,9 @@\n   chapters.value = await chapter()\r\n }\r\n getChapterData()\r\n \r\n+// 监听语言切换：处理国际化问题\r\n watchSwitchLang(getChapterData)\r\n </script>\r\n \r\n <style lang=\"scss\" scoped></style>\r\n"
+                },
+                {
+                    "date": 1697017764891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,11 @@\n <template>\r\n   <!-- 章节 -->\r\n   <el-timeline>\r\n-    <el-timeline-item v-for=\"item in chapters\" :key=\"item.\"></el-timeline-item>\r\n+    <el-timeline-item\r\n+      v-for=\"item in chapters\"\r\n+      :key=\"item.id\"\r\n+    ></el-timeline-item>\r\n   </el-timeline>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1697017780829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,17 +8,18 @@\n   </el-timeline>\r\n </template>\r\n \r\n <script setup>\r\n-import { ref } from 'vue'\r\n import { chapter } from '@/api/user'\r\n import { watchSwitchLang } from '@/utils/i18n'\r\n+import { ref } from 'vue'\r\n \r\n // 定义项目章节数据\r\n const chapters = ref([])\r\n // 获取项目章节数据\r\n const getChapterData = async () => {\r\n   chapters.value = await chapter()\r\n+  console.log(chapters.value)\r\n }\r\n getChapterData()\r\n \r\n // 监听语言切换：处理国际化问题\r\n"
+                },
+                {
+                    "date": 1697018052196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,14 @@\n   <el-timeline>\r\n     <el-timeline-item\r\n       v-for=\"item in chapters\"\r\n       :key=\"item.id\"\r\n-    ></el-timeline-item>\r\n+      :timestamp=\"item.timestamp\"\r\n+    >\r\n+      <el-card>\r\n+        {{ item.content }}\r\n+      </el-card>\r\n+    </el-timeline-item>\r\n   </el-timeline>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1697018107004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <!-- 章节 -->\r\n   <el-timeline>\r\n     <el-timeline-item\r\n-      v-for=\"item in chapters\"\r\n+      v-for=\"item in chapterData\"\r\n       :key=\"item.id\"\r\n       :timestamp=\"item.timestamp\"\r\n     >\r\n       <el-card>\r\n@@ -18,13 +18,13 @@\n import { watchSwitchLang } from '@/utils/i18n'\r\n import { ref } from 'vue'\r\n \r\n // 定义项目章节数据\r\n-const chapters = ref([])\r\n+const chapterData = ref([])\r\n // 获取项目章节数据\r\n const getChapterData = async () => {\r\n-  chapters.value = await chapter()\r\n-  console.log(chapters.value)\r\n+  chapterData.value = await chapter()\r\n+  console.log(chapterData.value)\r\n }\r\n getChapterData()\r\n \r\n // 监听语言切换：处理国际化问题\r\n"
+                },
+                {
+                    "date": 1697018148752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n     <el-timeline-item\r\n       v-for=\"item in chapterData\"\r\n       :key=\"item.id\"\r\n       :timestamp=\"item.timestamp\"\r\n+      placement=\"top\"\r\n     >\r\n       <el-card>\r\n         {{ item.content }}\r\n       </el-card>\r\n"
+                },
+                {
+                    "date": 1697022337997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n const chapterData = ref([])\r\n // 获取项目章节数据\r\n const getChapterData = async () => {\r\n   chapterData.value = await chapter()\r\n-  console.log(chapterData.value)\r\n }\r\n getChapterData()\r\n \r\n // 监听语言切换：处理国际化问题\r\n"
+                }
+            ],
+            "date": 1695978789049,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <!-- 章节 -->\r\n  <div>章节</div>\r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n"
+        }
+    ]
+}

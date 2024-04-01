@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/filters/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1698480770551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702183119892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import dayjs from 'dayjs'\r\n+import relativeTime from 'dayjs/plugin/relativeTime'\r\n \r\n export const dateFilter = (val, format = 'YYYY-MM-DD') => {\r\n   if (!isNaN(val)) {\r\n     // 将传入的字符串转换未数字\r\n@@ -8,8 +9,9 @@\n   // console.log('解析后的时间', dayjs(val))\r\n   // 解析时间戳，根据传入的占位符返回格式化后的日期。\r\n   return dayjs(val).format(format)\r\n }\r\n+dayjs.extend(relativeTime)\r\n \r\n export default (app) => {\r\n   app.config.globalProperties.$filters = {\r\n     dateFilter\r\n"
+                },
+                {
+                    "date": 1702183171627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   // console.log('解析后的时间', dayjs(val))\r\n   // 解析时间戳，根据传入的占位符返回格式化后的日期。\r\n   return dayjs(val).format(format)\r\n }\r\n+\r\n dayjs.extend(relativeTime)\r\n \r\n export default (app) => {\r\n   app.config.globalProperties.$filters = {\r\n"
+                },
+                {
+                    "date": 1702183335723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,29 @@\n import dayjs from 'dayjs'\r\n-import relativeTime from 'dayjs/plugin/relativeTime'\r\n+import rt from 'dayjs/plugin/relativeTime'\r\n \r\n export const dateFilter = (val, format = 'YYYY-MM-DD') => {\r\n   if (!isNaN(val)) {\r\n-    // 将传入的字符串转换未数字\r\n+    // 将传入的字符串转换为数字\r\n     val = parseInt(val)\r\n   }\r\n   // console.log('解析后的时间', dayjs(val))\r\n   // 解析时间戳，根据传入的占位符返回格式化后的日期。\r\n   return dayjs(val).format(format)\r\n }\r\n \r\n-dayjs.extend(relativeTime)\r\n+// 加载相对时间插件\r\n+dayjs.extend(rt)\r\n+function relativeTime(val) {\r\n+  if (!isNaN(val)) {\r\n+    // 将传入的字符串转换为数字\r\n+    val = parseInt(val)\r\n+  }\r\n+  return dayjs().to(dayjs(val))\r\n+}\r\n \r\n export default (app) => {\r\n   app.config.globalProperties.$filters = {\r\n-    dateFilter\r\n+    dateFilter,\r\n+    relativeTime\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1702183396745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,13 @@\n }\r\n \r\n // 加载相对时间插件\r\n dayjs.extend(rt)\r\n+/**\r\n+ * 相对时间\r\n+ * @param {*} val\r\n+ * @returns\r\n+ */\r\n function relativeTime(val) {\r\n   if (!isNaN(val)) {\r\n     // 将传入的字符串转换为数字\r\n     val = parseInt(val)\r\n"
+                },
+                {
+                    "date": 1702183508023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import dayjs from 'dayjs'\r\n import rt from 'dayjs/plugin/relativeTime'\r\n+import 'dayjs/locale/zh-cn'\r\n+import store from '@/store'\r\n \r\n export const dateFilter = (val, format = 'YYYY-MM-DD') => {\r\n   if (!isNaN(val)) {\r\n     // 将传入的字符串转换为数字\r\n@@ -22,9 +24,9 @@\n   if (!isNaN(val)) {\r\n     // 将传入的字符串转换为数字\r\n     val = parseInt(val)\r\n   }\r\n-  return dayjs().to(dayjs(val))\r\n+  return dayjs().locale(store.).to(dayjs(val))\r\n }\r\n \r\n export default (app) => {\r\n   app.config.globalProperties.$filters = {\r\n"
+                },
+                {
+                    "date": 1702183547908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n+import store from '@/store'\r\n import dayjs from 'dayjs'\r\n+import 'dayjs/locale/zh-cn'\r\n import rt from 'dayjs/plugin/relativeTime'\r\n-import 'dayjs/locale/zh-cn'\r\n-import store from '@/store'\r\n \r\n export const dateFilter = (val, format = 'YYYY-MM-DD') => {\r\n   if (!isNaN(val)) {\r\n     // 将传入的字符串转换为数字\r\n@@ -24,9 +24,11 @@\n   if (!isNaN(val)) {\r\n     // 将传入的字符串转换为数字\r\n     val = parseInt(val)\r\n   }\r\n-  return dayjs().locale(store.).to(dayjs(val))\r\n+  return dayjs()\r\n+    .locale(store.getters.language === 'zh' ? 'zh-cn' : 'en')\r\n+    .to(dayjs(val))\r\n }\r\n \r\n export default (app) => {\r\n   app.config.globalProperties.$filters = {\r\n"
+                },
+                {
+                    "date": 1702183673673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,14 @@\n import store from '@/store'\r\n import dayjs from 'dayjs'\r\n import 'dayjs/locale/zh-cn'\r\n import rt from 'dayjs/plugin/relativeTime'\r\n-\r\n+/**\r\n+ * 处理时间解析\r\n+ * @param {*} val\r\n+ * @param {*} format\r\n+ * @returns\r\n+ */\r\n export const dateFilter = (val, format = 'YYYY-MM-DD') => {\r\n   if (!isNaN(val)) {\r\n     // 将传入的字符串转换为数字\r\n     val = parseInt(val)\r\n"
+                }
+            ],
+            "date": 1698480770551,
+            "name": "Commit-0",
+            "content": "import dayjs from 'dayjs'\r\n\r\nexport const dateFilter = (val, format = 'YYYY-MM-DD') => {\r\n  if (!isNaN(val)) {\r\n    // 将传入的字符串转换未数字\r\n    val = parseInt(val)\r\n  }\r\n  // console.log('解析后的时间', dayjs(val))\r\n  // 解析时间戳，根据传入的占位符返回格式化后的日期。\r\n  return dayjs(val).format(format)\r\n}\r\n\r\nexport default (app) => {\r\n  app.config.globalProperties.$filters = {\r\n    dateFilter\r\n  }\r\n}\r\n"
+        }
+    ]
+}

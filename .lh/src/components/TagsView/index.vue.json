@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/components/TagsView/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1695630336180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695630341899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  \r\n+  div.tags\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1695630349522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <template>\r\n-  div.tags\r\n+  <div class=\"tags-view-container\">\r\n+    \r\n+  </div>\r\n </template>\r\n \r\n <script setup>\r\n import {} from 'vue'\r\n"
+                },
+                {
+                    "date": 1695630355565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"tags-view-container\">\r\n-    \r\n+    <router-link></router-link>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1695630364332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <template>\r\n   <div class=\"tags-view-container\">\r\n-    <router-link></router-link>\r\n+    <router-link>\r\n+      {{  }}\r\n+    </router-link>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1695630370368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"tags-view-container\">\r\n-    <router-link>\r\n+    <router-link class=\"\">\r\n       {{  }}\r\n     </router-link>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1695630377762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"tags-view-container\">\r\n-    <router-link class=\"\">\r\n+    <router-link class=\"tags-view-\">\r\n       {{  }}\r\n     </router-link>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1695630383635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"tags-view-container\">\r\n-    <router-link class=\"tags-view-\">\r\n+    <router-link class=\"tags-view-item\" >\r\n       {{  }}\r\n     </router-link>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1695630391445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"tags-view-container\">\r\n-    <router-link class=\"tags-view-item\" >\r\n+    <router-link class=\"tags-view-item\" :class=\"is\">\r\n       {{  }}\r\n     </router-link>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1695630397620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"tags-view-container\">\r\n-    <router-link class=\"tags-view-item\" :class=\"isActive()\">\r\n+    <router-link class=\"tags-view-item\" :class=\"isActive(t)\">\r\n       {{  }}\r\n     </router-link>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1695630443612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"tags-view-container\">\r\n-    <router-link class=\"tags-view-item\" :class=\"isActive(tag) ? $store.getters.cssVar.menu\">\r\n+    <router-link class=\"tags-view-item\" :class=\"isActive(tag) ? $store.getters.cssVar.menubar\">\r\n       {{  }}\r\n     </router-link>\r\n   </div>\r\n </template>\r\n"
+                }
+            ],
+            "date": 1695630336180,
+            "name": "Commit-0",
+            "content": "<template>\r\n  \r\n</template>\r\n\r\n<script setup>\r\nimport {} from 'vue'\r\n</script>\r\n\r\n<style  lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

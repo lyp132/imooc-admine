@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/router/modules/ArticleCreate.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1700692437583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700692450491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export default {\r\n   path: '/article',\r\n   component: layout,\r\n   redirect: '/article/ranking',\r\n-  name: 'articleRanking',\r\n+  name: 'articleCreate',\r\n   meta: {\r\n     title: 'article',\r\n     icon: 'article'\r\n   },\r\n"
+                },
+                {
+                    "date": 1700692474520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+import layout from '@/layout'\r\n+\r\n+export default {\r\n+  path: '/article',\r\n+  component: layout,\r\n+  redirect: '/article/ranking',\r\n+  name: 'articleCreate',\r\n+  meta: {\r\n+    title: 'article',\r\n+    icon: 'article'\r\n+  },\r\n+  children: [\r\n+    {\r\n+      path: '/article/create',\r\n+      component: () => import('@/views/article-create/index'),\r\n+      meta: {\r\n+        title: 'articleCreate',\r\n+        icon: 'article-create'\r\n+      }\r\n+    }\r\n+  ]\r\n+}\r\n"
+                },
+                {
+                    "date": 1700692526965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,15 @@\n       meta: {\r\n         title: 'articleCreate',\r\n         icon: 'article-create'\r\n       }\r\n+    },\r\n+    {\r\n+      path: '/article/editor/:id',\r\n+      name: 'articleEditor',\r\n+      component: () => import('@/views/article-create/index'),\r\n+      meta: {\r\n+        title: 'articleEditor'\r\n+      }\r\n     }\r\n   ]\r\n }\r\n"
+                }
+            ],
+            "date": 1700692437583,
+            "name": "Commit-0",
+            "content": "import layout from '@/layout'\r\n\r\nexport default {\r\n  path: '/article',\r\n  component: layout,\r\n  redirect: '/article/ranking',\r\n  name: 'articleRanking',\r\n  meta: {\r\n    title: 'article',\r\n    icon: 'article'\r\n  },\r\n  children: [\r\n    {\r\n      path: '/article/ranking',\r\n      component: () => import('@/views/article-ranking/index'),\r\n      meta: {\r\n        title: 'articleRanking',\r\n        icon: 'article-ranking'\r\n      }\r\n    },\r\n    {\r\n      path: '/article/:id',\r\n      name: 'articleDetail',\r\n      component: () => import('@/views/article-detail/index'),\r\n      meta: {\r\n        title: 'articleDetail'\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
+        }
+    ]
+}
